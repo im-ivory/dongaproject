@@ -158,6 +158,102 @@ html {
       padding-bottom: 6vw;
     }
   }
+
+  .case_bar {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .counter_container {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      color: white;
+      background-color: rgba(255, 96, 96, 0.884);
+      position: sticky;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      top: 0;
+      padding: 20px;
+      align-self: flex-end;
+      display: none;
+
+      li {
+        display: inline-block;
+        &:first-child {
+          margin-bottom: 20px;
+        }
+
+        h2 {
+          display: inline-block;
+        }
+      }
+    }
+    .run_Btn {
+      #jsBtn {
+        all: unset;
+        color: black;
+        background-color: white;
+        padding: 20px 30px;
+        margin: 50px 0;
+        cursor: pointer;
+      }
+    }
+
+    .chart_container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      p {
+        &:after {
+          content: "";
+          display: inline-block;
+          width: 60vw;
+          border-bottom: 3px solid white;
+          margin-bottom: 5px;
+          margin-left: 10px;
+        }
+
+        &:nth-child(1) {
+          margin-bottom: 50px;
+        }
+        &:nth-child(2) {
+          margin-bottom: 120px;
+        }
+        &:nth-child(4) {
+          margin-bottom: 70px;
+        }
+        &:nth-child(3),
+        &:nth-child(5) {
+          margin-bottom: 200px;
+        }
+        &:nth-child(7) {
+          align-self: center;
+          padding-top: 50px;
+          text-align: center;
+          font-size: 19px;
+          line-height: 30px;
+        }
+
+        &:nth-child(7):after {
+          content: none;
+        }
+      }
+      .bar {
+        position: absolute;
+        top: 8px;
+        left: 40%;
+        width: 200px;
+        height: 0;
+        //701
+        background-color: darkorange;
+      }
+    }
+  }
 }
 
 .page05 {

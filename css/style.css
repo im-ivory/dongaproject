@@ -163,6 +163,128 @@ html {
   padding-bottom: 6vw;
 }
 
+.page04 .case_bar {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page04 .case_bar .counter_container {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  color: white;
+  background-color: rgba(255, 96, 96, 0.884);
+  position: -webkit-sticky;
+  position: sticky;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  top: 0;
+  padding: 20px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  display: none;
+}
+
+.page04 .case_bar .counter_container li {
+  display: inline-block;
+}
+
+.page04 .case_bar .counter_container li:first-child {
+  margin-bottom: 20px;
+}
+
+.page04 .case_bar .counter_container li h2 {
+  display: inline-block;
+}
+
+.page04 .case_bar .run_Btn #jsBtn {
+  all: unset;
+  color: black;
+  background-color: white;
+  padding: 20px 30px;
+  margin: 50px 0;
+  cursor: pointer;
+}
+
+.page04 .case_bar .chart_container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.page04 .case_bar .chart_container p:after {
+  content: "";
+  display: inline-block;
+  width: 60vw;
+  border-bottom: 3px solid white;
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+
+.page04 .case_bar .chart_container p:nth-child(1) {
+  margin-bottom: 50px;
+}
+
+.page04 .case_bar .chart_container p:nth-child(2) {
+  margin-bottom: 120px;
+}
+
+.page04 .case_bar .chart_container p:nth-child(4) {
+  margin-bottom: 70px;
+}
+
+.page04 .case_bar .chart_container p:nth-child(3), .page04 .case_bar .chart_container p:nth-child(5) {
+  margin-bottom: 200px;
+}
+
+.page04 .case_bar .chart_container p:nth-child(7) {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding-top: 50px;
+  text-align: center;
+  font-size: 19px;
+  line-height: 30px;
+}
+
+.page04 .case_bar .chart_container p:nth-child(7):after {
+  content: none;
+}
+
+.page04 .case_bar .chart_container .bar {
+  position: absolute;
+  top: 8px;
+  left: 40%;
+  width: 200px;
+  height: 0;
+  background-color: darkorange;
+}
+
 .page05 {
   height: 100vh;
 }

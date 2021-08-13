@@ -131,7 +131,81 @@ gsap.from('.page04 > .title > h1', {
         scrub: 1,
         toggleActions: 'play reverse none reverse',
         start: 'top 70%',
-        markers: true,
         end: 'bottom bottom',
     }
 })
+
+// /////page05//////
+//button
+
+const btn = document.querySelector("#jsBtn");
+var chartHeight = document.querySelector(".chart_container").clientHeight;
+
+function increase(){
+    gsap.to('.bar',{
+    transformOrigin: "0 0",
+    height: chartHeight - 128,
+    duration: 5,
+    ease: "power1",
+});
+};
+
+$('#jsBtn').click(function () { 
+    $(".counter_container").css("display", "flex");
+    $('html, body').stop().animate({
+    scrollTop : $('#up').offset().top -400
+}, 5000)
+});
+
+
+btn.addEventListener("click", increase);
+
+// ///// 시계
+$(function() {
+    var count0 = 2020;
+    var count1 = 1;
+    var count2 = 1;
+  timeCounter();
+
+  function timeCounter() {
+
+    id0 = setInterval(count0Fn, 3600);
+
+    function count0Fn() {
+      count0++;
+      if (count0 > 2021) {    
+        clearInterval(id0);
+      } else {
+        $(".number").eq(0).text(count0);
+      }
+
+    }
+
+    // id1 = setTimeout(count1Fn, 1200);
+    id1 = setInterval(count1Fn, 300);
+
+    function count1Fn() {
+      count1++;
+      if (count1 > 12) {
+        count1 = 0;
+      } else if (count1 == 9 && count0 == 2021 && count2 == 3){
+          clearInterval(id1);
+      }else {
+        $(".number").eq(1).text(count1);
+      }
+    }
+
+    id2 = setInterval(count2Fn, 10);
+
+    function count2Fn() {
+      count2++;
+      if (count2 > 31) {
+        count2 = 0;
+      }  else if (count1 == 8 && count0 == 2021 && count2 == 3){
+        clearInterval(id2);
+      }else{
+        $(".number").eq(2).text(count2);
+      }
+    }
+  }
+});
