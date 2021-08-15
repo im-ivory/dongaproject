@@ -87,6 +87,7 @@ html {
       overflow: hidden;
       top: 0;
       width: 100%;
+      height: 100vh;
 
       img {
         width: 100%;
@@ -95,51 +96,57 @@ html {
 
       .place-dot {
         position: absolute;
-        right: 32%;
-        top: 43%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         opacity: 0;
 
+        &.wuhan {
+          right: 29vw;
+          top: 19vw;
+        }
+        &.airport {
+          right: 14vw;
+          top: 13vw;
+          opacity: 0;
+        }
+        &.hospital {
+          right: 14vw;
+          top: 13vw;
+          opacity: 0;
+
+          .dot {
+            background-color: brown;
+          }
+        }
+
         p {
-          color: black;
+          color: white;
           font-weight: bold;
-          font-size: 30px;
-          padding-bottom: 10px;
+          font-size: 2vw;
+          padding: 1vw 1.5vw;
+          margin-bottom: 1vw;
+          background-color: black;
         }
 
         .dot {
-          width: 50px;
-          height: 50px;
+          width: 5vw;
+          height: 5vw;
           background-color: rgb(0, 165, 110);
           border-radius: 50%;
           // box-shadow: rgba(0, 165, 110, 0.575) 0px 5px 35px 13px;
         }
       }
+
       .airplane {
         position: absolute;
-        right: 55%;
-        top: 58%;
-        width: 250px;
-        transform: rotate(-15deg);
+        right: 27vw;
+        top: 19vw;
+        width: 15vw;
         opacity: 0;
         img {
           width: 100%;
-        }
-      }
-
-      .airport {
-        right: 25%;
-        top: 30%;
-        opacity: 0;
-        p {
-          color: white;
-        }
-      }
-      .hospital {
-        right: 30%;
-        top: 30%;
-        opacity: 0;
-        p {
-          color: white;
+          transform: rotate(-15deg);
         }
       }
     }
@@ -350,12 +357,12 @@ html {
 }
 
 .page05 {
-  width: 70%;
   height: auto;
-  margin: 20vw auto;
+  margin: 20vw 0;
 
   .title {
-    width: 100%;
+    width: 70%;
+    margin: 0 auto;
     text-align: center;
     font-size: 3vw;
     font-weight: 800;
@@ -367,6 +374,17 @@ html {
   }
 
   .korea_vaccine {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    height: 100vh;
+    // svg {
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 100%;
+    // }
     svg rect {
       fill: rgb(135, 147, 255);
       transition: all 0.5s;
@@ -509,15 +527,11 @@ html {
     font-weight: 800;
     padding-bottom: 10vw;
 
-    h1,
     div {
       margin-bottom: 8vw;
     }
     .mask {
       width: 20%;
-      // position: absolute;
-      // top: 10%;
-      // left: 39%;
       img {
         width: 100%;
       }
@@ -532,5 +546,58 @@ html {
         width: 100%;
       }
     }
+  }
+}
+
+@media all and (max-width: 767px) {
+  .page01 {
+    height: 100vh;
+
+    .inner {
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      height: 100%;
+
+      .img {
+        flex-basis: unset;
+        width: 80%;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .title {
+        flex-basis: unset;
+        font-size: 6vw;
+        text-align: center;
+        line-height: 17vw;
+
+        h1 {
+          width: 100%;
+        }
+      }
+    }
+    .page_loader {
+      display: none;
+    }
+  }
+
+  .page02 {
+    .article {
+      .text {
+        font-size: 2.5vw;
+        line-height: 4vw;
+        width: 35vw;
+        word-break: keep-all;
+      }
+    }
+  }
+
+  .page03 {
+    width: 65%;
+    font-size: 2.5vw;
+    line-height: 4vw;
   }
 }

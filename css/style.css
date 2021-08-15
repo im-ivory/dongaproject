@@ -101,6 +101,7 @@ html {
   overflow: hidden;
   top: 0;
   width: 100%;
+  height: 100vh;
 }
 
 .page02 .content_container .background_image img {
@@ -111,57 +112,68 @@ html {
 
 .page02 .content_container .background_image .place-dot {
   position: absolute;
-  right: 32%;
-  top: 43%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   opacity: 0;
 }
 
+.page02 .content_container .background_image .place-dot.wuhan {
+  right: 29vw;
+  top: 19vw;
+}
+
+.page02 .content_container .background_image .place-dot.airport {
+  right: 14vw;
+  top: 13vw;
+  opacity: 0;
+}
+
+.page02 .content_container .background_image .place-dot.hospital {
+  right: 14vw;
+  top: 13vw;
+  opacity: 0;
+}
+
+.page02 .content_container .background_image .place-dot.hospital .dot {
+  background-color: brown;
+}
+
 .page02 .content_container .background_image .place-dot p {
-  color: black;
+  color: white;
   font-weight: bold;
-  font-size: 30px;
-  padding-bottom: 10px;
+  font-size: 2vw;
+  padding: 1vw 1.5vw;
+  margin-bottom: 1vw;
+  background-color: black;
 }
 
 .page02 .content_container .background_image .place-dot .dot {
-  width: 50px;
-  height: 50px;
+  width: 5vw;
+  height: 5vw;
   background-color: #00a56e;
   border-radius: 50%;
 }
 
 .page02 .content_container .background_image .airplane {
   position: absolute;
-  right: 55%;
-  top: 58%;
-  width: 250px;
-  -webkit-transform: rotate(-15deg);
-          transform: rotate(-15deg);
+  right: 27vw;
+  top: 19vw;
+  width: 15vw;
   opacity: 0;
 }
 
 .page02 .content_container .background_image .airplane img {
   width: 100%;
-}
-
-.page02 .content_container .background_image .airport {
-  right: 25%;
-  top: 30%;
-  opacity: 0;
-}
-
-.page02 .content_container .background_image .airport p {
-  color: white;
-}
-
-.page02 .content_container .background_image .hospital {
-  right: 30%;
-  top: 30%;
-  opacity: 0;
-}
-
-.page02 .content_container .background_image .hospital p {
-  color: white;
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
 }
 
 .page02 .article {
@@ -403,13 +415,13 @@ html {
 }
 
 .page05 {
-  width: 70%;
   height: auto;
-  margin: 20vw auto;
+  margin: 20vw 0;
 }
 
 .page05 .title {
-  width: 100%;
+  width: 70%;
+  margin: 0 auto;
   text-align: center;
   font-size: 3vw;
   font-weight: 800;
@@ -418,6 +430,13 @@ html {
 
 .page05 .title h1:first-child {
   padding-bottom: 2vw;
+}
+
+.page05 .korea_vaccine {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  height: 100vh;
 }
 
 .page05 .korea_vaccine svg rect {
@@ -594,7 +613,6 @@ html {
   padding-bottom: 10vw;
 }
 
-.page07 .title h1,
 .page07 .title div {
   margin-bottom: 8vw;
 }
@@ -622,5 +640,55 @@ html {
 
 .page07 .title .people img {
   width: 100%;
+}
+
+@media all and (max-width: 767px) {
+  .page01 {
+    height: 100vh;
+  }
+  .page01 .inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    height: 100%;
+  }
+  .page01 .inner .img {
+    -ms-flex-preferred-size: unset;
+        flex-basis: unset;
+    width: 80%;
+  }
+  .page01 .inner .img img {
+    width: 100%;
+  }
+  .page01 .inner .title {
+    -ms-flex-preferred-size: unset;
+        flex-basis: unset;
+    font-size: 6vw;
+    text-align: center;
+    line-height: 17vw;
+  }
+  .page01 .inner .title h1 {
+    width: 100%;
+  }
+  .page01 .page_loader {
+    display: none;
+  }
+  .page02 .article .text {
+    font-size: 2.5vw;
+    line-height: 4vw;
+    width: 35vw;
+    word-break: keep-all;
+  }
+  .page03 {
+    width: 65%;
+    font-size: 2.5vw;
+    line-height: 4vw;
+  }
 }
 /*# sourceMappingURL=style.css.map */

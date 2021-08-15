@@ -1,8 +1,16 @@
-gsap.registerPlugin(ScrollTrigger);
+/////////////page01//////////
 
+gsap.registerPlugin(ScrollTrigger);
 gsap.defaults({ease: "power1", duration: 3});
 
-const tl = gsap.timeline();
+// ScrollTrigger.saveStyles(".mobile, .desktop");
+
+
+ScrollTrigger.matchMedia({
+  
+
+  "(min-width: 768px)": function() {
+    const tl = gsap.timeline();
 
 tl.to('.page01 > .inner > .title', {
     opacity: 0,
@@ -32,11 +40,19 @@ tl.to('.page01 > .inner > .title', {
     scrollTrigger: {
         trigger: '.page_loader',
         scrub: 1,
+        pin: true,
         toggleActions: 'play reverse none reverse',
         start: 'top 0%',
         end: 'bottom 120%',
     }
 })
+},
+});
+
+
+
+
+
 
 
 // ///////page2///////
@@ -83,10 +99,10 @@ gsap.from('.page02 > .title', {
 //   });
 
 // const tl2 = gsap.timeline();
-gsap.to('.background_image > img', {
+gsap.fromTo('.background_image > img', {scale:0.8, x:"33vw", y:"-5vw"},{
     scale:3,
-    y: -350,
-    x: 300,
+    y: "-25vw",
+    x: "20vw",
     scrollTrigger: {
     trigger: '.article01 > .text',
     scrub: 1,
@@ -105,10 +121,10 @@ gsap.to('.background_image > .wuhan', {
   end: 'bottom 100%',
 }
 })
-// gsap.fromTo('.background_image > .place-dot > .dot', {boxShadow: "none"}, {
-//   boxShadow: "rgba(0, 165, 110, 0.575) 0px 5px 35px 13px",
-//   repeat: -1
-// })
+// // gsap.fromTo('.background_image > .place-dot > .dot', {boxShadow: "none"}, {
+// //   boxShadow: "rgba(0, 165, 110, 0.575) 0px 5px 35px 13px",
+// //   repeat: -1
+// // })
 gsap.to('.background_image > .wuhan', {
   opacity:0,
   scrollTrigger: {
@@ -129,10 +145,9 @@ gsap.to('.background_image > .airplane', {
   end: 'bottom 100%',
 }
 })
-gsap.fromTo('.background_image > img', {y: -350, x: 300}, {
-    // scale:3,
-    y: 10,
-    x: -1000,
+gsap.fromTo('.background_image > img', { y: "-25vw",x: "20vw"}, {
+    y: "-1vw",
+    x: "-52vw",
     scrollTrigger: {
     trigger: '.article03 > .text',
     scrub: 1,
@@ -141,17 +156,17 @@ gsap.fromTo('.background_image > img', {y: -350, x: 300}, {
     end: 'bottom 90%',
 }
 })
-gsap.to('.background_image > .airplane', {
-  y: -50,
-  x: -150,
-  scrollTrigger: {
-  trigger: '.article03 > .text',
-  scrub: 1,
-  toggleActions: 'play reverse none reverse',
-  start: 'top 80%',
-  end: 'bottom 100%',
-}
-})
+// gsap.to('.background_image > .airplane', {
+//   y: -50,
+//   x: -150,
+//   scrollTrigger: {
+//   trigger: '.article03 > .text',
+//   scrub: 1,
+//   toggleActions: 'play reverse none reverse',
+//   start: 'top 80%',
+//   end: 'bottom 100%',
+// }
+// })
 gsap.to('.background_image > .airport', {
   opacity:1,
   scrollTrigger: {
@@ -162,10 +177,8 @@ gsap.to('.background_image > .airport', {
   end: 'bottom 90%',
 }
 })
-gsap.fromTo('.background_image > img', {x: -1000}, {
-    // scale:3,
-    // y: 10,
-    x: -1100,
+gsap.fromTo('.background_image > img', {x:"-52vw"}, {
+    x: "-55vw",
     scrollTrigger: {
     trigger: '.article04 > .text',
     scrub: 1,
@@ -229,7 +242,6 @@ gsap.from('.page04 > .title > h1', {
         end: 'bottom bottom',
     }
 })
-
 
 //button
 
@@ -421,18 +433,18 @@ var korVaccineData = [
   {x: 11.2, y: "18~29", z:854927},
 ];
   // var color = ['red','blue','yellow','green']
-  var svg2 = d3.select('.korea_vaccine svg');
-  var width2 = parseInt(svg2.style("width"), 10);
-  var height2 = parseInt(svg2.style("height"), 10) -20;
+  var korVsvg = d3.select('.korea_vaccine svg');
+  var korVWidth = parseInt(korVsvg.style("width"), 10);
+  var korVHeight = parseInt(korVsvg.style("height"), 10) -20;
 
-  var yScale2 = d3.scaleBand()
+  var korVyScale = d3.scaleBand()
       .domain(korVaccineData.map(function(d) {return d.y;}))
-      .range([0, height2]).paddingInner(0.2);
-  var xScale2 = d3.scaleLinear()
+      .range([0, korVHeight]).paddingInner(0.2);
+  var korVxScale = d3.scaleLinear()
       .domain([0, d3.max(korVaccineData, function(d) {return d.x; })])
-      .range([0, width2]);
+      .range([0, korVWidth]);
 
-  var svgG = svg2.append("g")
+  var svgG = korVsvg.append("g")
       .attr("transform", "translate(60,0)");
   
   svgG.selectAll('rect')
@@ -440,7 +452,7 @@ var korVaccineData = [
   .enter() //부족한 선택물은 추가 계산 | enter(): 부족한 선택물을 추가하는 ㄴ메서드
   .append('rect')
       .attr('height', 60)
-      .attr('y', (d,i)=>yScale2(d.y)) // y축에 data들을 70만큼 거리를 둔다
+      .attr('y', (d,i)=>korVyScale(d.y)) // y축에 data들을 70만큼 거리를 둔다
       .attr('width', 10) //width 기본값
       .on("mouseover", function() {tooltip.style("display", null);})
       .on("mouseout", function() {tooltip.style("display", "none");})
@@ -453,8 +465,8 @@ var korVaccineData = [
       .attr('width', d=>(d.x*700)/100) //svg의 가로길이만큼 곱해주고 100으로 나눠 백분율로 나타나게함
       
 
-  var yAxis2 = d3.axisLeft().scale(yScale2);
-  var xAxis2 = d3.axisBottom().scale(xScale2);
+  var yAxis2 = d3.axisLeft().scale(korVyScale);
+  var xAxis2 = d3.axisBottom().scale(korVxScale);
 
   svgG.append("g")
       .call(yAxis2);
@@ -565,24 +577,12 @@ d3.selectAll(".municipality-label")
 
 // ////page07
 const tlL = gsap.timeline();
-tlL.from('.page07 > .title > h1',  {
+tlL.from('.page07 > .title > div',  {
   y:100,
   opacity: 0,
   stagger: 2,
   scrollTrigger: {
-      trigger: '.page07 > .title',
-      scrub: 1,
-      toggleActions: 'play reverse none reverse',
-      start: 'top 50%',
-      end: 'bottom 60%',
-  }
-})
-.from('.page07 > .title> div',  {
-  y:100,
-  opacity: 0,
-  stagger: 2,
-  scrollTrigger: {
-      trigger: '.page07 > .title >div',
+      trigger: '.page07 > div',
       scrub: 1,
       toggleActions: 'play reverse none reverse',
       start: 'top 50%',
@@ -592,20 +592,19 @@ tlL.from('.page07 > .title > h1',  {
 .to('.page07 > .bg',  {
   opacity: 0.5,
   scrollTrigger: {
-      trigger: '.page07 > .title >div',
+      trigger: '.page07 > .title > .text:first-child',
       scrub: 1,
       toggleActions: 'play reverse none reverse',
       start: 'top 50%',
       end: 'bottom 60%',
   }
 },200)
-
 .to('.page07 > .title > .people > img:nth-child(2)',  {
   paddingRight:100,
   paddingLeft:100,
   stagger: 2,
   scrollTrigger: {
-      trigger: '.page07 > .title > h1:last-child',
+      trigger: '.page07 > .title > .text:last-child',
       scrub: 1,
       toggleActions: 'play reverse none reverse',
       start: 'top 80%',
@@ -615,34 +614,10 @@ tlL.from('.page07 > .title > h1',  {
 .to('.page07 > .bg',  {
   scale: 3,
   scrollTrigger: {
-      trigger: '.page07 > .title > h1:last-child',
+      trigger: '.page07 > .title > .text:last-child',
       scrub: 1,
       toggleActions: 'play reverse none reverse',
       start: 'top 80%',
       end: 'bottom 60%',
   }
 })
-// .set('.page07 > .title > h1:nth-child(2)', { 
-//   scrollTrigger: {
-//     trigger: '.page07 > .title> h1:nth-child(2)',
-//     scrub: 1,
-//     toggleActions: 'play reverse none reverse',
-//     toggleClass: "space",
-//     start: 'top 50%',
-//     markers: true,
-//     end: 'bottom bottom',
-// }
-// })
-
-
-// to('.page07 > .title > h1:nth-child(2)',  {
-//   letterSpacing: 100,
-//   scrollTrigger: {
-//       trigger: '.page07 > .title> h1:nth-child(2)',
-//       scrub: 1,
-//       toggleActions: 'play reverse none reverse',
-//       start: 'top 50%',
-//       markers: true,
-//       end: 'bottom 60%',
-//   }
-// })
