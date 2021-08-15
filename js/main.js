@@ -589,11 +589,31 @@ tlL.from('.page07 > .title > h1',  {
       end: 'bottom 60%',
   }
 })
+.to('.page07 > .bg',  {
+  opacity: 0.5,
+  scrollTrigger: {
+      trigger: '.page07 > .title >div',
+      scrub: 1,
+      toggleActions: 'play reverse none reverse',
+      start: 'top 50%',
+      end: 'bottom 60%',
+  }
+},200)
 
 .to('.page07 > .title > .people > img:nth-child(2)',  {
   paddingRight:100,
   paddingLeft:100,
   stagger: 2,
+  scrollTrigger: {
+      trigger: '.page07 > .title > h1:last-child',
+      scrub: 1,
+      toggleActions: 'play reverse none reverse',
+      start: 'top 80%',
+      end: 'bottom 60%',
+  }
+})
+.to('.page07 > .bg',  {
+  scale: 3,
   scrollTrigger: {
       trigger: '.page07 > .title > h1:last-child',
       scrub: 1,
