@@ -80,6 +80,7 @@ html {
     width: 100%;
     height: auto;
     position: relative;
+    margin-top: 10vw;
 
     .background_image {
       position: sticky;
@@ -91,32 +92,88 @@ html {
         width: 100%;
         transform: scale(0.8) translate(40vw, -100px);
       }
-    }
 
-    .article {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-
-      .text {
+      .place-dot {
         position: absolute;
-        top: 5vw;
-        left: 6vw;
-        padding: 3vw;
-        font-size: 1.3vw;
-        line-height: 2vw;
-        color: white;
-        background-color: rgba(0, 0, 0, 0.493);
+        right: 32%;
+        top: 43%;
+        opacity: 0;
+
+        p {
+          color: black;
+          font-weight: bold;
+          font-size: 30px;
+          padding-bottom: 10px;
+        }
+
+        .dot {
+          width: 50px;
+          height: 50px;
+          background-color: rgb(0, 165, 110);
+          border-radius: 50%;
+          // box-shadow: rgba(0, 165, 110, 0.575) 0px 5px 35px 13px;
+        }
+      }
+      .airplane {
+        position: absolute;
+        right: 55%;
+        top: 58%;
+        width: 250px;
+        transform: rotate(-15deg);
+        opacity: 0;
+        img {
+          width: 100%;
+        }
+      }
+
+      .airport {
+        right: 25%;
+        top: 30%;
+        opacity: 0;
+        p {
+          color: white;
+        }
+      }
+      .hospital {
+        right: 30%;
+        top: 30%;
+        opacity: 0;
+        p {
+          color: white;
+        }
       }
     }
+  }
 
-    // .article05 {
-    //   .text {
-    //     position: relative;
-    //     text-align: center;
-    //     font-size: 2vw;
-    //   }
-    // }
+  .article {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    .text {
+      position: absolute;
+      top: 5vw;
+      left: 6vw;
+      padding: 3vw;
+      font-size: 1.3vw;
+      line-height: 2vw;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.493);
+    }
+  }
+
+  .article06 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    .page_fadeout {
+      position: sticky;
+      width: 150px;
+      height: 100px;
+      background-color: rgb(0, 0, 0);
+      box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px;
+    }
   }
 }
 
@@ -144,15 +201,15 @@ html {
 
 .page04 {
   width: 70%;
-  height: 100vh;
+  height: auto;
   margin: 20vw auto;
 
   .title {
     width: 100%;
     text-align: center;
-    font-size: 4vw;
+    font-size: 3vw;
     font-weight: 800;
-    padding: 5vw 0;
+    padding-bottom: 20vw;
 
     h1:first-child {
       padding-bottom: 6vw;
@@ -176,10 +233,11 @@ html {
       align-items: center;
       justify-content: center;
       text-align: center;
-      top: 0;
+      top: 20px;
       padding: 20px;
       align-self: flex-end;
       display: none;
+      z-index: 2;
 
       li {
         display: inline-block;
@@ -237,25 +295,232 @@ html {
           text-align: center;
           font-size: 19px;
           line-height: 30px;
+          opacity: 0;
+          &:after {
+            content: none;
+          }
         }
+      }
+    }
+    .bar {
+      position: absolute;
+      top: 8px;
+      left: 40%;
+      width: 200px;
+      height: 0;
+      //701
+      background-color: darkorange;
+    }
+  }
 
-        &:nth-child(7):after {
-          content: none;
-        }
-      }
-      .bar {
-        position: absolute;
-        top: 8px;
-        left: 40%;
-        width: 200px;
-        height: 0;
-        //701
-        background-color: darkorange;
-      }
+  .case_line {
+    margin-top: 10vw;
+    path {
+      stroke: rgb(24, 151, 255);
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .axis path,
+    .axis line,
+    .axis text {
+      fill: none;
+      stroke: rgb(128, 128, 128);
+      stroke-width: 1;
+      shape-rendering: crispEdges;
+    }
+
+    div.tooltip {
+      position: absolute;
+      text-align: center;
+      width: 60px;
+      height: 50px;
+      padding: 2px;
+      font: 15px sans-serif;
+      background: lightsteelblue;
+      border: 0px;
+      border-radius: 8px;
+      pointer-events: none;
+    }
+
+    circle {
+      fill: rgb(71, 165, 100);
     }
   }
 }
 
 .page05 {
-  height: 100vh;
+  width: 70%;
+  height: auto;
+  margin: 20vw auto;
+
+  .title {
+    width: 100%;
+    text-align: center;
+    font-size: 3vw;
+    font-weight: 800;
+    padding-bottom: 20vw;
+
+    h1:first-child {
+      padding-bottom: 2vw;
+    }
+  }
+
+  .korea_vaccine {
+    svg rect {
+      fill: rgb(135, 147, 255);
+      transition: all 0.5s;
+    }
+
+    svg rect:hover {
+      fill: cornflowerblue;
+      cursor: pointer;
+    }
+    svg text {
+      fill: white;
+      font: 16px;
+      text-anchor: end;
+    }
+    path.domain {
+      stroke: white;
+    }
+
+    .toolTip {
+      position: absolute;
+      border: 0 none;
+      border-radius: 4px 4px 4px 4px;
+      background-color: rgb(228, 255, 210);
+      padding: 5px;
+      text-align: center;
+      font-size: 16px;
+    }
+  }
+}
+
+.page06 {
+  width: 70%;
+  height: auto;
+  margin: 20vw auto;
+
+  .title {
+    width: 100%;
+    text-align: center;
+    font-size: 3vw;
+    font-weight: 800;
+    padding-bottom: 10vw;
+
+    h1:first-child {
+      padding-bottom: 2vw;
+    }
+  }
+
+  .korea_case {
+    #map path {
+      fill: rgb(155, 155, 155);
+      stroke: black;
+      cursor: pointer;
+    }
+    #map path.c0 {
+      fill: #e0f2f1;
+    }
+    #map path.c1 {
+      fill: #b2dfdb;
+    }
+    #map path.c2 {
+      fill: #80cbc4;
+    }
+    #map path.c3 {
+      fill: #4db6ac;
+    }
+    #map path.c4 {
+      fill: #26a69a;
+    }
+    #map path.c5 {
+      fill: #009688;
+    }
+    #map path.c6 {
+      fill: #00897b;
+    }
+    #map path.c7 {
+      fill: #00796b;
+    }
+    #map path.c8 {
+      fill: #00695c;
+    }
+    #map path:hover {
+      fill: gold;
+    }
+    #map .municipality-label {
+      font-weight: bold;
+    }
+    p {
+      margin: 0;
+    }
+    div.tooltip {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 100px;
+      height: 100px;
+      padding: 2px;
+      font: 15px sans-serif;
+      background: rgb(255, 255, 255);
+      border: 0px;
+      border-radius: 8px;
+      pointer-events: none;
+    }
+
+    p:nth-child(2) {
+      font-weight: bold;
+      font-size: 20px;
+    }
+    p:last-child {
+      color: red;
+    }
+  }
+}
+
+.page07 {
+  position: relative;
+  width: 70%;
+  height: auto;
+  margin: 20vw auto;
+  padding-bottom: 10vw;
+
+  .title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 3vw;
+    font-weight: 800;
+    padding-bottom: 10vw;
+
+    h1,
+    div {
+      margin-bottom: 8vw;
+    }
+    .mask {
+      width: 20%;
+      // position: absolute;
+      // top: 10%;
+      // left: 39%;
+      img {
+        width: 100%;
+      }
+    }
+    .people {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 10%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
 }

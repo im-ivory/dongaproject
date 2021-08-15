@@ -92,6 +92,7 @@ html {
   width: 100%;
   height: auto;
   position: relative;
+  margin-top: 10vw;
 }
 
 .page02 .content_container .background_image {
@@ -108,13 +109,68 @@ html {
           transform: scale(0.8) translate(40vw, -100px);
 }
 
-.page02 .content_container .article {
+.page02 .content_container .background_image .place-dot {
+  position: absolute;
+  right: 32%;
+  top: 43%;
+  opacity: 0;
+}
+
+.page02 .content_container .background_image .place-dot p {
+  color: black;
+  font-weight: bold;
+  font-size: 30px;
+  padding-bottom: 10px;
+}
+
+.page02 .content_container .background_image .place-dot .dot {
+  width: 50px;
+  height: 50px;
+  background-color: #00a56e;
+  border-radius: 50%;
+}
+
+.page02 .content_container .background_image .airplane {
+  position: absolute;
+  right: 55%;
+  top: 58%;
+  width: 250px;
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+  opacity: 0;
+}
+
+.page02 .content_container .background_image .airplane img {
+  width: 100%;
+}
+
+.page02 .content_container .background_image .airport {
+  right: 25%;
+  top: 30%;
+  opacity: 0;
+}
+
+.page02 .content_container .background_image .airport p {
+  color: white;
+}
+
+.page02 .content_container .background_image .hospital {
+  right: 30%;
+  top: 30%;
+  opacity: 0;
+}
+
+.page02 .content_container .background_image .hospital p {
+  color: white;
+}
+
+.page02 .article {
   position: relative;
   width: 100%;
   height: 100vh;
 }
 
-.page02 .content_container .article .text {
+.page02 .article .text {
   position: absolute;
   top: 5vw;
   left: 6vw;
@@ -123,6 +179,29 @@ html {
   line-height: 2vw;
   color: white;
   background-color: rgba(0, 0, 0, 0.493);
+}
+
+.page02 .article06 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.page02 .article06 .page_fadeout {
+  position: -webkit-sticky;
+  position: sticky;
+  width: 150px;
+  height: 100px;
+  background-color: black;
+  -webkit-box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px;
+          box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px;
 }
 
 .page03 {
@@ -147,16 +226,16 @@ html {
 
 .page04 {
   width: 70%;
-  height: 100vh;
+  height: auto;
   margin: 20vw auto;
 }
 
 .page04 .title {
   width: 100%;
   text-align: center;
-  font-size: 4vw;
+  font-size: 3vw;
   font-weight: 800;
-  padding: 5vw 0;
+  padding-bottom: 20vw;
 }
 
 .page04 .title h1:first-child {
@@ -195,11 +274,12 @@ html {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
-  top: 0;
+  top: 20px;
   padding: 20px;
   -ms-flex-item-align: end;
       align-self: flex-end;
   display: none;
+  z-index: 2;
 }
 
 .page04 .case_bar .counter_container li {
@@ -270,13 +350,14 @@ html {
   text-align: center;
   font-size: 19px;
   line-height: 30px;
+  opacity: 0;
 }
 
 .page04 .case_bar .chart_container p:nth-child(7):after {
   content: none;
 }
 
-.page04 .case_bar .chart_container .bar {
+.page04 .case_bar .bar {
   position: absolute;
   top: 8px;
   left: 40%;
@@ -285,7 +366,250 @@ html {
   background-color: darkorange;
 }
 
+.page04 .case_line {
+  margin-top: 10vw;
+}
+
+.page04 .case_line path {
+  stroke: #1897ff;
+  stroke-width: 2;
+  fill: none;
+}
+
+.page04 .case_line .axis path,
+.page04 .case_line .axis line,
+.page04 .case_line .axis text {
+  fill: none;
+  stroke: gray;
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+}
+
+.page04 .case_line div.tooltip {
+  position: absolute;
+  text-align: center;
+  width: 60px;
+  height: 50px;
+  padding: 2px;
+  font: 15px sans-serif;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.page04 .case_line circle {
+  fill: #47a564;
+}
+
 .page05 {
-  height: 100vh;
+  width: 70%;
+  height: auto;
+  margin: 20vw auto;
+}
+
+.page05 .title {
+  width: 100%;
+  text-align: center;
+  font-size: 3vw;
+  font-weight: 800;
+  padding-bottom: 20vw;
+}
+
+.page05 .title h1:first-child {
+  padding-bottom: 2vw;
+}
+
+.page05 .korea_vaccine svg rect {
+  fill: #8793ff;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.page05 .korea_vaccine svg rect:hover {
+  fill: cornflowerblue;
+  cursor: pointer;
+}
+
+.page05 .korea_vaccine svg text {
+  fill: white;
+  font: 16px;
+  text-anchor: end;
+}
+
+.page05 .korea_vaccine path.domain {
+  stroke: white;
+}
+
+.page05 .korea_vaccine .toolTip {
+  position: absolute;
+  border: 0 none;
+  border-radius: 4px 4px 4px 4px;
+  background-color: #e4ffd2;
+  padding: 5px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.page06 {
+  width: 70%;
+  height: auto;
+  margin: 20vw auto;
+}
+
+.page06 .title {
+  width: 100%;
+  text-align: center;
+  font-size: 3vw;
+  font-weight: 800;
+  padding-bottom: 10vw;
+}
+
+.page06 .title h1:first-child {
+  padding-bottom: 2vw;
+}
+
+.page06 .korea_case #map path {
+  fill: #9b9b9b;
+  stroke: black;
+  cursor: pointer;
+}
+
+.page06 .korea_case #map path.c0 {
+  fill: #e0f2f1;
+}
+
+.page06 .korea_case #map path.c1 {
+  fill: #b2dfdb;
+}
+
+.page06 .korea_case #map path.c2 {
+  fill: #80cbc4;
+}
+
+.page06 .korea_case #map path.c3 {
+  fill: #4db6ac;
+}
+
+.page06 .korea_case #map path.c4 {
+  fill: #26a69a;
+}
+
+.page06 .korea_case #map path.c5 {
+  fill: #009688;
+}
+
+.page06 .korea_case #map path.c6 {
+  fill: #00897b;
+}
+
+.page06 .korea_case #map path.c7 {
+  fill: #00796b;
+}
+
+.page06 .korea_case #map path.c8 {
+  fill: #00695c;
+}
+
+.page06 .korea_case #map path:hover {
+  fill: gold;
+}
+
+.page06 .korea_case #map .municipality-label {
+  font-weight: bold;
+}
+
+.page06 .korea_case p {
+  margin: 0;
+}
+
+.page06 .korea_case div.tooltip {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  padding: 2px;
+  font: 15px sans-serif;
+  background: white;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.page06 .korea_case p:nth-child(2) {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.page06 .korea_case p:last-child {
+  color: red;
+}
+
+.page07 {
+  position: relative;
+  width: 70%;
+  height: auto;
+  margin: 20vw auto;
+  padding-bottom: 10vw;
+}
+
+.page07 .title {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 3vw;
+  font-weight: 800;
+  padding-bottom: 10vw;
+}
+
+.page07 .title h1,
+.page07 .title div {
+  margin-bottom: 8vw;
+}
+
+.page07 .title .mask {
+  width: 20%;
+}
+
+.page07 .title .mask img {
+  width: 100%;
+}
+
+.page07 .title .people {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 10%;
+}
+
+.page07 .title .people img {
+  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */
