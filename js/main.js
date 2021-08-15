@@ -348,7 +348,7 @@ var svg = d3.select("body .page04 .case_line")
               "translate(" + margin.left + "," + margin.top + ")");
 
 // Get the data
-d3.csv("../content/case_data.csv", function(error, data) {
+d3.csv("./content/case_data.csv", function(error, data) {
     data.forEach(function(d) {
         d.date = parseDate(d.date);
         d.case = +d.case;
@@ -520,7 +520,7 @@ var korMapTooltip = d3.select(".page06 .korea_case").append("div")
 .style("opacity", 0);
 
 
-d3.json("../content/skorea_provinces_topo_simple.json", function(error, data) {
+d3.json("./content/skorea_provinces_topo_simple.json", function(error, data) {
 
 var features = topojson.feature(data, data.objects.skorea_provinces_geo).features;
 
