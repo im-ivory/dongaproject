@@ -12,6 +12,7 @@ ScrollTrigger.matchMedia({
   "(min-width: 768px)": function() {
     const tl = gsap.timeline();
 
+
 tl.to('.page01 > .inner > .title', {
     opacity: 0,
     duration: 1,
@@ -68,175 +69,131 @@ gsap.from('.page02 > .title', {
     }
 })
 
-// gsap.fromTo('.page02 > .article', {
-//     y:50,
-//     opacity: 0,
-//     scrollTrigger: {
-//         trigger: '.page02',
-//         scrub: 1,
-//         toggleActions: 'play reverse none reverse',
-//         start: 'top 30%',
-//         end: 'top 60%',
-//     }
-// })
-
-// const tl2 = gsap.timeline();
-// tl2.fromTo('.content_container > .article > .text',  {opacity: 0, y: -100}, {
-//     y:100,
-//     opacity: 1,
-// });
-
-// gsap.utils.toArray(".content_container > .article > .text").forEach((article, i) => {
-//     ScrollTrigger.create({
-//       animation: tl2,
-//       trigger: article,
-//       start: "top 0%", 
-//     end: 'bottom 0%',
-//     // pin: true,
-//     scrub: true,
-//     anticipatePin: 1,
-//     });
-//   });
-
 const tl2 = gsap.timeline();
-tl2.to('.background_image > img', {
-  scale:0.8,
+tl2.to(".background_image > img", {
+  scale:0.8, 
   x:"33vw", 
   y:"-5vw",
   scrollTrigger: {
-  trigger: '.background_image',
+  trigger: ".content_container",
   scrub: 1,
-  toggleActions: 'play reverse none reverse',
-  start: 'top 80%',
-  end: 'bottom 100%',
+  toggleActions: "play none reverse reset",
+  start: "top 100%",
+  end: "+=500",
 }
 })
-tl2.to('.background_image > img', {
-    scale:3,
-    y: "-25vw",
-    x: "20vw",
-    scrollTrigger: {
-    trigger: '.article01 > .text',
-    scrub: 1,
-    toggleActions: 'play reverse none reverse',
-    start: 'top 80%',
-    end: 'bottom 100%',
-}
-})
-tl2.to('.background_image > .wuhan', {
-  opacity:1,
+tl2.fromTo(".background_image > img", {scale:0.8, x:"33vw", y:"-5vw"},{
+  scale:3,
+  y: "-25vw",
+  x: "20vw",
   scrollTrigger: {
-  trigger: '.article01 > .text',
+  trigger: ".article01",
   scrub: 1,
-  toggleActions: 'play reverse none reverse',
-  start: 'top 80%',
-  end: 'bottom 100%',
+  toggleActions: "play none reverse reset",
+  start: "top 100%",
+  end: "+=500",
 }
 })
-// // gsap.fromTo('.background_image > .place-dot > .dot', {boxShadow: "none"}, {
-// //   boxShadow: "rgba(0, 165, 110, 0.575) 0px 5px 35px 13px",
-// //   repeat: -1
-// // })
-tl2.to('.background_image > .wuhan', {
-  opacity:0,
+tl2.to(".background_image > .wuhan", {
+opacity:1,
+scrollTrigger: {
+trigger: ".article01",
+scrub: 1,
+toggleActions: "play none reverse reset",
+start: "top 100%",
+end: "+=500",
+}
+})
+
+tl2.to(".background_image > .wuhan", {
+opacity:0,
+scrollTrigger: {
+trigger: ".article02",
+scrub: 1,
+toggleActions: "play none reverse reset",
+  start: "top 100%",
+  end: "+=100",
+}
+})
+tl2.to(".background_image > .airplane", {
+opacity:1,
+scrollTrigger: {
+trigger: ".article02",
+scrub: 1,
+toggleActions: "play none reverse reset",
+  start: "top 100%",
+  end: "+=300",
+}
+})
+tl2.fromTo(".background_image > img", { y: "-25vw",x: "20vw"}, {
+  y: "-1vw",
+  x: "-52vw",
   scrollTrigger: {
-  trigger: '.article02 > .text',
+  trigger: ".article03",
   scrub: 1,
-  toggleActions: 'play reverse none reverse',
-  start: 'top 80%',
-  end: 'bottom 100%',
+  toggleActions: "play none reverse reset",
+  start: "top 100%",
+  end: "+=200",
 }
 })
-tl2.to('.background_image > .airplane', {
-  opacity:1,
+tl2.to(".background_image > .airport", {
+opacity:1,
+scrollTrigger: {
+trigger: ".article03",
+scrub: 1,
+toggleActions: "play none reverse reset",
+  start: "top 100%",
+  end: "+=200",
+}
+})
+tl2.fromTo(".background_image > img", {x:"-52vw"}, {
+  x: "-55vw",
   scrollTrigger: {
-  trigger: '.article02 > .text',
+  trigger: ".article04 > .text",
   scrub: 1,
-  toggleActions: 'play reverse none reverse',
-  start: 'top 80%',
-  end: 'bottom 100%',
+  toggleActions: "play none reverse reset",
+  start: "top 100%",
+  end: "+=500",
 }
 })
-tl2.fromTo('.background_image > img', { y: "-25vw",x: "20vw"}, {
-    y: "-1vw",
-    x: "-52vw",
-    scrollTrigger: {
-    trigger: '.article03 > .text',
-    scrub: 1,
-    toggleActions: 'play reverse none reverse',
-    start: 'top 85%',
-    end: 'bottom 90%',
+tl2.to(".background_image > .airplane", {
+opacity:0,
+scrollTrigger: {
+trigger: ".article04 > .text",
+scrub: 1,
+toggleActions: "play none reverse reset",
+  start: "top 100%",
+  end: "+=200",
 }
 })
-// gsap.to('.background_image > .airplane', {
-//   y: -50,
-//   x: -150,
-//   scrollTrigger: {
-//   trigger: '.article03 > .text',
-//   scrub: 1,
-//   toggleActions: 'play reverse none reverse',
-//   start: 'top 80%',
-//   end: 'bottom 100%',
-// }
-// })
-tl2.to('.background_image > .airport', {
-  opacity:1,
-  scrollTrigger: {
-  trigger: '.article03 > .text',
-  scrub: 1,
-  toggleActions: 'play reverse none reverse',
-  start: 'top 70%',
-  end: 'bottom 90%',
+tl2.to(".background_image > .airport", {
+opacity:0,
+scrollTrigger: {
+trigger: ".article04 > .text",
+scrub: 1,
+toggleActions: "play none reverse reset",
+  start: "top 100%",
+  end: "+=200",
 }
 })
-tl2.fromTo('.background_image > img', {x:"-52vw"}, {
-    x: "-55vw",
-    scrollTrigger: {
-    trigger: '.article04 > .text',
-    scrub: 1,
-    toggleActions: 'play reverse none reverse',
-    start: 'top 90%',
-    end: 'bottom 100%',
+tl2.to(".background_image > .hospital", {
+opacity:1,
+scrollTrigger: {
+trigger: ".article04 > .text",
+scrub: 1,
+toggleActions: "play none reverse reset",
+  start: "top 100%",
+  end: "+=200",
 }
 })
-tl2.to('.background_image > .airplane', {
-  opacity:0,
-  scrollTrigger: {
-  trigger: '.article04 > .text',
-  scrub: 1,
-  toggleActions: 'play reverse none reverse',
-  start: 'top 90%',
-  end: 'bottom 100%',
-}
-})
-tl2.to('.background_image > .airport', {
-  opacity:0,
-  scrollTrigger: {
-  trigger: '.article04 > .text',
-  scrub: 1,
-  toggleActions: 'play reverse none reverse',
-  start: 'top 90%',
-  end: 'bottom 100%',
-}
-})
-tl2.to('.background_image > .hospital', {
-  opacity:1,
-  scrollTrigger: {
-  trigger: '.article04 > .text',
-  scrub: 1,
-  toggleActions: 'play reverse none reverse',
-  start: 'top 90%',
-  end: 'bottom 100%',
-}
-})
-tl2.to('.article06 > .page_fadeout', {
-  scale: 11,
-  scrollTrigger: {
-  trigger: '.article06 > .page_fadeout',
-  scrub: 1,
-  toggleActions: 'play reverse none reverse',
-  start: 'top 90%',
-  end: 'bottom 100%',
+tl2.to(".article06 > .page_fadeout", {
+scale: 11,
+scrollTrigger: {
+trigger: ".article06 > .page_fadeout",
+scrub: 1,
+toggleActions: "play none reverse reset",
+  start: "top 100%",
+  end: "+=500",
 }
 })
 
@@ -473,8 +430,9 @@ var worldMapTooltip = d3.select(".page05 .world_vaccine").append("div")
 
           var features = topojson.feature(data, data.objects.worldmap).features;
           
-          worldMapSvg.attr("width", worldMapWidth)
-          .attr("height", worldMapHeight) // 맨 위에서 설정한 값으로 svg 크기값 전달
+          worldMapSvg.attr("viewBox", `0 0 ${worldMapWidth} ${worldMapHeight}`)
+          // worldMapSvg.attr("width", worldMapWidth)
+          // .attr("height", worldMapHeight) // 맨 위에서 설정한 값으로 svg 크기값 전달
           .append("g"); //svg 그룹화
       
       worldMapSvg.selectAll("path") //지도 그릴 선들을 모두 선택
@@ -561,7 +519,7 @@ var korVHeight = 700;
   var korVsvg = d3.select(".page05 .korea_vaccine")
   .append("svg")
   .attr("viewBox", `0 0 ${korVWidth} ${korVHeight}`)
-  // .append("g") //svg전체를 그룹화시킨다, 이거 안쓰면 axis(축)은 안움직임
+  .append("g") //svg전체를 그룹화시킨다, 이거 안쓰면 axis(축)은 안움직임
   .attr("transform", "translate(0,20)"); //svg위치를 전체 옮긴다.
 
 
@@ -642,11 +600,12 @@ gsap.from('.page06 > .title > h1', {
 var korMapWidth = 1000,
 korMapHeight = 1000;
 
-var korMapSvg = d3.select(".page06 .korea_case #chart").append("svg")
-.attr("width", korMapWidth)
-.attr("height", korMapHeight);
+var korMapSvg = d3.select(".page06 .korea_case").append("svg")
+.attr("viewBox", `0 0 ${korMapWidth} ${korMapHeight}`)
+// .attr("width", korMapWidth)
+// .attr("height", korMapHeight);
 
-var korMap = korMapSvg.append("g").attr("id", "map");
+// var korMap = korMapSvg.append("g").attr("id", "map");
 
 var korMapProjection = d3.geoMercator()
 .center([127.2895, 37.4651])
@@ -672,7 +631,7 @@ features.forEach(function(d){
 d.properties.quantized = quantize(d.properties.case);
 })
 
-korMap.selectAll("path")
+korMapSvg.selectAll("path")
 .data(features)
 .enter().append("path")
 .attr("class", function(d) { return "municipality c" + d.properties.quantized; })
@@ -687,7 +646,7 @@ korMap.selectAll("path")
   korMapTooltip.style("opacity", 0);	
 });
 
-korMap.selectAll("text")
+korMapSvg.selectAll("text")
 .data(features)
 .enter().append("text")
 .attr("transform", function(d) { return "translate(" + korMapPath.centroid(d) + ")"; })
@@ -714,13 +673,13 @@ tlL.from('.page07 > .title > div',  {
       scrub: 1,
       toggleActions: 'play reverse none reverse',
       start: 'top 50%',
-      end: 'bottom 60%',
+      end: "+=700",
   }
 })
 .to('.page07 > .bg',  {
   opacity: 0.5,
   scrollTrigger: {
-      trigger: '.page07 > .title > .text:first-child',
+      trigger: '.page07 > .title > .text:nth-child(3)',
       scrub: 1,
       toggleActions: 'play reverse none reverse',
       start: 'top 50%',
@@ -745,7 +704,7 @@ tlL.from('.page07 > .title > div',  {
       trigger: '.page07 > .title > .text:last-child',
       scrub: 1,
       toggleActions: 'play reverse none reverse',
-      start: 'top 80%',
-      end: 'bottom 60%',
+      start: "top 50%",
+      end: "+=50",
   }
 })
