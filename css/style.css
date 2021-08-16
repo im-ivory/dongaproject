@@ -106,8 +106,6 @@ html {
 
 .page02 .content_container .background_image img {
   width: 100%;
-  -webkit-transform: scale(0.8) translate(40vw, -100px);
-          transform: scale(0.8) translate(40vw, -100px);
 }
 
 .page02 .content_container .background_image .place-dot {
@@ -247,7 +245,7 @@ html {
   text-align: center;
   font-size: 3vw;
   font-weight: 800;
-  padding-bottom: 20vw;
+  padding-bottom: 15vw;
 }
 
 .page04 .title h1:first-child {
@@ -309,9 +307,10 @@ html {
 .page04 .case_bar .run_Btn #jsBtn {
   all: unset;
   color: black;
+  font-size: 2vw;
   background-color: white;
-  padding: 20px 30px;
-  margin: 50px 0;
+  padding: 2vw 5vw;
+  margin: 5vw 0;
   cursor: pointer;
 }
 
@@ -373,13 +372,15 @@ html {
   position: absolute;
   top: 8px;
   left: 40%;
-  width: 200px;
+  width: 15vw;
   height: 0;
   background-color: darkorange;
 }
 
 .page04 .case_line {
   margin-top: 10vw;
+  width: 100%;
+  height: 100vh;
 }
 
 .page04 .case_line path {
@@ -397,21 +398,52 @@ html {
   shape-rendering: crispEdges;
 }
 
-.page04 .case_line div.tooltip {
+.page04 .case_line .desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 2vw;
+}
+
+.page04 .case_line .desc p:last-child:before {
+  content: "";
+  display: inline-block;
+  width: 5vw;
+  border-bottom: 5px solid #47a564;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
+.page04 .case_line .line_duration {
+  padding-top: 1vw;
+  font-size: 0.9vw;
+}
+
+.page04 .case_line .line_tooltip {
   position: absolute;
   text-align: center;
-  width: 60px;
-  height: 50px;
-  padding: 2px;
+  width: 170px;
+  height: 60px;
+  padding: 10px;
   font: 15px sans-serif;
-  background: lightsteelblue;
+  color: black;
+  background: white;
   border: 0px;
   border-radius: 8px;
   pointer-events: none;
 }
 
+.page04 .case_line .line_tooltip p:first-child {
+  font-weight: 800;
+  padding-bottom: 10px;
+}
+
 .page04 .case_line circle {
   fill: #47a564;
+  cursor: pointer;
 }
 
 .page05 {
@@ -432,15 +464,116 @@ html {
   padding-bottom: 2vw;
 }
 
+.page05 .world_vaccine {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  padding-bottom: 20vw;
+}
+
+.page05 .world_vaccine .worldmap_dsc {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page05 .world_vaccine .worldmap_dsc p:last-child {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-top: 3vw;
+  font-size: 0.9vw;
+}
+
+.page05 .world_vaccine .worldmap_duration {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  font-size: 0.8vw;
+}
+
+.page05 .world_vaccine .country {
+  stroke-width: 1;
+  stroke: white;
+  fill: #c4c4c4;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.page05 .world_vaccine .country:hover {
+  cursor: pointer;
+  fill: gray;
+}
+
+.page05 .world_vaccine circle {
+  cursor: pointer;
+}
+
+.page05 .world_vaccine .worldmap_tooltip {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  padding: 2px;
+  font: 15px sans-serif;
+  background: white;
+  color: black;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.page05 .world_vaccine .worldmap_tooltip p:last-child {
+  font-weight: bold;
+}
+
 .page05 .korea_vaccine {
-  position: relative;
   width: 80%;
   margin: 0 auto;
   height: 100vh;
 }
 
 .page05 .korea_vaccine svg rect {
-  fill: #8793ff;
+  fill: #47a564;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
@@ -452,7 +585,7 @@ html {
 
 .page05 .korea_vaccine svg text {
   fill: white;
-  font: 16px;
+  font-size: 1.3vw;
   text-anchor: end;
 }
 
@@ -460,14 +593,54 @@ html {
   stroke: white;
 }
 
-.page05 .korea_vaccine .toolTip {
+.page05 .korea_vaccine .korV_dsc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 2vw;
+}
+
+.page05 .korea_vaccine .korV_dsc p:last-child:before {
+  content: "";
+  display: inline-block;
+  width: 5vw;
+  border-bottom: 5px solid #47a564;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
+.page05 .korea_vaccine .korV_tooltip {
   position: absolute;
-  border: 0 none;
-  border-radius: 4px 4px 4px 4px;
-  background-color: #e4ffd2;
-  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-align: center;
-  font-size: 16px;
+  width: 13vw;
+  height: 4vw;
+  padding: 0.5vw;
+  font-size: 1vw;
+  color: black;
+  background: white;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.page05 .korea_vaccine .korV_tooltip p:first-child {
+  padding-bottom: 0.5vw;
 }
 
 .page06 {
@@ -481,11 +654,27 @@ html {
   text-align: center;
   font-size: 3vw;
   font-weight: 800;
-  padding-bottom: 10vw;
+  padding-bottom: 20vw;
 }
 
 .page06 .title h1:first-child {
   padding-bottom: 2vw;
+}
+
+.page06 .korea_case {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .page06 .korea_case #map path {
@@ -538,11 +727,29 @@ html {
   font-weight: bold;
 }
 
-.page06 .korea_case p {
-  margin: 0;
+.page06 .korea_case .kormap_dsc {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.page06 .korea_case div.tooltip {
+.page06 .korea_case .kormap_dsc p:first-child {
+  font-size: 1.3vw;
+  font-weight: 800;
+}
+
+.page06 .korea_case .kormap_dsc p:last-child {
+  font-size: 0.9vw;
+}
+
+.page06 .korea_case .kormap_tooltip {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -563,18 +770,20 @@ html {
   padding: 2px;
   font: 15px sans-serif;
   background: white;
+  color: black;
   border: 0px;
   border-radius: 8px;
   pointer-events: none;
 }
 
-.page06 .korea_case p:nth-child(2) {
+.page06 .korea_case .kormap_tooltip p:nth-child(2) {
   font-weight: bold;
   font-size: 20px;
 }
 
-.page06 .korea_case p:last-child {
+.page06 .korea_case .kormap_tooltip p:last-child {
   color: red;
+  font-weight: bold;
 }
 
 .page07 {
@@ -597,6 +806,7 @@ html {
 
 .page07 .title {
   width: 70%;
+  height: 100%;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -672,6 +882,41 @@ html {
     font-size: 6vw;
     text-align: center;
     line-height: 17vw;
+  }
+  .page01 .inner .title h1 {
+    width: 100%;
+  }
+  .page01 .page_loader {
+    display: none;
+  }
+  .page02 .article .text {
+    font-size: 2.5vw;
+    line-height: 4vw;
+    width: 35vw;
+    word-break: keep-all;
+  }
+  .page03 {
+    width: 65%;
+    font-size: 2.5vw;
+    line-height: 4vw;
+  }
+}
+
+@media all and (max-width: 767px) and (max-width: 480px) {
+  .page01 .inner {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .page01 .inner .img {
+    width: 100%;
+    padding-bottom: 10vw;
+  }
+  .page01 .inner .title {
+    font-size: 11vw;
+    line-height: 17vw;
+    width: 95%;
+    word-break: keep-all;
   }
   .page01 .inner .title h1 {
     width: 100%;
