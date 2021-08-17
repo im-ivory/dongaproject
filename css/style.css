@@ -425,6 +425,19 @@ html {
 
 .page04 .case_line .line_tooltip {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-align: center;
   width: 170px;
   height: 60px;
@@ -866,7 +879,7 @@ html {
   width: 100%;
 }
 
-@media all and (max-width: 1024px) and (min-width: 768px) {
+@media all and (max-width: 1024px) {
   .page02 .article .text {
     font-size: 2vw;
     line-height: 3vw;
@@ -891,12 +904,27 @@ html {
     font-size: 1.3vw;
   }
   .page04 .case_line .axis text {
-    font-size: 3vw;
+    font-size: 2.5vw;
+  }
+  .page04 .case_line .line_tooltip {
+    width: 18vw;
+    height: 5vw;
+    padding: 1vw 0.5vw;
+    font-size: 1.5vw;
   }
   .page05 .korea_vaccine .korV_tooltip {
     font-size: 1.5vw;
     width: 17vw;
     padding: 1vw;
+  }
+  .page06 .korea_case .kormap_tooltip {
+    width: 10vw;
+    height: 10vw;
+    padding: 1vw;
+    font-size: 1.5vw;
+  }
+  .page06 .korea_case .kormap_tooltip p:nth-child(2) {
+    font-size: 2vw;
   }
   .page07 .title {
     margin-bottom: 20vw;
@@ -953,6 +981,9 @@ html {
     width: 65%;
     font-size: 2.5vw;
     line-height: 4vw;
+  }
+  .page04 .case_line .axis text {
+    font-size: 3vw;
   }
 }
 
@@ -1018,8 +1049,50 @@ html {
     padding: 15px;
     top: 15px;
   }
-  .page04 .case_lin {
-    margin-top: 30vw;
+  .page04 .case_line {
+    margin: 40vw 0;
+    height: auto;
+  }
+  .page04 .case_line .axis text {
+    font-size: 5vw;
+  }
+  .page04 .case_line .desc {
+    font-size: 3vw;
+  }
+  .page04 .case_line .desc p:last-child {
+    font-size: 2vw;
+  }
+  .page04 .case_line .desc p:last-child:before {
+    width: 5vw;
+    border-bottom: 3px solid #47a564;
+    margin-bottom: 3px;
+  }
+  .page04 .case_line .line_tooltip {
+    height: 12vw;
+  }
+  .page05 {
+    padding: 35vw 0;
+  }
+  .page05 .title {
+    width: 80%;
+    font-size: 6vw;
+    line-height: 10vw;
+  }
+  .page05 .title h1:first-child {
+    padding-bottom: 5vw;
+  }
+  .page05 .world_vaccine .worldmap_tooltip {
+    width: 15vw;
+    height: 15vw;
+    font-size: 3.5vw;
+  }
+  .page06 .title {
+    width: 100%;
+    font-size: 5.8vw;
+    line-height: 10vw;
+  }
+  .page06 .title h1:first-child {
+    padding-bottom: 5vw;
   }
 }
 /*# sourceMappingURL=style.css.map */
