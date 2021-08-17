@@ -334,9 +334,10 @@ html {
     .axis line,
     .axis text {
       fill: none;
-      stroke: rgb(128, 128, 128);
+      stroke: white;
       stroke-width: 1;
       shape-rendering: crispEdges;
+      font-size: 1.5vw;
     }
 
     .desc {
@@ -720,6 +721,22 @@ html {
     .case_bar {
       margin-bottom: 20vw;
     }
+    .case_line {
+      svg {
+        g {
+          transform: translate(80, 30);
+        }
+      }
+      .line_duration {
+        padding-top: 1.5vw;
+        font-size: 1.3vw;
+      }
+      .axis {
+        text {
+          font-size: 3vw;
+        }
+      }
+    }
   }
   .page05 {
     .korea_vaccine {
@@ -791,47 +808,89 @@ html {
     font-size: 2.5vw;
     line-height: 4vw;
   }
+}
 
-  @media all and (max-width: 480px) {
-    .page01 {
-      .inner {
-        justify-content: center;
-        .img {
+@media all and (max-width: 480px) {
+  .page01 {
+    .inner {
+      justify-content: center;
+      .img {
+        width: 100%;
+        padding-bottom: 10vw;
+      }
+
+      .title {
+        font-size: 11vw;
+        line-height: 17vw;
+        width: 95%;
+        word-break: keep-all;
+
+        h1 {
           width: 100%;
-          padding-bottom: 10vw;
-        }
-
-        .title {
-          font-size: 11vw;
-          line-height: 17vw;
-          width: 95%;
-          word-break: keep-all;
-
-          h1 {
-            width: 100%;
-          }
-        }
-      }
-      .page_loader {
-        display: none;
-      }
-    }
-
-    .page02 {
-      .article {
-        .text {
-          font-size: 2.5vw;
-          line-height: 4vw;
-          width: 35vw;
-          word-break: keep-all;
         }
       }
     }
+    .page_loader {
+      display: none;
+    }
+  }
 
-    .page03 {
-      width: 65%;
-      font-size: 2.5vw;
-      line-height: 4vw;
+  .page02 {
+    .article {
+      .text {
+        font-size: 2.5vw;
+        line-height: 4vw;
+        width: 35vw;
+        word-break: keep-all;
+      }
+    }
+  }
+
+  .page03 {
+    width: 80%;
+    font-size: 16px;
+    line-height: 25px;
+
+    .video {
+      padding: 50px 0;
+    }
+  }
+  .page04 {
+    width: 80%;
+    .title {
+      font-size: 7vw;
+      word-break: keep-all;
+
+      h1:last-child {
+        width: 75%;
+        margin: 0 auto;
+      }
+    }
+
+    .case_bar {
+      .run_Btn {
+        #jsBtn {
+          font-size: 4vw;
+          padding: 15px;
+          margin: 40px;
+        }
+      }
+      .chart_container {
+        p:after {
+          width: 50vw;
+        }
+      }
+      .counter_container {
+        width: 60px;
+        height: 60px;
+        font-size: 13px;
+        padding: 15px;
+        top: 15px;
+      }
+    }
+
+    .case_lin {
+      margin-top: 30vw;
     }
   }
 }

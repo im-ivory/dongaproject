@@ -393,9 +393,10 @@ html {
 .page04 .case_line .axis line,
 .page04 .case_line .axis text {
   fill: none;
-  stroke: gray;
+  stroke: white;
   stroke-width: 1;
   shape-rendering: crispEdges;
+  font-size: 1.5vw;
 }
 
 .page04 .case_line .desc {
@@ -881,6 +882,17 @@ html {
   .page04 .case_bar {
     margin-bottom: 20vw;
   }
+  .page04 .case_line svg g {
+    -webkit-transform: translate(80, 30);
+            transform: translate(80, 30);
+  }
+  .page04 .case_line .line_duration {
+    padding-top: 1.5vw;
+    font-size: 1.3vw;
+  }
+  .page04 .case_line .axis text {
+    font-size: 3vw;
+  }
   .page05 .korea_vaccine .korV_tooltip {
     font-size: 1.5vw;
     width: 17vw;
@@ -944,7 +956,7 @@ html {
   }
 }
 
-@media all and (max-width: 767px) and (max-width: 480px) {
+@media all and (max-width: 480px) {
   .page01 .inner {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -973,9 +985,41 @@ html {
     word-break: keep-all;
   }
   .page03 {
-    width: 65%;
-    font-size: 2.5vw;
-    line-height: 4vw;
+    width: 80%;
+    font-size: 16px;
+    line-height: 25px;
+  }
+  .page03 .video {
+    padding: 50px 0;
+  }
+  .page04 {
+    width: 80%;
+  }
+  .page04 .title {
+    font-size: 7vw;
+    word-break: keep-all;
+  }
+  .page04 .title h1:last-child {
+    width: 75%;
+    margin: 0 auto;
+  }
+  .page04 .case_bar .run_Btn #jsBtn {
+    font-size: 4vw;
+    padding: 15px;
+    margin: 40px;
+  }
+  .page04 .case_bar .chart_container p:after {
+    width: 50vw;
+  }
+  .page04 .case_bar .counter_container {
+    width: 60px;
+    height: 60px;
+    font-size: 13px;
+    padding: 15px;
+    top: 15px;
+  }
+  .page04 .case_lin {
+    margin-top: 30vw;
   }
 }
 /*# sourceMappingURL=style.css.map */
