@@ -8,11 +8,8 @@ gsap.defaults({ease: "power1", duration: 3});
 
 ScrollTrigger.matchMedia({
   
-
   "(min-width: 768px)": function() {
     const tl = gsap.timeline();
-
-
 tl.to('.page01 > .inner > .title', {
     opacity: 0,
     duration: 1,
@@ -290,7 +287,7 @@ $('#jsBtn').click(function(){
 
 // //// 라인차트
 
-var margin = {top: 30, right: 20, bottom: 30, left: 50},
+var margin = {top: 30, right: 20, bottom: 100, left: 150},
     width = 1000 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
@@ -303,7 +300,15 @@ var y = d3.scaleLinear().range([height, 0]);
 var xAxis = d3.axisBottom(x)
     .ticks(10);
 var yAxis = d3.axisLeft(y)
-    .ticks(10);
+    .ticks(5);
+
+    // if(window.matchMedia("(min-width: 768px)").matches){
+    //   var yAxis = d3.axisLeft(y)
+    //         .ticks(10);
+    // }else{
+    //   var yAxis = d3.axisLeft(y)
+    //         .ticks(5);
+    // }
 
 var valueline = d3.line()
     .x(function(d) { return x(d.date); })
@@ -321,6 +326,7 @@ var desc = d3.select("body .page04 .case_line").append("div")
 var svg = d3.select("body .page04 .case_line")
     .append("svg")
           .attr("viewBox", `0 0 1000 500`)
+          .attr("preserveAspectRatio", "xMinYMin meet")
         // .attr("width", "100%")
         // .attr("height", "100%")
     .append("g")
@@ -609,7 +615,7 @@ var korMapSvg = d3.select(".page06 .korea_case").append("svg")
 
 var korMapProjection = d3.geoMercator()
 .center([127.2895, 37.4651])
-.scale(7000)
+.scale(8000)
 .translate([width/2, height/2]);
 
 var korMapPath = d3.geoPath().projection(korMapProjection);
