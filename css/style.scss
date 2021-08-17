@@ -444,7 +444,7 @@ html {
         p:last-child {
           align-self: flex-end;
           margin-top: 3vw;
-          font-size: 0.9vw;
+          font-size: 1.5vw;
         }
       }
       .worldmap_duration {
@@ -452,7 +452,7 @@ html {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        font-size: 0.8vw;
+        font-size: 1.5vw;
       }
 
       .country {
@@ -687,8 +687,7 @@ html {
   .page07 {
     width: 100%;
     height: auto;
-    margin: 20vw 0;
-    padding-bottom: 10vw;
+    padding: 20vw 0;
     overflow: hidden;
     position: relative;
 
@@ -710,7 +709,7 @@ html {
       align-items: center;
       font-size: 3vw;
       font-weight: 800;
-      padding-bottom: 20vw;
+      // padding-bottom: 20vw;
 
       div {
         margin-bottom: 8vw;
@@ -904,6 +903,14 @@ html {
             font-size: 3.5vw;
           }
         }
+      }
+    }
+    .page07 {
+      .bg {
+        top: 10vw;
+      }
+      .title {
+        padding-bottom: 20vw;
       }
     }
   }

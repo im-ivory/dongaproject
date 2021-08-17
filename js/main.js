@@ -293,7 +293,7 @@ var margin = {top: 30, right: 20, bottom: 100, left: 150},
     height = 500 - margin.top - margin.bottom;
 
 var parseDate = d3.timeParse("%Y-%m-%d");
-var formatTime = d3.timeFormat("%y/%m/%d");
+var formatTime = d3.timeFormat("%y-%m-%d");
 
 var x = d3.scaleTime().range([0, width]);
 var y = d3.scaleLinear().range([height, 0]);
@@ -343,7 +343,7 @@ d3.csv("./content/case_data.csv", function(error, data) {
     svg.selectAll("dot")	
        .data(data)			
        .enter().append("circle")								
-        .attr("r", 5)		
+        .attr("r", 7)		
         .attr("cx", function(d) { return x(d.date); })		 
         .attr("cy", function(d) { return y(d.case); })		
         .on("mouseover", function(d) {		
@@ -441,10 +441,11 @@ var worldMapTooltip = d3.select(".page05 .world_vaccine").append("div")
               .enter().append("circle")
               .attr("transform", function(d) { return "translate(" + worldMapPath.centroid(d) + ")"; })
               .attr("r", 10)
+              .style("fill", "cornflowerblue")
+              // .attr("xlink:href", "content/injection.png")
               .attr("class", (function(d) { return "country-name "+d.properties.iso_a3; }))
-              .style("fill", "red")
               .on("mouseover", function(d) {		
-                worldMapTooltip	.html(`<p>${d.properties.name}</p><p>${d.properties.vaccinated}%</p>`)
+                worldMapTooltip	.html(`<p>${d.properties.kor_name}</p><p>${d.properties.vaccinated}%</p>`)
                       .style("left", (d3.event.pageX) + "px")		
                       .style("top", (d3.event.pageY - 28) + "px")
                       .style("opacity", 1)	
@@ -643,11 +644,12 @@ tlL.from('.page07 > .title > div',  {
   opacity: 0,
   stagger: 2,
   scrollTrigger: {
-      trigger: '.page07 > div',
+      trigger: '.page07 > .title > div',
       scrub: 1,
       toggleActions: 'play reverse none reverse',
-      start: 'top 100%',
-      end: "+=500",
+      start: 'top 50%',
+      end: "bottom 100%",
+      
   }
 })
 .to('.page07 > .bg',  {
@@ -668,17 +670,17 @@ tlL.from('.page07 > .title > div',  {
       trigger: '.page07 > .title > .text:last-child',
       scrub: 1,
       toggleActions: 'play reverse none reverse',
-      start: 'top 70%',
-      end: 'bottom 30%',
+      start: 'top 60%',
+      end: 'bottom 100%',
   }
 })
 .to('.page07 > .bg',  {
   scale: 3,
   scrollTrigger: {
-      trigger: '.page07 > .title > .text:last-child',
+      trigger: '.page07 > .title > .people',
       scrub: 1,
       toggleActions: 'play reverse none reverse',
       start: "top 50%",
-      end: "+=50",
+      end: "bottom 100%",
   }
 })
