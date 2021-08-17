@@ -318,9 +318,9 @@ var lineTooltip = d3.select("body .page04 .case_line").append("div")
     .attr("class", "line_tooltip")				
     .style("opacity", 0);
 
-var desc = d3.select("body .page04 .case_line").append("div")
-    .attr("class", "desc")
-    .html("<p>대한민국 누적확진자 수 | 출처: 질병관리청</p><p>누적 확진자수(명)</p>")
+var lineDsc = d3.select("body .page04 .case_line").append("div")
+    .attr("class", "line_dsc")
+    .html("<p>대한민국 누적확진자 수</p><p>누적 확진자수(명)</p>")
 
 
 var svg = d3.select("body .page04 .case_line")
@@ -335,7 +335,7 @@ var svg = d3.select("body .page04 .case_line")
 
 var lineDuration = d3.select("body .page04 .case_line").append("div")
 .attr("class", "line_duration")
-.html("<p>통계기간: 2020년 01월 20일 ~ 2021년 08월 02일</p>")
+.html("<p>통계기간: 2020년 01월 20일 ~ 2021년 08월 02일<br>(출처: 질병관리청)</p>")
 
 d3.csv("./content/case_data.csv", function(error, data) {
     data.forEach(function(d) {
@@ -357,9 +357,9 @@ d3.csv("./content/case_data.csv", function(error, data) {
         .attr("cx", function(d) { return x(d.date); })		 
         .attr("cy", function(d) { return y(d.case); })		
         .on("mouseover", function(d) {		
-          lineTooltip	.html("<p>"+formatTime(d.date)+"</p>" + "<p>누적 확진자 수: "+d.case+"명</p>")	
-                .style("left", (d3.event.pageX) + "px")		
-                .style("top", (d3.event.pageY - 28) + "px")
+          lineTooltip	.html("<p>"+formatTime(d.date)+"</p>" + "<p>"+d.case+"명</p>")	
+                .style("left", (d3.event.pageX- 50) + "px")		
+                .style("top", (d3.event.pageY- 75) + "px")
                 .style("opacity", 1);	
             })					
         .on("mouseout", function(d) {		
@@ -520,13 +520,18 @@ var korVHeight = 700;
 
   var korVDsc= d3.select("body .page05 .korea_vaccine").append("div")
     .attr("class", "korV_dsc")
-    .html("<p>연령대별 백신접종률 | 출처: 질병관리청</p><p>백진접종률(%)</p>")
+    .html("<p>연령대별 백신접종률</p><p>백진접종률(%)</p>")
 
   var korVsvg = d3.select(".page05 .korea_vaccine")
   .append("svg")
   .attr("viewBox", `0 0 ${korVWidth} ${korVHeight}`)
+  // .style("min-height", 700)
   .append("g") //svg전체를 그룹화시킨다, 이거 안쓰면 axis(축)은 안움직임
   .attr("transform", "translate(0,20)"); //svg위치를 전체 옮긴다.
+
+  // var korVSrc= d3.select("body .page05 .korea_vaccine").append("div")
+  // .attr("class", "korV_src")
+  // .html("<p>출처: 질병관리청</p>")
 
 
   var korVyScale = d3.scaleBand()
@@ -574,7 +579,7 @@ var korVHeight = 700;
       .call(yAxis2);
 
   svgG.append("g")
-      .attr("transform", "translate(0,"+(height+64)+")")
+      .attr("transform", "translate(0,"+(height+135)+")")
       .call(xAxis2);
 
   // svgG.append("image")
@@ -641,7 +646,7 @@ d.properties.quantized = quantize(d.properties.case);
 korMapSvg.selectAll("path")
 .data(features)
 .enter().append("path")
-.attr("class", function(d) { return "municipality c" + d.properties.quantized; })
+.attr("class", function(d) { return "city c" + d.properties.quantized; })
 .attr("d", korMapPath)
 .on("mouseover", function(d) {		
   korMapTooltip	.html(`<p>${d.properties.name}</p><p>${d.properties.case}</p><p>(+${d.properties.new})</p>`)
@@ -657,10 +662,35 @@ korMapSvg.selectAll("text")
 .data(features)
 .enter().append("text")
 .attr("transform", function(d) { return "translate(" + korMapPath.centroid(d) + ")"; })
-.attr("dy", ".35em")
 .attr("dx", "-.6em")
-.attr("class", (function(d) { return "municipality-label "+d.properties.code; }))
+.attr("dy", function(d){
+  if(d.properties.code == 31){
+    return "-3em"
+  }else if(d.properties.code == 33){
+    return "-2em"
+  }else{
+    return ".55em"
+  }
+})
+.style("fill", function(d){
+  if(d.properties.code == 23 || d.properties.code == 21){
+    return "white"
+  }else{
+    return "black"
+  }
+})
+.attr("class", (function(d) { return "city-label "+d.properties.code; }))
 .text(function(d) { return d.properties.name; })
+.on("mouseover", function(d) {		
+  korMapTooltip	.html(`<p>${d.properties.name}</p><p>${d.properties.case}</p><p>(+${d.properties.new})</p>`)
+    .style("left", (d3.event.pageX) + "px")		
+    .style("top", (d3.event.pageY - 28) + "px")
+    .style("opacity", 1)
+})					
+.on("mouseout", function(d) {		
+  korMapTooltip.style("opacity", 0);	
+});
+
 
 
 });

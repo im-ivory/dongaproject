@@ -331,20 +331,25 @@ html {
     }
 
     .axis path,
-    .axis line,
-    .axis text {
+    .axis line {
       fill: none;
       stroke: white;
       stroke-width: 1;
       shape-rendering: crispEdges;
+    }
+    .axis text {
+      fill: white;
       font-size: 1.5vw;
     }
 
-    .desc {
+    .line_dsc {
       display: flex;
       justify-content: space-between;
       padding-bottom: 2vw;
 
+      p:first-child {
+        font-weight: 800;
+      }
       p:last-child:before {
         content: "";
         display: inline-block;
@@ -357,6 +362,7 @@ html {
     .line_duration {
       padding-top: 1vw;
       font-size: 0.9vw;
+      line-height: 1.5vw;
     }
     .line_tooltip {
       position: absolute;
@@ -365,10 +371,10 @@ html {
       align-items: center;
       justify-content: center;
       text-align: center;
-      width: 170px;
+      width: 100px;
       height: 60px;
       padding: 10px;
-      font: 15px sans-serif;
+      font-size: 16px;
       color: black;
       background: white;
       border: 0px;
@@ -459,7 +465,7 @@ html {
       width: 100px;
       height: 100px;
       padding: 2px;
-      font: 15px sans-serif;
+      font-size: 16px;
       background: rgb(255, 255, 255);
       color: black;
       border: 0px;
@@ -607,8 +613,9 @@ html {
         fill: gold;
       }
     }
-    .municipality-label {
+    .city-label {
       font-weight: bold;
+      cursor: pointer;
     }
     .kormap_dsc {
       width: 90%;
@@ -635,10 +642,11 @@ html {
       width: 100px;
       height: 100px;
       padding: 2px;
-      font: 15px sans-serif;
+      font-size: 16px;
       background: rgb(255, 255, 255);
       color: black;
       border: 0px;
+      line-height: 25px;
       border-radius: 8px;
       pointer-events: none;
 
@@ -750,6 +758,11 @@ html {
   }
   .page05 {
     .korea_vaccine {
+      svg {
+        text {
+          font-size: 2vw;
+        }
+      }
       .korV_tooltip {
         font-size: 1.5vw;
         width: 17vw;
@@ -764,6 +777,7 @@ html {
         height: 10vw;
         padding: 1vw;
         font-size: 1.5vw;
+        line-height: 2.5vw;
 
         p:nth-child(2) {
           font-size: 2vw;
@@ -836,7 +850,20 @@ html {
     .case_line {
       .axis {
         text {
-          font-size: 3vw;
+          font-size: 5vw;
+        }
+      }
+      .line_duration {
+        font-size: 2vw;
+        line-height: 3.5vw;
+      }
+    }
+  }
+  .page05 {
+    .korea_vaccine {
+      svg {
+        text {
+          font-size: 3.5vw;
         }
       }
     }
@@ -939,14 +966,17 @@ html {
       height: auto;
       .axis {
         text {
-          font-size: 10vw;
+          font-size: 8.5vw;
         }
       }
-      .desc {
-        font-size: 3vw;
+      .line_dsc {
+        flex-direction: column;
+        align-items: center;
+        font-size: 4.5vw;
 
         p:last-child {
-          font-size: 2vw;
+          font-size: 3.3vw;
+          margin-top: 6vw;
 
           &:before {
             width: 5vw;
@@ -957,6 +987,14 @@ html {
       }
       .line_tooltip {
         height: 12vw;
+        font-size: 3.5vw;
+        p:first-child {
+          padding: 5px;
+        }
+      }
+      .line_duration {
+        font-size: 2.5vw;
+        line-height: 3.5vw;
       }
     }
   }
@@ -971,7 +1009,33 @@ html {
         padding-bottom: 5vw;
       }
     }
+    .korea_vaccine {
+      svg {
+        text {
+          font-size: 5.8vw;
+        }
+      }
+      .korV_dsc {
+        p:last-child {
+          font-size: 2vw;
+        }
+      }
+      .korV_tooltip {
+        font-size: 3vw;
+        width: 20vw;
+        height: 10vw;
+      }
+    }
     .world_vaccine {
+      .worldmap_dsc {
+        font-size: 4.5vw;
+        p:last-child {
+          font-size: 3vw;
+        }
+      }
+      .worldmap_duration {
+        font-size: 3vw;
+      }
       .worldmap_tooltip {
         width: 15vw;
         height: 15vw;
@@ -984,8 +1048,32 @@ html {
       width: 100%;
       font-size: 5.8vw;
       line-height: 10vw;
+      padding-bottom: 60vw;
       h1:first-child {
         padding-bottom: 5vw;
+      }
+    }
+
+    .korea_case {
+      padding: 20vw 0;
+
+      .kormap_dsc {
+        flex-direction: column;
+        padding-bottom: 10vw;
+        p:first-child {
+          font-size: 5vw;
+          padding-bottom: 3vw;
+        }
+      }
+
+      .kormap_tooltip {
+        width: 15vw;
+        height: 15vw;
+        font-size: 3vw;
+        line-height: 5vw;
+        p:nth-child(2) {
+          font-size: 4vw;
+        }
       }
     }
   }

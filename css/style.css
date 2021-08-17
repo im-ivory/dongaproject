@@ -390,16 +390,19 @@ html {
 }
 
 .page04 .case_line .axis path,
-.page04 .case_line .axis line,
-.page04 .case_line .axis text {
+.page04 .case_line .axis line {
   fill: none;
   stroke: white;
   stroke-width: 1;
   shape-rendering: crispEdges;
+}
+
+.page04 .case_line .axis text {
+  fill: white;
   font-size: 1.5vw;
 }
 
-.page04 .case_line .desc {
+.page04 .case_line .line_dsc {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -409,7 +412,11 @@ html {
   padding-bottom: 2vw;
 }
 
-.page04 .case_line .desc p:last-child:before {
+.page04 .case_line .line_dsc p:first-child {
+  font-weight: 800;
+}
+
+.page04 .case_line .line_dsc p:last-child:before {
   content: "";
   display: inline-block;
   width: 5vw;
@@ -421,6 +428,7 @@ html {
 .page04 .case_line .line_duration {
   padding-top: 1vw;
   font-size: 0.9vw;
+  line-height: 1.5vw;
 }
 
 .page04 .case_line .line_tooltip {
@@ -439,10 +447,10 @@ html {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
-  width: 170px;
+  width: 100px;
   height: 60px;
   padding: 10px;
-  font: 15px sans-serif;
+  font-size: 16px;
   color: black;
   background: white;
   border: 0px;
@@ -568,7 +576,7 @@ html {
   width: 100px;
   height: 100px;
   padding: 2px;
-  font: 15px sans-serif;
+  font-size: 16px;
   background: white;
   color: black;
   border: 0px;
@@ -749,8 +757,9 @@ html {
   fill: gold;
 }
 
-.page06 .korea_case .municipality-label {
+.page06 .korea_case .city-label {
   font-weight: bold;
+  cursor: pointer;
 }
 
 .page06 .korea_case .kormap_dsc {
@@ -794,10 +803,11 @@ html {
   width: 100px;
   height: 100px;
   padding: 2px;
-  font: 15px sans-serif;
+  font-size: 16px;
   background: white;
   color: black;
   border: 0px;
+  line-height: 25px;
   border-radius: 8px;
   pointer-events: none;
 }
@@ -912,6 +922,9 @@ html {
     padding: 1vw 0.5vw;
     font-size: 1.5vw;
   }
+  .page05 .korea_vaccine svg text {
+    font-size: 2vw;
+  }
   .page05 .korea_vaccine .korV_tooltip {
     font-size: 1.5vw;
     width: 17vw;
@@ -922,6 +935,7 @@ html {
     height: 10vw;
     padding: 1vw;
     font-size: 1.5vw;
+    line-height: 2.5vw;
   }
   .page06 .korea_case .kormap_tooltip p:nth-child(2) {
     font-size: 2vw;
@@ -983,7 +997,14 @@ html {
     line-height: 4vw;
   }
   .page04 .case_line .axis text {
-    font-size: 3vw;
+    font-size: 5vw;
+  }
+  .page04 .case_line .line_duration {
+    font-size: 2vw;
+    line-height: 3.5vw;
+  }
+  .page05 .korea_vaccine svg text {
+    font-size: 3.5vw;
   }
 }
 
@@ -1066,21 +1087,37 @@ html {
     height: auto;
   }
   .page04 .case_line .axis text {
-    font-size: 10vw;
+    font-size: 8.5vw;
   }
-  .page04 .case_line .desc {
-    font-size: 3vw;
+  .page04 .case_line .line_dsc {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 4.5vw;
   }
-  .page04 .case_line .desc p:last-child {
-    font-size: 2vw;
+  .page04 .case_line .line_dsc p:last-child {
+    font-size: 3.3vw;
+    margin-top: 6vw;
   }
-  .page04 .case_line .desc p:last-child:before {
+  .page04 .case_line .line_dsc p:last-child:before {
     width: 5vw;
     border-bottom: 3px solid #47a564;
     margin-bottom: 3px;
   }
   .page04 .case_line .line_tooltip {
     height: 12vw;
+    font-size: 3.5vw;
+  }
+  .page04 .case_line .line_tooltip p:first-child {
+    padding: 5px;
+  }
+  .page04 .case_line .line_duration {
+    font-size: 2.5vw;
+    line-height: 3.5vw;
   }
   .page05 {
     padding: 35vw 0;
@@ -1093,6 +1130,26 @@ html {
   .page05 .title h1:first-child {
     padding-bottom: 5vw;
   }
+  .page05 .korea_vaccine svg text {
+    font-size: 5.8vw;
+  }
+  .page05 .korea_vaccine .korV_dsc p:last-child {
+    font-size: 2vw;
+  }
+  .page05 .korea_vaccine .korV_tooltip {
+    font-size: 3vw;
+    width: 20vw;
+    height: 10vw;
+  }
+  .page05 .world_vaccine .worldmap_dsc {
+    font-size: 4.5vw;
+  }
+  .page05 .world_vaccine .worldmap_dsc p:last-child {
+    font-size: 3vw;
+  }
+  .page05 .world_vaccine .worldmap_duration {
+    font-size: 3vw;
+  }
   .page05 .world_vaccine .worldmap_tooltip {
     width: 15vw;
     height: 15vw;
@@ -1102,9 +1159,33 @@ html {
     width: 100%;
     font-size: 5.8vw;
     line-height: 10vw;
+    padding-bottom: 60vw;
   }
   .page06 .title h1:first-child {
     padding-bottom: 5vw;
+  }
+  .page06 .korea_case {
+    padding: 20vw 0;
+  }
+  .page06 .korea_case .kormap_dsc {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-bottom: 10vw;
+  }
+  .page06 .korea_case .kormap_dsc p:first-child {
+    font-size: 5vw;
+    padding-bottom: 3vw;
+  }
+  .page06 .korea_case .kormap_tooltip {
+    width: 15vw;
+    height: 15vw;
+    font-size: 3vw;
+    line-height: 5vw;
+  }
+  .page06 .korea_case .kormap_tooltip p:nth-child(2) {
+    font-size: 4vw;
   }
 }
 /*# sourceMappingURL=style.css.map */
