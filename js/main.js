@@ -6,8 +6,20 @@ gsap.defaults({ease: "power1", duration: 3});
 
 ScrollTrigger.matchMedia({  
   "(min-width: 768px)": function() {
+    gsap.to(".mouse > .wheel",{
+      y:30,
+      opacity: 0,
+      repeat: -1,
+      duration: 1.5,
+  })
+
     const tl = gsap.timeline();
-tl.to('.page01 > .inner > .title', {
+    tl.fromTo('.page01 > .inner > .title', {y: -50, opacity: 0},{
+      y: 0,
+      opacity: 1,
+      duration: 1,
+  })
+tl.fromTo('.page01 > .inner > .title',{opacity:1}, {
     opacity: 0,
     duration: 1,
     scrollTrigger: {
@@ -17,6 +29,16 @@ tl.to('.page01 > .inner > .title', {
         start: 'top 100%',
         end: 'bottom 100%',
     }
+})
+.to('.page01 > .inner > .mouse', {
+  opacity: 0,
+  scrollTrigger: {
+      trigger: '.page_loader',
+      scrub: 1,
+      toggleActions: 'play reverse none reverse',
+      start: 'top 80%',
+      end: 'bottom 100%',
+  }
 })
 .to('.page01 > .inner > .img', {
     xPercent: 50,
@@ -65,7 +87,7 @@ tl2.to(".background_image > img", {
   x:"33vw", 
   y:"-5vw",
   scrollTrigger: {
-  trigger: ".content_container",
+  trigger: ".page02",
   scrub: 1,
   toggleActions: "play none reverse reset",
   start: "top 100%",
@@ -185,16 +207,6 @@ tl2.to(".background_image > .confirmed", {
     end: "+=200",
   }
   })
-tl2.to(".article06 > .page_fadeout", {
-scale: 11,
-scrollTrigger: {
-trigger: ".article06 > .page_fadeout",
-scrub: 1,
-toggleActions: "play none reverse reset",
-  start: "top 100%",
-  end: "+=500",
-}
-})
 
 
 //--------------page04--------------
