@@ -869,13 +869,19 @@ html {
   }
 
   .page02 {
+    .title {
+      font-size: 7vw;
+    }
     .article {
       .text {
-        font-size: 2.5vw;
-        line-height: 4vw;
-        width: 35vw;
+        font-size: 4.5vw;
+        line-height: 7vw;
+        width: 80%;
         word-break: keep-all;
       }
+    }
+    .content_container {
+      margin-top: 50vw;
     }
   }
 
@@ -890,13 +896,16 @@ html {
   }
   .page04 {
     width: 80%;
+    margin: 30vw auto;
     .title {
       font-size: 7vw;
       word-break: keep-all;
+      padding: 40vw 0;
 
       h1:last-child {
         width: 75%;
         margin: 0 auto;
+        line-height: 12vw;
       }
     }
 
@@ -909,6 +918,9 @@ html {
         }
       }
       .chart_container {
+        p {
+          font-size: 12px;
+        }
         p:after {
           width: 50vw;
         }
@@ -927,7 +939,7 @@ html {
       height: auto;
       .axis {
         text {
-          font-size: 5vw;
+          font-size: 10vw;
         }
       }
       .desc {

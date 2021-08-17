@@ -1009,11 +1009,17 @@ html {
   .page01 .page_loader {
     display: none;
   }
+  .page02 .title {
+    font-size: 7vw;
+  }
   .page02 .article .text {
-    font-size: 2.5vw;
-    line-height: 4vw;
-    width: 35vw;
+    font-size: 4.5vw;
+    line-height: 7vw;
+    width: 80%;
     word-break: keep-all;
+  }
+  .page02 .content_container {
+    margin-top: 50vw;
   }
   .page03 {
     width: 80%;
@@ -1025,19 +1031,25 @@ html {
   }
   .page04 {
     width: 80%;
+    margin: 30vw auto;
   }
   .page04 .title {
     font-size: 7vw;
     word-break: keep-all;
+    padding: 40vw 0;
   }
   .page04 .title h1:last-child {
     width: 75%;
     margin: 0 auto;
+    line-height: 12vw;
   }
   .page04 .case_bar .run_Btn #jsBtn {
     font-size: 4vw;
     padding: 15px;
     margin: 40px;
+  }
+  .page04 .case_bar .chart_container p {
+    font-size: 12px;
   }
   .page04 .case_bar .chart_container p:after {
     width: 50vw;
@@ -1054,7 +1066,7 @@ html {
     height: auto;
   }
   .page04 .case_line .axis text {
-    font-size: 5vw;
+    font-size: 10vw;
   }
   .page04 .case_line .desc {
     font-size: 3vw;
