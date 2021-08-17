@@ -516,6 +516,7 @@ html {
 
     .korV_dsc {
       display: flex;
+      align-items: center;
       justify-content: space-between;
       width: 90%;
       margin: 0 auto;
@@ -1016,8 +1017,13 @@ html {
         }
       }
       .korV_dsc {
+        padding-bottom: 5vw;
         p:last-child {
           font-size: 2vw;
+
+          &:before {
+            margin-bottom: 3px;
+          }
         }
       }
       .korV_tooltip {
@@ -1060,12 +1066,16 @@ html {
       .kormap_dsc {
         flex-direction: column;
         padding-bottom: 10vw;
-        p:first-child {
-          font-size: 5vw;
-          padding-bottom: 3vw;
+        p {
+          &:first-child {
+            font-size: 5vw;
+            padding-bottom: 3vw;
+          }
+          &:last-child {
+            font-size: 3vw;
+          }
         }
       }
-
       .kormap_tooltip {
         width: 15vw;
         height: 15vw;

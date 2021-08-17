@@ -629,6 +629,9 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -1133,8 +1136,14 @@ html {
   .page05 .korea_vaccine svg text {
     font-size: 5.8vw;
   }
+  .page05 .korea_vaccine .korV_dsc {
+    padding-bottom: 5vw;
+  }
   .page05 .korea_vaccine .korV_dsc p:last-child {
     font-size: 2vw;
+  }
+  .page05 .korea_vaccine .korV_dsc p:last-child:before {
+    margin-bottom: 3px;
   }
   .page05 .korea_vaccine .korV_tooltip {
     font-size: 3vw;
@@ -1177,6 +1186,9 @@ html {
   .page06 .korea_case .kormap_dsc p:first-child {
     font-size: 5vw;
     padding-bottom: 3vw;
+  }
+  .page06 .korea_case .kormap_dsc p:last-child {
+    font-size: 3vw;
   }
   .page06 .korea_case .kormap_tooltip {
     width: 15vw;
