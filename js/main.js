@@ -353,7 +353,7 @@ d3.csv("./content/case_data.csv", function(error, data) {
     svg.selectAll("dot")	
         .data(data)			
     .enter().append("circle")								
-        .attr("r", 3)		
+        .attr("r", 5)		
         .attr("cx", function(d) { return x(d.date); })		 
         .attr("cy", function(d) { return y(d.case); })		
         .on("mouseover", function(d) {		
@@ -608,6 +608,7 @@ korMapHeight = 1000;
 
 var korMapSvg = d3.select(".page06 .korea_case").append("svg")
 .attr("viewBox", `0 0 ${korMapWidth} ${korMapHeight}`)
+.style("min-width", 500)
 // .attr("width", korMapWidth)
 // .attr("height", korMapHeight);
 
