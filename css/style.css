@@ -26,11 +26,11 @@ html {
   font-family: "NanumSquareR";
 }
 
-.page01 {
+.wrap .page01 {
   height: auto;
 }
 
-.page01 .inner {
+.wrap .page01 .inner {
   width: 90%;
   height: 100vh;
   margin: 0 auto;
@@ -48,16 +48,16 @@ html {
           justify-content: space-between;
 }
 
-.page01 .inner .img {
+.wrap .page01 .inner .img {
   -ms-flex-preferred-size: 45%;
       flex-basis: 45%;
 }
 
-.page01 .inner .img img {
+.wrap .page01 .inner .img img {
   width: 100%;
 }
 
-.page01 .inner .title {
+.wrap .page01 .inner .title {
   -ms-flex-preferred-size: 45%;
       flex-basis: 45%;
   font-size: 4.8vw;
@@ -66,21 +66,21 @@ html {
   line-height: 7vw;
 }
 
-.page01 .inner .title h1 {
+.wrap .page01 .inner .title h1 {
   width: 100%;
 }
 
-.page01 .page_loader {
+.wrap .page01 .page_loader {
   width: 100%;
   height: 100vh;
 }
 
-.page02 {
+.wrap .page02 {
   width: 100%;
   height: auto;
 }
 
-.page02 .title {
+.wrap .page02 .title {
   text-align: center;
   font-size: 4.8vw;
   font-weight: 800;
@@ -88,14 +88,14 @@ html {
   opacity: 1;
 }
 
-.page02 .content_container {
+.wrap .page02 .content_container {
   width: 100%;
   height: auto;
   position: relative;
   margin-top: 10vw;
 }
 
-.page02 .content_container .background_image {
+.wrap .page02 .content_container .background_image {
   position: -webkit-sticky;
   position: sticky;
   overflow: hidden;
@@ -104,11 +104,11 @@ html {
   height: 100vh;
 }
 
-.page02 .content_container .background_image img {
+.wrap .page02 .content_container .background_image img {
   width: 100%;
 }
 
-.page02 .content_container .background_image .place-dot {
+.wrap .page02 .content_container .background_image .place-dot {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -123,28 +123,28 @@ html {
   opacity: 0;
 }
 
-.page02 .content_container .background_image .place-dot.wuhan {
+.wrap .page02 .content_container .background_image .place-dot.wuhan {
   right: 29vw;
   top: 19vw;
 }
 
-.page02 .content_container .background_image .place-dot.airport {
+.wrap .page02 .content_container .background_image .place-dot.airport {
   right: 14vw;
   top: 13vw;
   opacity: 0;
 }
 
-.page02 .content_container .background_image .place-dot.hospital {
+.wrap .page02 .content_container .background_image .place-dot.hospital {
   right: 14vw;
   top: 13vw;
   opacity: 0;
 }
 
-.page02 .content_container .background_image .place-dot.hospital .dot {
+.wrap .page02 .content_container .background_image .place-dot.hospital .dot {
   background-color: brown;
 }
 
-.page02 .content_container .background_image .place-dot p {
+.wrap .page02 .content_container .background_image .place-dot p {
   color: white;
   font-weight: bold;
   font-size: 2vw;
@@ -153,14 +153,14 @@ html {
   background-color: black;
 }
 
-.page02 .content_container .background_image .place-dot .dot {
+.wrap .page02 .content_container .background_image .place-dot .dot {
   width: 5vw;
   height: 5vw;
   background-color: #00a56e;
   border-radius: 50%;
 }
 
-.page02 .content_container .background_image .airplane {
+.wrap .page02 .content_container .background_image .airplane {
   position: absolute;
   right: 27vw;
   top: 19vw;
@@ -168,19 +168,36 @@ html {
   opacity: 0;
 }
 
-.page02 .content_container .background_image .airplane img {
+.wrap .page02 .content_container .background_image .airplane img {
   width: 100%;
   -webkit-transform: rotate(-15deg);
           transform: rotate(-15deg);
 }
 
-.page02 .article {
+.wrap .page02 .content_container .background_image .confirmed {
+  position: absolute;
+  right: 24vw;
+  top: 23vw;
+  background-color: white;
+  padding: 2vw;
+  -webkit-transform: rotate(-13deg);
+          transform: rotate(-13deg);
+  opacity: 0;
+}
+
+.wrap .page02 .content_container .background_image .confirmed h1 {
+  color: black;
+  font-size: 8vw;
+  font-family: "NanumSquareEB";
+}
+
+.wrap .page02 .article {
   position: relative;
   width: 100%;
   height: 100vh;
 }
 
-.page02 .article .text {
+.wrap .page02 .article .text {
   position: absolute;
   top: 5vw;
   left: 6vw;
@@ -191,7 +208,7 @@ html {
   background-color: rgba(0, 0, 0, 0.493);
 }
 
-.page02 .article06 {
+.wrap .page02 .article06 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -204,7 +221,7 @@ html {
   overflow: hidden;
 }
 
-.page02 .article06 .page_fadeout {
+.wrap .page02 .article06 .page_fadeout {
   position: -webkit-sticky;
   position: sticky;
   width: 150px;
@@ -214,33 +231,33 @@ html {
           box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px;
 }
 
-.page03 {
+.wrap .page03 {
   width: 50%;
   margin: 20vw auto;
   font-size: 1.3vw;
   line-height: 2vw;
 }
 
-.page03 .video {
+.wrap .page03 .video {
   width: 100%;
   padding: 4vw 0;
 }
 
-.page03 .video video {
+.wrap .page03 .video video {
   width: 100%;
 }
 
-.page03 .article_text:last-child p {
+.wrap .page03 .article_text:last-child p {
   padding-bottom: 1vw;
 }
 
-.page04 {
+.wrap .page04 {
   width: 70%;
   height: auto;
   margin: 20vw auto;
 }
 
-.page04 .title {
+.wrap .page04 .title {
   width: 100%;
   text-align: center;
   font-size: 3vw;
@@ -248,11 +265,11 @@ html {
   padding-bottom: 15vw;
 }
 
-.page04 .title h1:first-child {
+.wrap .page04 .title h1:first-child {
   padding-bottom: 6vw;
 }
 
-.page04 .case_bar {
+.wrap .page04 .case_bar {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -266,7 +283,7 @@ html {
           align-items: center;
 }
 
-.page04 .case_bar .counter_container {
+.wrap .page04 .case_bar .counter_container {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -292,19 +309,19 @@ html {
   z-index: 2;
 }
 
-.page04 .case_bar .counter_container li {
+.wrap .page04 .case_bar .counter_container li {
   display: inline-block;
 }
 
-.page04 .case_bar .counter_container li:first-child {
+.wrap .page04 .case_bar .counter_container li:first-child {
   margin-bottom: 20px;
 }
 
-.page04 .case_bar .counter_container li h2 {
+.wrap .page04 .case_bar .counter_container li h2 {
   display: inline-block;
 }
 
-.page04 .case_bar .run_Btn #jsBtn {
+.wrap .page04 .case_bar .run_Btn #jsBtn {
   all: unset;
   color: black;
   font-size: 2vw;
@@ -314,7 +331,7 @@ html {
   cursor: pointer;
 }
 
-.page04 .case_bar .chart_container {
+.wrap .page04 .case_bar .chart_container {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -328,7 +345,7 @@ html {
           align-items: flex-end;
 }
 
-.page04 .case_bar .chart_container p:after {
+.wrap .page04 .case_bar .chart_container p:after {
   content: "";
   display: inline-block;
   width: 60vw;
@@ -337,23 +354,23 @@ html {
   margin-left: 10px;
 }
 
-.page04 .case_bar .chart_container p:nth-child(1) {
+.wrap .page04 .case_bar .chart_container p:nth-child(1) {
   margin-bottom: 50px;
 }
 
-.page04 .case_bar .chart_container p:nth-child(2) {
+.wrap .page04 .case_bar .chart_container p:nth-child(2) {
   margin-bottom: 120px;
 }
 
-.page04 .case_bar .chart_container p:nth-child(4) {
+.wrap .page04 .case_bar .chart_container p:nth-child(4) {
   margin-bottom: 70px;
 }
 
-.page04 .case_bar .chart_container p:nth-child(3), .page04 .case_bar .chart_container p:nth-child(5) {
+.wrap .page04 .case_bar .chart_container p:nth-child(3), .wrap .page04 .case_bar .chart_container p:nth-child(5) {
   margin-bottom: 200px;
 }
 
-.page04 .case_bar .chart_container p:nth-child(7) {
+.wrap .page04 .case_bar .chart_container p:nth-child(7) {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -364,11 +381,11 @@ html {
   opacity: 0;
 }
 
-.page04 .case_bar .chart_container p:nth-child(7):after {
+.wrap .page04 .case_bar .chart_container p:nth-child(7):after {
   content: none;
 }
 
-.page04 .case_bar .bar {
+.wrap .page04 .case_bar .bar {
   position: absolute;
   top: 8px;
   left: 40%;
@@ -377,46 +394,50 @@ html {
   background-color: darkorange;
 }
 
-.page04 .case_line {
+.wrap .page04 .case_line {
   margin-top: 10vw;
   width: 100%;
   height: 100vh;
 }
 
-.page04 .case_line path {
+.wrap .page04 .case_line path {
   stroke: #1897ff;
   stroke-width: 2;
   fill: none;
 }
 
-.page04 .case_line .axis path,
-.page04 .case_line .axis line {
+.wrap .page04 .case_line .axis path,
+.wrap .page04 .case_line .axis line {
   fill: none;
   stroke: white;
   stroke-width: 1;
   shape-rendering: crispEdges;
 }
 
-.page04 .case_line .axis text {
+.wrap .page04 .case_line .axis text {
   fill: white;
   font-size: 1.5vw;
 }
 
-.page04 .case_line .line_dsc {
+.wrap .page04 .case_line .line_dsc {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding-bottom: 2vw;
 }
 
-.page04 .case_line .line_dsc p:first-child {
+.wrap .page04 .case_line .line_dsc p:first-child {
   font-weight: 800;
+  font-size: 2vw;
 }
 
-.page04 .case_line .line_dsc p:last-child:before {
+.wrap .page04 .case_line .line_dsc p:last-child:before {
   content: "";
   display: inline-block;
   width: 5vw;
@@ -425,13 +446,13 @@ html {
   margin-right: 5px;
 }
 
-.page04 .case_line .line_duration {
+.wrap .page04 .case_line .line_duration {
   padding-top: 1vw;
   font-size: 0.9vw;
   line-height: 1.5vw;
 }
 
-.page04 .case_line .line_tooltip {
+.wrap .page04 .case_line .line_tooltip {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -458,22 +479,22 @@ html {
   pointer-events: none;
 }
 
-.page04 .case_line .line_tooltip p:first-child {
+.wrap .page04 .case_line .line_tooltip p:first-child {
   font-weight: 800;
   padding-bottom: 10px;
 }
 
-.page04 .case_line circle {
+.wrap .page04 .case_line circle {
   fill: #47a564;
   cursor: pointer;
 }
 
-.page05 {
+.wrap .page05 {
   height: auto;
   margin: 20vw 0;
 }
 
-.page05 .title {
+.wrap .page05 .title {
   width: 70%;
   margin: 0 auto;
   text-align: center;
@@ -482,11 +503,11 @@ html {
   padding-bottom: 20vw;
 }
 
-.page05 .title h1:first-child {
+.wrap .page05 .title h1:first-child {
   padding-bottom: 2vw;
 }
 
-.page05 .world_vaccine {
+.wrap .page05 .world_vaccine {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -504,7 +525,7 @@ html {
   padding-bottom: 20vw;
 }
 
-.page05 .world_vaccine .worldmap_dsc {
+.wrap .page05 .world_vaccine .worldmap_dsc {
   width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -516,16 +537,17 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 2vw;
 }
 
-.page05 .world_vaccine .worldmap_dsc p:last-child {
+.wrap .page05 .world_vaccine .worldmap_dsc p:last-child {
   -ms-flex-item-align: end;
       align-self: flex-end;
   margin-top: 3vw;
   font-size: 0.9vw;
 }
 
-.page05 .world_vaccine .worldmap_duration {
+.wrap .page05 .world_vaccine .worldmap_duration {
   width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -540,7 +562,7 @@ html {
   font-size: 0.8vw;
 }
 
-.page05 .world_vaccine .country {
+.wrap .page05 .world_vaccine .country {
   stroke-width: 1;
   stroke: white;
   fill: #c4c4c4;
@@ -548,16 +570,11 @@ html {
   transition: all 0.3s;
 }
 
-.page05 .world_vaccine .country:hover {
-  cursor: pointer;
-  fill: gray;
-}
-
-.page05 .world_vaccine circle {
+.wrap .page05 .world_vaccine circle {
   cursor: pointer;
 }
 
-.page05 .world_vaccine .worldmap_tooltip {
+.wrap .page05 .world_vaccine .worldmap_tooltip {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -584,11 +601,12 @@ html {
   pointer-events: none;
 }
 
-.page05 .world_vaccine .worldmap_tooltip p:last-child {
+.wrap .page05 .world_vaccine .worldmap_tooltip p:last-child {
   font-weight: bold;
+  padding-top: 1vw;
 }
 
-.page05 .korea_vaccine {
+.wrap .page05 .korea_vaccine {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -604,28 +622,28 @@ html {
   height: 100vh;
 }
 
-.page05 .korea_vaccine svg rect {
+.wrap .page05 .korea_vaccine svg rect {
   fill: #47a564;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 
-.page05 .korea_vaccine svg rect:hover {
+.wrap .page05 .korea_vaccine svg rect:hover {
   fill: cornflowerblue;
   cursor: pointer;
 }
 
-.page05 .korea_vaccine svg text {
+.wrap .page05 .korea_vaccine svg text {
   fill: white;
   font-size: 1.3vw;
   text-anchor: end;
 }
 
-.page05 .korea_vaccine path.domain {
+.wrap .page05 .korea_vaccine path.domain {
   stroke: white;
 }
 
-.page05 .korea_vaccine .korV_dsc {
+.wrap .page05 .korea_vaccine .korV_dsc {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -638,9 +656,14 @@ html {
   width: 90%;
   margin: 0 auto;
   padding-bottom: 2vw;
+  font-size: 2vw;
 }
 
-.page05 .korea_vaccine .korV_dsc p:last-child:before {
+.wrap .page05 .korea_vaccine .korV_dsc p:last-child {
+  font-size: 1vw;
+}
+
+.wrap .page05 .korea_vaccine .korV_dsc p:last-child:before {
   content: "";
   display: inline-block;
   width: 5vw;
@@ -649,7 +672,7 @@ html {
   margin-right: 5px;
 }
 
-.page05 .korea_vaccine .korV_tooltip {
+.wrap .page05 .korea_vaccine .korV_tooltip {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -676,17 +699,21 @@ html {
   pointer-events: none;
 }
 
-.page05 .korea_vaccine .korV_tooltip p:first-child {
+.wrap .page05 .korea_vaccine .korV_tooltip p strong {
+  font-family: "NanumSquareEB";
+}
+
+.wrap .page05 .korea_vaccine .korV_tooltip p:first-child {
   padding-bottom: 0.5vw;
 }
 
-.page06 {
+.wrap .page06 {
   width: 70%;
   height: auto;
   margin: 20vw auto;
 }
 
-.page06 .title {
+.wrap .page06 .title {
   width: 100%;
   text-align: center;
   font-size: 3vw;
@@ -694,11 +721,11 @@ html {
   padding-bottom: 20vw;
 }
 
-.page06 .title h1:first-child {
+.wrap .page06 .title h1:first-child {
   padding-bottom: 2vw;
 }
 
-.page06 .korea_case {
+.wrap .page06 .korea_case {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -714,58 +741,58 @@ html {
           align-items: center;
 }
 
-.page06 .korea_case path {
+.wrap .page06 .korea_case path {
   fill: #9b9b9b;
   stroke: black;
   cursor: pointer;
 }
 
-.page06 .korea_case path.c0 {
+.wrap .page06 .korea_case path.c0 {
   fill: #e0f2f1;
 }
 
-.page06 .korea_case path.c1 {
+.wrap .page06 .korea_case path.c1 {
   fill: #b2dfdb;
 }
 
-.page06 .korea_case path.c2 {
+.wrap .page06 .korea_case path.c2 {
   fill: #80cbc4;
 }
 
-.page06 .korea_case path.c3 {
+.wrap .page06 .korea_case path.c3 {
   fill: #4db6ac;
 }
 
-.page06 .korea_case path.c4 {
+.wrap .page06 .korea_case path.c4 {
   fill: #26a69a;
 }
 
-.page06 .korea_case path.c5 {
+.wrap .page06 .korea_case path.c5 {
   fill: #009688;
 }
 
-.page06 .korea_case path.c6 {
+.wrap .page06 .korea_case path.c6 {
   fill: #00897b;
 }
 
-.page06 .korea_case path.c7 {
+.wrap .page06 .korea_case path.c7 {
   fill: #00796b;
 }
 
-.page06 .korea_case path.c8 {
+.wrap .page06 .korea_case path.c8 {
   fill: #00695c;
 }
 
-.page06 .korea_case path:hover {
+.wrap .page06 .korea_case path:hover {
   fill: gold;
 }
 
-.page06 .korea_case .city-label {
+.wrap .page06 .korea_case .city-label {
   font-weight: bold;
   cursor: pointer;
 }
 
-.page06 .korea_case .kormap_dsc {
+.wrap .page06 .korea_case .kormap_dsc {
   width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -778,16 +805,16 @@ html {
           align-items: center;
 }
 
-.page06 .korea_case .kormap_dsc p:first-child {
-  font-size: 1.3vw;
+.wrap .page06 .korea_case .kormap_dsc p:first-child {
+  font-size: 2vw;
   font-weight: 800;
 }
 
-.page06 .korea_case .kormap_dsc p:last-child {
-  font-size: 0.9vw;
+.wrap .page06 .korea_case .kormap_dsc p:last-child {
+  font-size: 1vw;
 }
 
-.page06 .korea_case .kormap_tooltip {
+.wrap .page06 .korea_case .kormap_tooltip {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -815,17 +842,17 @@ html {
   pointer-events: none;
 }
 
-.page06 .korea_case .kormap_tooltip p:nth-child(2) {
+.wrap .page06 .korea_case .kormap_tooltip p:nth-child(2) {
   font-weight: bold;
   font-size: 20px;
 }
 
-.page06 .korea_case .kormap_tooltip p:last-child {
+.wrap .page06 .korea_case .kormap_tooltip p:last-child {
   color: red;
   font-weight: bold;
 }
 
-.page07 {
+.wrap .page07 {
   width: 100%;
   height: auto;
   margin: 20vw 0;
@@ -834,17 +861,17 @@ html {
   position: relative;
 }
 
-.page07 .bg {
+.wrap .page07 .bg {
   width: 100%;
   position: absolute;
   top: 0;
 }
 
-.page07 .bg img {
+.wrap .page07 .bg img {
   width: 100%;
 }
 
-.page07 .title {
+.wrap .page07 .title {
   width: 70%;
   height: 100%;
   margin: 0 auto;
@@ -860,22 +887,22 @@ html {
           align-items: center;
   font-size: 3vw;
   font-weight: 800;
-  padding-bottom: 10vw;
+  padding-bottom: 20vw;
 }
 
-.page07 .title div {
+.wrap .page07 .title div {
   margin-bottom: 8vw;
 }
 
-.page07 .title .mask {
+.wrap .page07 .title .mask {
   width: 20%;
 }
 
-.page07 .title .mask img {
+.wrap .page07 .title .mask img {
   width: 100%;
 }
 
-.page07 .title .people {
+.wrap .page07 .title .people {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -888,74 +915,71 @@ html {
   width: 10%;
 }
 
-.page07 .title .people img {
+.wrap .page07 .title .people img {
   width: 100%;
 }
 
 @media all and (max-width: 1024px) {
-  .page02 .article .text {
+  .wrap .page02 .article .text {
     font-size: 2vw;
     line-height: 3vw;
   }
-  .page03 {
+  .wrap .page03 {
     width: 60%;
     font-size: 2vw;
     line-height: 3vw;
   }
-  .page04 .title {
+  .wrap .page04 .title {
     font-size: 4vw;
   }
-  .page04 .case_bar {
+  .wrap .page04 .case_bar {
     margin-bottom: 20vw;
   }
-  .page04 .case_line svg g {
+  .wrap .page04 .case_line svg g {
     -webkit-transform: translate(80, 30);
             transform: translate(80, 30);
   }
-  .page04 .case_line .line_duration {
+  .wrap .page04 .case_line .line_duration {
     padding-top: 1.5vw;
     font-size: 1.3vw;
   }
-  .page04 .case_line .axis text {
+  .wrap .page04 .case_line .axis text {
     font-size: 2.5vw;
   }
-  .page04 .case_line .line_tooltip {
+  .wrap .page04 .case_line .line_tooltip {
     width: 18vw;
     height: 5vw;
     padding: 1vw 0.5vw;
     font-size: 1.5vw;
   }
-  .page05 .korea_vaccine svg text {
+  .wrap .page05 .korea_vaccine svg text {
     font-size: 2vw;
   }
-  .page05 .korea_vaccine .korV_tooltip {
+  .wrap .page05 .korea_vaccine .korV_tooltip {
     font-size: 1.5vw;
     width: 17vw;
     padding: 1vw;
   }
-  .page06 .korea_case .kormap_tooltip {
+  .wrap .page06 .korea_case .kormap_tooltip {
     width: 10vw;
     height: 10vw;
     padding: 1vw;
     font-size: 1.5vw;
     line-height: 2.5vw;
   }
-  .page06 .korea_case .kormap_tooltip p:nth-child(2) {
+  .wrap .page06 .korea_case .kormap_tooltip p:nth-child(2) {
     font-size: 2vw;
   }
-  .page07 .title {
-    margin-bottom: 20vw;
-  }
-  .page07 .title div:last-child {
+  .wrap .page07 .title div:last-child {
     padding-bottom: 20vw;
   }
 }
 
 @media all and (max-width: 767px) {
-  .page01 {
+  .wrap .page01 {
     height: 100vh;
   }
-  .page01 .inner {
+  .wrap .page01 .inner {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -967,132 +991,147 @@ html {
         justify-content: space-around;
     height: 100%;
   }
-  .page01 .inner .img {
+  .wrap .page01 .inner .img {
     -ms-flex-preferred-size: unset;
         flex-basis: unset;
     width: 80%;
   }
-  .page01 .inner .img img {
+  .wrap .page01 .inner .img img {
     width: 100%;
   }
-  .page01 .inner .title {
+  .wrap .page01 .inner .title {
     -ms-flex-preferred-size: unset;
         flex-basis: unset;
     font-size: 6vw;
     text-align: center;
     line-height: 17vw;
   }
-  .page01 .inner .title h1 {
+  .wrap .page01 .inner .title h1 {
     width: 100%;
   }
-  .page01 .page_loader {
+  .wrap .page01 .page_loader {
     display: none;
   }
-  .page02 .article .text {
+  .wrap .page02 .title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 50vw;
+  }
+  .wrap .page02 .article .text {
     font-size: 2.5vw;
     line-height: 4vw;
     width: 35vw;
     word-break: keep-all;
   }
-  .page03 {
+  .wrap .page03 {
     width: 65%;
     font-size: 2.5vw;
     line-height: 4vw;
   }
-  .page04 .case_line .axis text {
+  .wrap .page04 .case_line .axis text {
     font-size: 5vw;
   }
-  .page04 .case_line .line_duration {
+  .wrap .page04 .case_line .line_duration {
     font-size: 2vw;
     line-height: 3.5vw;
   }
-  .page05 .korea_vaccine svg text {
+  .wrap .page04 .case_bar .chart_container p:after {
+    width: 55vw;
+  }
+  .wrap .page05 .korea_vaccine svg text {
     font-size: 3.5vw;
   }
 }
 
 @media all and (max-width: 480px) {
-  .page01 .inner {
+  .wrap .page01 .inner {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .page01 .inner .img {
+  .wrap .page01 .inner .img {
     width: 100%;
     padding-bottom: 10vw;
   }
-  .page01 .inner .title {
+  .wrap .page01 .inner .title {
     font-size: 11vw;
     line-height: 17vw;
     width: 95%;
     word-break: keep-all;
   }
-  .page01 .inner .title h1 {
+  .wrap .page01 .inner .title h1 {
     width: 100%;
   }
-  .page01 .page_loader {
+  .wrap .page01 .page_loader {
     display: none;
   }
-  .page02 .title {
+  .wrap .page02 .title {
     font-size: 7vw;
   }
-  .page02 .article .text {
+  .wrap .page02 .article .text {
     font-size: 4.5vw;
     line-height: 7vw;
     width: 80%;
     word-break: keep-all;
   }
-  .page02 .content_container {
+  .wrap .page02 .content_container {
     margin-top: 50vw;
   }
-  .page03 {
+  .wrap .page03 {
     width: 80%;
     font-size: 16px;
     line-height: 25px;
   }
-  .page03 .video {
+  .wrap .page03 .video {
     padding: 50px 0;
   }
-  .page04 {
+  .wrap .page04 {
     width: 80%;
     margin: 30vw auto;
   }
-  .page04 .title {
+  .wrap .page04 .title {
     font-size: 7vw;
     word-break: keep-all;
     padding: 40vw 0;
   }
-  .page04 .title h1:last-child {
+  .wrap .page04 .title h1:last-child {
     width: 75%;
     margin: 0 auto;
     line-height: 12vw;
   }
-  .page04 .case_bar .run_Btn #jsBtn {
+  .wrap .page04 .case_bar .run_Btn #jsBtn {
     font-size: 4vw;
     padding: 15px;
     margin: 40px;
   }
-  .page04 .case_bar .chart_container p {
+  .wrap .page04 .case_bar .chart_container p {
     font-size: 12px;
   }
-  .page04 .case_bar .chart_container p:after {
+  .wrap .page04 .case_bar .chart_container p:after {
     width: 50vw;
   }
-  .page04 .case_bar .counter_container {
+  .wrap .page04 .case_bar .counter_container {
     width: 60px;
     height: 60px;
     font-size: 13px;
     padding: 15px;
     top: 15px;
   }
-  .page04 .case_line {
+  .wrap .page04 .case_line {
     margin: 40vw 0;
     height: auto;
   }
-  .page04 .case_line .axis text {
+  .wrap .page04 .case_line .axis text {
     font-size: 8.5vw;
   }
-  .page04 .case_line .line_dsc {
+  .wrap .page04 .case_line .line_dsc {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1100,104 +1139,118 @@ html {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    font-size: 4.5vw;
   }
-  .page04 .case_line .line_dsc p:last-child {
-    font-size: 3.3vw;
+  .wrap .page04 .case_line .line_dsc p:first-child {
+    font-size: 5vw;
+  }
+  .wrap .page04 .case_line .line_dsc p:last-child {
+    font-size: 3vw;
     margin-top: 6vw;
   }
-  .page04 .case_line .line_dsc p:last-child:before {
+  .wrap .page04 .case_line .line_dsc p:before {
     width: 5vw;
     border-bottom: 3px solid #47a564;
     margin-bottom: 3px;
   }
-  .page04 .case_line .line_tooltip {
+  .wrap .page04 .case_line .line_tooltip {
     height: 12vw;
     font-size: 3.5vw;
   }
-  .page04 .case_line .line_tooltip p:first-child {
+  .wrap .page04 .case_line .line_tooltip p:first-child {
     padding: 5px;
   }
-  .page04 .case_line .line_duration {
+  .wrap .page04 .case_line .line_duration {
     font-size: 2.5vw;
     line-height: 3.5vw;
   }
-  .page05 {
+  .wrap .page05 {
     padding: 35vw 0;
   }
-  .page05 .title {
+  .wrap .page05 .title {
     width: 80%;
     font-size: 6vw;
     line-height: 10vw;
   }
-  .page05 .title h1:first-child {
+  .wrap .page05 .title h1:first-child {
     padding-bottom: 5vw;
   }
-  .page05 .korea_vaccine svg text {
+  .wrap .page05 .korea_vaccine svg text {
     font-size: 5.8vw;
   }
-  .page05 .korea_vaccine .korV_dsc {
+  .wrap .page05 .korea_vaccine .korV_dsc {
     padding-bottom: 5vw;
   }
-  .page05 .korea_vaccine .korV_dsc p:last-child {
+  .wrap .page05 .korea_vaccine .korV_dsc p:last-child {
     font-size: 2vw;
   }
-  .page05 .korea_vaccine .korV_dsc p:last-child:before {
+  .wrap .page05 .korea_vaccine .korV_dsc p:last-child:before {
     margin-bottom: 3px;
   }
-  .page05 .korea_vaccine .korV_tooltip {
+  .wrap .page05 .korea_vaccine .korV_tooltip {
     font-size: 3vw;
     width: 20vw;
     height: 10vw;
   }
-  .page05 .world_vaccine .worldmap_dsc {
+  .wrap .page05 .world_vaccine .worldmap_dsc {
     font-size: 4.5vw;
   }
-  .page05 .world_vaccine .worldmap_dsc p:last-child {
+  .wrap .page05 .world_vaccine .worldmap_dsc p:last-child {
     font-size: 3vw;
   }
-  .page05 .world_vaccine .worldmap_duration {
+  .wrap .page05 .world_vaccine .worldmap_duration {
     font-size: 3vw;
   }
-  .page05 .world_vaccine .worldmap_tooltip {
+  .wrap .page05 .world_vaccine .worldmap_tooltip {
     width: 15vw;
     height: 15vw;
     font-size: 3.5vw;
   }
-  .page06 .title {
+  .wrap .page06 {
+    width: 100%;
+    overflow: hidden;
+  }
+  .wrap .page06 .title {
     width: 100%;
     font-size: 5.8vw;
     line-height: 10vw;
     padding-bottom: 60vw;
   }
-  .page06 .title h1:first-child {
+  .wrap .page06 .title h1:first-child {
     padding-bottom: 5vw;
   }
-  .page06 .korea_case {
+  .wrap .page06 .korea_case {
     padding: 20vw 0;
   }
-  .page06 .korea_case .kormap_dsc {
+  .wrap .page06 .korea_case .kormap_dsc {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
     padding-bottom: 10vw;
   }
-  .page06 .korea_case .kormap_dsc p:first-child {
+  .wrap .page06 .korea_case .kormap_dsc p:first-child {
     font-size: 5vw;
     padding-bottom: 3vw;
   }
-  .page06 .korea_case .kormap_dsc p:last-child {
+  .wrap .page06 .korea_case .kormap_dsc p:last-child {
     font-size: 3vw;
   }
-  .page06 .korea_case .kormap_tooltip {
+  .wrap .page06 .korea_case .kormap_tooltip {
     width: 15vw;
     height: 15vw;
     font-size: 3vw;
     line-height: 5vw;
   }
-  .page06 .korea_case .kormap_tooltip p:nth-child(2) {
+  .wrap .page06 .korea_case .kormap_tooltip p:nth-child(2) {
     font-size: 4vw;
+  }
+  .wrap .page07 .title {
+    height: 85vh;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-size: 5vw;
+    padding-bottom: 20vw;
   }
 }
 /*# sourceMappingURL=style.css.map */

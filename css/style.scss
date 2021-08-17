@@ -23,792 +23,22 @@ html {
   background-color: black;
   color: white;
   font-family: "NanumSquareR";
-}
 
-.page01 {
-  height: auto;
-
-  .inner {
-    width: 90%;
-    height: 100vh;
-    margin: 0 auto;
-    position: sticky;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    .img {
-      flex-basis: 45%;
-
-      img {
-        width: 100%;
-      }
-    }
-
-    .title {
-      flex-basis: 45%;
-      font-size: 4.8vw;
-      font-family: "NanumSquareEB";
-      text-align: right;
-      line-height: 7vw;
-
-      h1 {
-        width: 100%;
-      }
-    }
-  }
-  .page_loader {
-    width: 100%;
-    height: 100vh;
-  }
-}
-
-.page02 {
-  width: 100%;
-  height: auto;
-
-  .title {
-    text-align: center;
-    font-size: 4.8vw;
-    font-weight: 800;
-    padding: 20vw 0;
-    opacity: 1;
-  }
-
-  .content_container {
-    width: 100%;
-    height: auto;
-    position: relative;
-    margin-top: 10vw;
-
-    .background_image {
-      position: sticky;
-      overflow: hidden;
-      top: 0;
-      width: 100%;
-      height: 100vh;
-
-      img {
-        width: 100%;
-        // transform: scale(0.8) translate(33vw, -5vw);
-      }
-
-      .place-dot {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        opacity: 0;
-
-        &.wuhan {
-          right: 29vw;
-          top: 19vw;
-        }
-        &.airport {
-          right: 14vw;
-          top: 13vw;
-          opacity: 0;
-        }
-        &.hospital {
-          right: 14vw;
-          top: 13vw;
-          opacity: 0;
-
-          .dot {
-            background-color: brown;
-          }
-        }
-
-        p {
-          color: white;
-          font-weight: bold;
-          font-size: 2vw;
-          padding: 1vw 1.5vw;
-          margin-bottom: 1vw;
-          background-color: black;
-        }
-
-        .dot {
-          width: 5vw;
-          height: 5vw;
-          background-color: rgb(0, 165, 110);
-          border-radius: 50%;
-          // box-shadow: rgba(0, 165, 110, 0.575) 0px 5px 35px 13px;
-        }
-      }
-
-      .airplane {
-        position: absolute;
-        right: 27vw;
-        top: 19vw;
-        width: 15vw;
-        opacity: 0;
-        img {
-          width: 100%;
-          transform: rotate(-15deg);
-        }
-      }
-    }
-  }
-
-  .article {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-
-    .text {
-      position: absolute;
-      top: 5vw;
-      left: 6vw;
-      padding: 3vw;
-      font-size: 1.3vw;
-      line-height: 2vw;
-      color: white;
-      background-color: rgba(0, 0, 0, 0.493);
-    }
-  }
-
-  .article06 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    .page_fadeout {
-      position: sticky;
-      width: 150px;
-      height: 100px;
-      background-color: rgb(0, 0, 0);
-      box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px;
-    }
-  }
-}
-
-.page03 {
-  width: 50%;
-  margin: 20vw auto;
-  font-size: 1.3vw;
-  line-height: 2vw;
-
-  .video {
-    width: 100%;
-    padding: 4vw 0;
-
-    video {
-      width: 100%;
-    }
-  }
-
-  .article_text:last-child {
-    p {
-      padding-bottom: 1vw;
-    }
-  }
-}
-
-.page04 {
-  width: 70%;
-  height: auto;
-  margin: 20vw auto;
-
-  .title {
-    width: 100%;
-    text-align: center;
-    font-size: 3vw;
-    font-weight: 800;
-    padding-bottom: 15vw;
-
-    h1:first-child {
-      padding-bottom: 6vw;
-    }
-  }
-
-  .case_bar {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .counter_container {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      color: white;
-      background-color: rgba(255, 96, 96, 0.884);
-      position: sticky;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      top: 20px;
-      padding: 20px;
-      align-self: flex-end;
-      display: none;
-      z-index: 2;
-
-      li {
-        display: inline-block;
-        &:first-child {
-          margin-bottom: 20px;
-        }
-
-        h2 {
-          display: inline-block;
-        }
-      }
-    }
-    .run_Btn {
-      #jsBtn {
-        all: unset;
-        color: black;
-        font-size: 2vw;
-        background-color: white;
-        padding: 2vw 5vw;
-        margin: 5vw 0;
-        cursor: pointer;
-      }
-    }
-
-    .chart_container {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      p {
-        &:after {
-          content: "";
-          display: inline-block;
-          width: 60vw;
-          border-bottom: 3px solid white;
-          margin-bottom: 5px;
-          margin-left: 10px;
-        }
-
-        &:nth-child(1) {
-          margin-bottom: 50px;
-        }
-        &:nth-child(2) {
-          margin-bottom: 120px;
-        }
-        &:nth-child(4) {
-          margin-bottom: 70px;
-        }
-        &:nth-child(3),
-        &:nth-child(5) {
-          margin-bottom: 200px;
-        }
-        &:nth-child(7) {
-          align-self: center;
-          padding-top: 50px;
-          text-align: center;
-          font-size: 19px;
-          line-height: 30px;
-          opacity: 0;
-          &:after {
-            content: none;
-          }
-        }
-      }
-    }
-    .bar {
-      position: absolute;
-      top: 8px;
-      left: 40%;
-      width: 15vw;
-      height: 0;
-      background-color: darkorange;
-    }
-  }
-
-  .case_line {
-    margin-top: 10vw;
-    width: 100%;
-    height: 100vh;
-    path {
-      stroke: rgb(24, 151, 255);
-      stroke-width: 2;
-      fill: none;
-    }
-
-    .axis path,
-    .axis line {
-      fill: none;
-      stroke: white;
-      stroke-width: 1;
-      shape-rendering: crispEdges;
-    }
-    .axis text {
-      fill: white;
-      font-size: 1.5vw;
-    }
-
-    .line_dsc {
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 2vw;
-
-      p:first-child {
-        font-weight: 800;
-      }
-      p:last-child:before {
-        content: "";
-        display: inline-block;
-        width: 5vw;
-        border-bottom: 5px solid rgb(71, 165, 100);
-        margin-bottom: 5px;
-        margin-right: 5px;
-      }
-    }
-    .line_duration {
-      padding-top: 1vw;
-      font-size: 0.9vw;
-      line-height: 1.5vw;
-    }
-    .line_tooltip {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      width: 100px;
-      height: 60px;
-      padding: 10px;
-      font-size: 16px;
-      color: black;
-      background: white;
-      border: 0px;
-      border-radius: 8px;
-      pointer-events: none;
-
-      p:first-child {
-        font-weight: 800;
-        padding-bottom: 10px;
-      }
-    }
-
-    circle {
-      fill: rgb(71, 165, 100);
-      cursor: pointer;
-    }
-  }
-}
-
-.page05 {
-  height: auto;
-  margin: 20vw 0;
-
-  .title {
-    width: 70%;
-    margin: 0 auto;
-    text-align: center;
-    font-size: 3vw;
-    font-weight: 800;
-    padding-bottom: 20vw;
-
-    h1:first-child {
-      padding-bottom: 2vw;
-    }
-  }
-
-  .world_vaccine {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding-bottom: 20vw;
-
-    .worldmap_dsc {
-      width: 80%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      p:last-child {
-        align-self: flex-end;
-        margin-top: 3vw;
-        font-size: 0.9vw;
-      }
-    }
-    .worldmap_duration {
-      width: 80%;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      font-size: 0.8vw;
-    }
-
-    .country {
-      stroke-width: 1;
-      stroke: white;
-      fill: rgb(196, 196, 196);
-      transition: all 0.3s;
-
-      &:hover {
-        cursor: pointer;
-        fill: gray;
-      }
-    }
-
-    circle {
-      cursor: pointer;
-    }
-
-    .worldmap_tooltip {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      width: 100px;
-      height: 100px;
-      padding: 2px;
-      font-size: 16px;
-      background: rgb(255, 255, 255);
-      color: black;
-      border: 0px;
-      border-radius: 8px;
-      pointer-events: none;
-
-      p:last-child {
-        font-weight: bold;
-      }
-    }
-  }
-  .korea_vaccine {
-    display: flex;
-    flex-direction: column;
-    // align-items: center;
-    justify-content: center;
-    width: 80%;
-    margin: 0 auto;
-    height: 100vh;
-    // svg {
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   width: 100%;
-    //   height: 100%;
-    // }
-
-    // svg {
-    //   border: 1px white solid;
-    // }
-    svg rect {
-      fill: rgb(71, 165, 100);
-      transition: all 0.5s;
-    }
-
-    svg rect:hover {
-      fill: cornflowerblue;
-      cursor: pointer;
-    }
-    svg text {
-      fill: white;
-      font-size: 1.3vw;
-      text-anchor: end;
-    }
-    path.domain {
-      stroke: white;
-    }
-
-    .korV_dsc {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 90%;
-      margin: 0 auto;
-      padding-bottom: 2vw;
-
-      p:last-child:before {
-        content: "";
-        display: inline-block;
-        width: 5vw;
-        border-bottom: 5px solid rgb(71, 165, 100);
-        margin-bottom: 5px;
-        margin-right: 5px;
-      }
-    }
-
-    .korV_tooltip {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      width: 13vw;
-      height: 4vw;
-      padding: 0.5vw;
-      font-size: 1vw;
-      color: black;
-      background: white;
-      border: 0px;
-      border-radius: 8px;
-      pointer-events: none;
-
-      p:first-child {
-        padding-bottom: 0.5vw;
-      }
-    }
-  }
-}
-
-.page06 {
-  width: 70%;
-  height: auto;
-  margin: 20vw auto;
-
-  .title {
-    width: 100%;
-    text-align: center;
-    font-size: 3vw;
-    font-weight: 800;
-    padding-bottom: 20vw;
-
-    h1:first-child {
-      padding-bottom: 2vw;
-    }
-  }
-
-  .korea_case {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    path {
-      fill: rgb(155, 155, 155);
-      stroke: black;
-      cursor: pointer;
-
-      &.c0 {
-        fill: #e0f2f1;
-      }
-      &.c1 {
-        fill: #b2dfdb;
-      }
-      &.c2 {
-        fill: #80cbc4;
-      }
-      &.c3 {
-        fill: #4db6ac;
-      }
-      &.c4 {
-        fill: #26a69a;
-      }
-      &.c5 {
-        fill: #009688;
-      }
-      &.c6 {
-        fill: #00897b;
-      }
-      &.c7 {
-        fill: #00796b;
-      }
-      &.c8 {
-        fill: #00695c;
-      }
-      &:hover {
-        fill: gold;
-      }
-    }
-    .city-label {
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .kormap_dsc {
-      width: 90%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      p:first-child {
-        font-size: 1.3vw;
-        font-weight: 800;
-      }
-      p:last-child {
-        font-size: 0.9vw;
-      }
-    }
-
-    .kormap_tooltip {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      width: 100px;
-      height: 100px;
-      padding: 2px;
-      font-size: 16px;
-      background: rgb(255, 255, 255);
-      color: black;
-      border: 0px;
-      line-height: 25px;
-      border-radius: 8px;
-      pointer-events: none;
-
-      p:nth-child(2) {
-        font-weight: bold;
-        font-size: 20px;
-      }
-      p:last-child {
-        color: red;
-        font-weight: bold;
-      }
-    }
-  }
-}
-
-.page07 {
-  width: 100%;
-  height: auto;
-  margin: 20vw 0;
-  padding-bottom: 10vw;
-  overflow: hidden;
-  position: relative;
-
-  .bg {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    img {
-      width: 100%;
-    }
-  }
-
-  .title {
-    width: 70%;
-    height: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 3vw;
-    font-weight: 800;
-    padding-bottom: 10vw;
-
-    div {
-      margin-bottom: 8vw;
-    }
-    .mask {
-      width: 20%;
-      img {
-        width: 100%;
-      }
-    }
-    .people {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 10%;
-
-      img {
-        width: 100%;
-      }
-    }
-  }
-}
-
-@media all and (max-width: 1024px) {
-  .page02 {
-    .article {
-      .text {
-        font-size: 2vw;
-        line-height: 3vw;
-      }
-    }
-  }
-  .page03 {
-    width: 60%;
-    font-size: 2vw;
-    line-height: 3vw;
-  }
-  .page04 {
-    .title {
-      font-size: 4vw;
-    }
-    .case_bar {
-      margin-bottom: 20vw;
-    }
-    .case_line {
-      svg {
-        g {
-          transform: translate(80, 30);
-        }
-      }
-      .line_duration {
-        padding-top: 1.5vw;
-        font-size: 1.3vw;
-      }
-      .axis {
-        text {
-          font-size: 2.5vw;
-        }
-      }
-      .line_tooltip {
-        width: 18vw;
-        height: 5vw;
-        padding: 1vw 0.5vw;
-        font-size: 1.5vw;
-      }
-    }
-  }
-  .page05 {
-    .korea_vaccine {
-      svg {
-        text {
-          font-size: 2vw;
-        }
-      }
-      .korV_tooltip {
-        font-size: 1.5vw;
-        width: 17vw;
-        padding: 1vw;
-      }
-    }
-  }
-  .page06 {
-    .korea_case {
-      .kormap_tooltip {
-        width: 10vw;
-        height: 10vw;
-        padding: 1vw;
-        font-size: 1.5vw;
-        line-height: 2.5vw;
-
-        p:nth-child(2) {
-          font-size: 2vw;
-        }
-      }
-    }
-  }
-  .page07 {
-    .title {
-      margin-bottom: 20vw;
-      div:last-child {
-        padding-bottom: 20vw;
-      }
-    }
-  }
-}
-
-@media all and (max-width: 767px) {
   .page01 {
-    height: 100vh;
+    height: auto;
 
     .inner {
-      flex-direction: column;
+      width: 90%;
+      height: 100vh;
+      margin: 0 auto;
+      position: sticky;
+      top: 0;
+      display: flex;
       align-items: center;
-      justify-content: space-around;
-      height: 100%;
+      justify-content: space-between;
 
       .img {
-        flex-basis: unset;
-        width: 80%;
+        flex-basis: 45%;
 
         img {
           width: 100%;
@@ -816,10 +46,11 @@ html {
       }
 
       .title {
-        flex-basis: unset;
-        font-size: 6vw;
-        text-align: center;
-        line-height: 17vw;
+        flex-basis: 45%;
+        font-size: 4.8vw;
+        font-family: "NanumSquareEB";
+        text-align: right;
+        line-height: 7vw;
 
         h1 {
           width: 100%;
@@ -827,44 +58,851 @@ html {
       }
     }
     .page_loader {
-      display: none;
+      width: 100%;
+      height: 100vh;
     }
   }
 
   .page02 {
+    width: 100%;
+    height: auto;
+
+    .title {
+      text-align: center;
+      font-size: 4.8vw;
+      font-weight: 800;
+      padding: 20vw 0;
+      opacity: 1;
+    }
+
+    .content_container {
+      width: 100%;
+      height: auto;
+      position: relative;
+      margin-top: 10vw;
+
+      .background_image {
+        position: sticky;
+        overflow: hidden;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+
+        img {
+          width: 100%;
+          // transform: scale(0.8) translate(33vw, -5vw);
+        }
+
+        .place-dot {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          opacity: 0;
+
+          &.wuhan {
+            right: 29vw;
+            top: 19vw;
+          }
+          &.airport {
+            right: 14vw;
+            top: 13vw;
+            opacity: 0;
+          }
+          &.hospital {
+            right: 14vw;
+            top: 13vw;
+            opacity: 0;
+
+            .dot {
+              background-color: brown;
+            }
+          }
+
+          p {
+            color: white;
+            font-weight: bold;
+            font-size: 2vw;
+            padding: 1vw 1.5vw;
+            margin-bottom: 1vw;
+            background-color: black;
+          }
+
+          .dot {
+            width: 5vw;
+            height: 5vw;
+            background-color: rgb(0, 165, 110);
+            border-radius: 50%;
+            // box-shadow: rgba(0, 165, 110, 0.575) 0px 5px 35px 13px;
+          }
+        }
+
+        .airplane {
+          position: absolute;
+          right: 27vw;
+          top: 19vw;
+          width: 15vw;
+          opacity: 0;
+          img {
+            width: 100%;
+            transform: rotate(-15deg);
+          }
+        }
+        .confirmed {
+          position: absolute;
+          right: 24vw;
+          top: 23vw;
+          background-color: white;
+          padding: 2vw;
+          transform: rotate(-13deg);
+          opacity: 0;
+          h1 {
+            color: black;
+            font-size: 8vw;
+            font-family: "NanumSquareEB";
+          }
+        }
+      }
+    }
+
     .article {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+
       .text {
-        font-size: 2.5vw;
-        line-height: 4vw;
-        width: 35vw;
-        word-break: keep-all;
+        position: absolute;
+        top: 5vw;
+        left: 6vw;
+        padding: 3vw;
+        font-size: 1.3vw;
+        line-height: 2vw;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.493);
+      }
+    }
+
+    .article06 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      .page_fadeout {
+        position: sticky;
+        width: 150px;
+        height: 100px;
+        background-color: rgb(0, 0, 0);
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px;
       }
     }
   }
 
   .page03 {
-    width: 65%;
-    font-size: 2.5vw;
-    line-height: 4vw;
-  }
-  .page04 {
-    .case_line {
-      .axis {
-        text {
-          font-size: 5vw;
-        }
+    width: 50%;
+    margin: 20vw auto;
+    font-size: 1.3vw;
+    line-height: 2vw;
+
+    .video {
+      width: 100%;
+      padding: 4vw 0;
+
+      video {
+        width: 100%;
       }
-      .line_duration {
-        font-size: 2vw;
-        line-height: 3.5vw;
+    }
+
+    .article_text:last-child {
+      p {
+        padding-bottom: 1vw;
       }
     }
   }
+
+  .page04 {
+    width: 70%;
+    height: auto;
+    margin: 20vw auto;
+
+    .title {
+      width: 100%;
+      text-align: center;
+      font-size: 3vw;
+      font-weight: 800;
+      padding-bottom: 15vw;
+
+      h1:first-child {
+        padding-bottom: 6vw;
+      }
+    }
+
+    .case_bar {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .counter_container {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        color: white;
+        background-color: rgba(255, 96, 96, 0.884);
+        position: sticky;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        top: 20px;
+        padding: 20px;
+        align-self: flex-end;
+        display: none;
+        z-index: 2;
+
+        li {
+          display: inline-block;
+          &:first-child {
+            margin-bottom: 20px;
+          }
+
+          h2 {
+            display: inline-block;
+          }
+        }
+      }
+      .run_Btn {
+        #jsBtn {
+          all: unset;
+          color: black;
+          font-size: 2vw;
+          background-color: white;
+          padding: 2vw 5vw;
+          margin: 5vw 0;
+          cursor: pointer;
+        }
+      }
+
+      .chart_container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        p {
+          &:after {
+            content: "";
+            display: inline-block;
+            width: 60vw;
+            border-bottom: 3px solid white;
+            margin-bottom: 5px;
+            margin-left: 10px;
+          }
+
+          &:nth-child(1) {
+            margin-bottom: 50px;
+          }
+          &:nth-child(2) {
+            margin-bottom: 120px;
+          }
+          &:nth-child(4) {
+            margin-bottom: 70px;
+          }
+          &:nth-child(3),
+          &:nth-child(5) {
+            margin-bottom: 200px;
+          }
+          &:nth-child(7) {
+            align-self: center;
+            padding-top: 50px;
+            text-align: center;
+            font-size: 19px;
+            line-height: 30px;
+            opacity: 0;
+            &:after {
+              content: none;
+            }
+          }
+        }
+      }
+      .bar {
+        position: absolute;
+        top: 8px;
+        left: 40%;
+        width: 15vw;
+        height: 0;
+        background-color: darkorange;
+      }
+    }
+
+    .case_line {
+      margin-top: 10vw;
+      width: 100%;
+      height: 100vh;
+      path {
+        stroke: rgb(24, 151, 255);
+        stroke-width: 2;
+        fill: none;
+      }
+
+      .axis path,
+      .axis line {
+        fill: none;
+        stroke: white;
+        stroke-width: 1;
+        shape-rendering: crispEdges;
+      }
+      .axis text {
+        fill: white;
+        font-size: 1.5vw;
+      }
+
+      .line_dsc {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 2vw;
+
+        p:first-child {
+          font-weight: 800;
+          font-size: 2vw;
+        }
+        p:last-child:before {
+          content: "";
+          display: inline-block;
+          width: 5vw;
+          border-bottom: 5px solid rgb(71, 165, 100);
+          margin-bottom: 5px;
+          margin-right: 5px;
+        }
+      }
+      .line_duration {
+        padding-top: 1vw;
+        font-size: 0.9vw;
+        line-height: 1.5vw;
+      }
+      .line_tooltip {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100px;
+        height: 60px;
+        padding: 10px;
+        font-size: 16px;
+        color: black;
+        background: white;
+        border: 0px;
+        border-radius: 8px;
+        pointer-events: none;
+
+        p:first-child {
+          font-weight: 800;
+          padding-bottom: 10px;
+        }
+      }
+
+      circle {
+        fill: rgb(71, 165, 100);
+        cursor: pointer;
+      }
+    }
+  }
+
   .page05 {
+    height: auto;
+    margin: 20vw 0;
+
+    .title {
+      width: 70%;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 3vw;
+      font-weight: 800;
+      padding-bottom: 20vw;
+
+      h1:first-child {
+        padding-bottom: 2vw;
+      }
+    }
+
+    .world_vaccine {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding-bottom: 20vw;
+
+      .worldmap_dsc {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 2vw;
+
+        p:last-child {
+          align-self: flex-end;
+          margin-top: 3vw;
+          font-size: 0.9vw;
+        }
+      }
+      .worldmap_duration {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 0.8vw;
+      }
+
+      .country {
+        stroke-width: 1;
+        stroke: white;
+        fill: rgb(196, 196, 196);
+        transition: all 0.3s;
+      }
+
+      circle {
+        cursor: pointer;
+      }
+
+      .worldmap_tooltip {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100px;
+        height: 100px;
+        padding: 2px;
+        font-size: 16px;
+        background: rgb(255, 255, 255);
+        color: black;
+        border: 0px;
+        border-radius: 8px;
+        pointer-events: none;
+
+        p:last-child {
+          font-weight: bold;
+          padding-top: 1vw;
+        }
+      }
+    }
     .korea_vaccine {
-      svg {
-        text {
-          font-size: 3.5vw;
+      display: flex;
+      flex-direction: column;
+      // align-items: center;
+      justify-content: center;
+      width: 80%;
+      margin: 0 auto;
+      height: 100vh;
+      // svg {
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      //   width: 100%;
+      //   height: 100%;
+      // }
+
+      // svg {
+      //   border: 1px white solid;
+      // }
+      svg rect {
+        fill: rgb(71, 165, 100);
+        transition: all 0.5s;
+      }
+
+      svg rect:hover {
+        fill: cornflowerblue;
+        cursor: pointer;
+      }
+      svg text {
+        fill: white;
+        font-size: 1.3vw;
+        text-anchor: end;
+      }
+      path.domain {
+        stroke: white;
+      }
+
+      .korV_dsc {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+        margin: 0 auto;
+        padding-bottom: 2vw;
+        font-size: 2vw;
+
+        p:last-child {
+          font-size: 1vw;
+          &:before {
+            content: "";
+            display: inline-block;
+            width: 5vw;
+            border-bottom: 5px solid rgb(71, 165, 100);
+            margin-bottom: 5px;
+            margin-right: 5px;
+          }
+        }
+      }
+
+      .korV_tooltip {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 13vw;
+        height: 4vw;
+        padding: 0.5vw;
+        font-size: 1vw;
+        color: black;
+        background: white;
+        border: 0px;
+        border-radius: 8px;
+        pointer-events: none;
+
+        p {
+          strong {
+            font-family: "NanumSquareEB";
+          }
+        }
+        p:first-child {
+          padding-bottom: 0.5vw;
+        }
+      }
+    }
+  }
+
+  .page06 {
+    width: 70%;
+    height: auto;
+    margin: 20vw auto;
+
+    .title {
+      width: 100%;
+      text-align: center;
+      font-size: 3vw;
+      font-weight: 800;
+      padding-bottom: 20vw;
+
+      h1:first-child {
+        padding-bottom: 2vw;
+      }
+    }
+
+    .korea_case {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      path {
+        fill: rgb(155, 155, 155);
+        stroke: black;
+        cursor: pointer;
+
+        &.c0 {
+          fill: #e0f2f1;
+        }
+        &.c1 {
+          fill: #b2dfdb;
+        }
+        &.c2 {
+          fill: #80cbc4;
+        }
+        &.c3 {
+          fill: #4db6ac;
+        }
+        &.c4 {
+          fill: #26a69a;
+        }
+        &.c5 {
+          fill: #009688;
+        }
+        &.c6 {
+          fill: #00897b;
+        }
+        &.c7 {
+          fill: #00796b;
+        }
+        &.c8 {
+          fill: #00695c;
+        }
+        &:hover {
+          fill: gold;
+        }
+      }
+      .city-label {
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .kormap_dsc {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p:first-child {
+          font-size: 2vw;
+          font-weight: 800;
+        }
+        p:last-child {
+          font-size: 1vw;
+        }
+      }
+
+      .kormap_tooltip {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100px;
+        height: 100px;
+        padding: 2px;
+        font-size: 16px;
+        background: rgb(255, 255, 255);
+        color: black;
+        border: 0px;
+        line-height: 25px;
+        border-radius: 8px;
+        pointer-events: none;
+
+        p:nth-child(2) {
+          font-weight: bold;
+          font-size: 20px;
+        }
+        p:last-child {
+          color: red;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .page07 {
+    width: 100%;
+    height: auto;
+    margin: 20vw 0;
+    padding-bottom: 10vw;
+    overflow: hidden;
+    position: relative;
+
+    .bg {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      img {
+        width: 100%;
+      }
+    }
+
+    .title {
+      width: 70%;
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 3vw;
+      font-weight: 800;
+      padding-bottom: 20vw;
+
+      div {
+        margin-bottom: 8vw;
+      }
+      .mask {
+        width: 20%;
+        img {
+          width: 100%;
+        }
+      }
+      .people {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 10%;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .wrap {
+    .page02 {
+      .article {
+        .text {
+          font-size: 2vw;
+          line-height: 3vw;
+        }
+      }
+    }
+    .page03 {
+      width: 60%;
+      font-size: 2vw;
+      line-height: 3vw;
+    }
+    .page04 {
+      .title {
+        font-size: 4vw;
+      }
+      .case_bar {
+        margin-bottom: 20vw;
+      }
+      .case_line {
+        svg {
+          g {
+            transform: translate(80, 30);
+          }
+        }
+        .line_duration {
+          padding-top: 1.5vw;
+          font-size: 1.3vw;
+        }
+        .axis {
+          text {
+            font-size: 2.5vw;
+          }
+        }
+        .line_tooltip {
+          width: 18vw;
+          height: 5vw;
+          padding: 1vw 0.5vw;
+          font-size: 1.5vw;
+        }
+      }
+    }
+    .page05 {
+      .korea_vaccine {
+        svg {
+          text {
+            font-size: 2vw;
+          }
+        }
+        .korV_tooltip {
+          font-size: 1.5vw;
+          width: 17vw;
+          padding: 1vw;
+        }
+      }
+    }
+    .page06 {
+      .korea_case {
+        .kormap_tooltip {
+          width: 10vw;
+          height: 10vw;
+          padding: 1vw;
+          font-size: 1.5vw;
+          line-height: 2.5vw;
+
+          p:nth-child(2) {
+            font-size: 2vw;
+          }
+        }
+      }
+    }
+    .page07 {
+      .title {
+        div:last-child {
+          padding-bottom: 20vw;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 767px) {
+  .wrap {
+    .page01 {
+      height: 100vh;
+
+      .inner {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height: 100%;
+
+        .img {
+          flex-basis: unset;
+          width: 80%;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .title {
+          flex-basis: unset;
+          font-size: 6vw;
+          text-align: center;
+          line-height: 17vw;
+
+          h1 {
+            width: 100%;
+          }
+        }
+      }
+      .page_loader {
+        display: none;
+      }
+    }
+
+    .page02 {
+      .title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50vw;
+      }
+      .article {
+        .text {
+          font-size: 2.5vw;
+          line-height: 4vw;
+          width: 35vw;
+          word-break: keep-all;
+        }
+      }
+    }
+
+    .page03 {
+      width: 65%;
+      font-size: 2.5vw;
+      line-height: 4vw;
+    }
+    .page04 {
+      .case_line {
+        .axis {
+          text {
+            font-size: 5vw;
+          }
+        }
+        .line_duration {
+          font-size: 2vw;
+          line-height: 3.5vw;
+        }
+      }
+      .case_bar {
+        .chart_container {
+          p:after {
+            width: 55vw;
+          }
+        }
+      }
+    }
+    .page05 {
+      .korea_vaccine {
+        svg {
+          text {
+            font-size: 3.5vw;
+          }
         }
       }
     }
@@ -872,218 +910,233 @@ html {
 }
 
 @media all and (max-width: 480px) {
-  .page01 {
-    .inner {
-      justify-content: center;
-      .img {
-        width: 100%;
-        padding-bottom: 10vw;
+  .wrap {
+    .page01 {
+      .inner {
+        justify-content: center;
+        .img {
+          width: 100%;
+          padding-bottom: 10vw;
+        }
+
+        .title {
+          font-size: 11vw;
+          line-height: 17vw;
+          width: 95%;
+          word-break: keep-all;
+
+          h1 {
+            width: 100%;
+          }
+        }
       }
+      .page_loader {
+        display: none;
+      }
+    }
+
+    .page02 {
+      .title {
+        font-size: 7vw;
+      }
+      .article {
+        .text {
+          font-size: 4.5vw;
+          line-height: 7vw;
+          width: 80%;
+          word-break: keep-all;
+        }
+      }
+      .content_container {
+        margin-top: 50vw;
+      }
+    }
+
+    .page03 {
+      width: 80%;
+      font-size: 16px;
+      line-height: 25px;
+
+      .video {
+        padding: 50px 0;
+      }
+    }
+    .page04 {
+      width: 80%;
+      margin: 30vw auto;
+      .title {
+        font-size: 7vw;
+        word-break: keep-all;
+        padding: 40vw 0;
+
+        h1:last-child {
+          width: 75%;
+          margin: 0 auto;
+          line-height: 12vw;
+        }
+      }
+
+      .case_bar {
+        .run_Btn {
+          #jsBtn {
+            font-size: 4vw;
+            padding: 15px;
+            margin: 40px;
+          }
+        }
+        .chart_container {
+          p {
+            font-size: 12px;
+          }
+          p:after {
+            width: 50vw;
+          }
+        }
+        .counter_container {
+          width: 60px;
+          height: 60px;
+          font-size: 13px;
+          padding: 15px;
+          top: 15px;
+        }
+      }
+
+      .case_line {
+        margin: 40vw 0;
+        height: auto;
+        .axis {
+          text {
+            font-size: 8.5vw;
+          }
+        }
+        .line_dsc {
+          flex-direction: column;
+          align-items: center;
+
+          p {
+            &:first-child {
+              font-size: 5vw;
+            }
+            &:last-child {
+              font-size: 3vw;
+              margin-top: 6vw;
+            }
+            &:before {
+              width: 5vw;
+              border-bottom: 3px solid #47a564;
+              margin-bottom: 3px;
+            }
+          }
+        }
+        .line_tooltip {
+          height: 12vw;
+          font-size: 3.5vw;
+          p:first-child {
+            padding: 5px;
+          }
+        }
+        .line_duration {
+          font-size: 2.5vw;
+          line-height: 3.5vw;
+        }
+      }
+    }
+    .page05 {
+      padding: 35vw 0;
 
       .title {
-        font-size: 11vw;
-        line-height: 17vw;
-        width: 95%;
-        word-break: keep-all;
-
-        h1 {
-          width: 100%;
-        }
-      }
-    }
-    .page_loader {
-      display: none;
-    }
-  }
-
-  .page02 {
-    .title {
-      font-size: 7vw;
-    }
-    .article {
-      .text {
-        font-size: 4.5vw;
-        line-height: 7vw;
         width: 80%;
-        word-break: keep-all;
-      }
-    }
-    .content_container {
-      margin-top: 50vw;
-    }
-  }
-
-  .page03 {
-    width: 80%;
-    font-size: 16px;
-    line-height: 25px;
-
-    .video {
-      padding: 50px 0;
-    }
-  }
-  .page04 {
-    width: 80%;
-    margin: 30vw auto;
-    .title {
-      font-size: 7vw;
-      word-break: keep-all;
-      padding: 40vw 0;
-
-      h1:last-child {
-        width: 75%;
-        margin: 0 auto;
-        line-height: 12vw;
-      }
-    }
-
-    .case_bar {
-      .run_Btn {
-        #jsBtn {
-          font-size: 4vw;
-          padding: 15px;
-          margin: 40px;
+        font-size: 6vw;
+        line-height: 10vw;
+        h1:first-child {
+          padding-bottom: 5vw;
         }
       }
-      .chart_container {
-        p {
-          font-size: 12px;
-        }
-        p:after {
-          width: 50vw;
-        }
-      }
-      .counter_container {
-        width: 60px;
-        height: 60px;
-        font-size: 13px;
-        padding: 15px;
-        top: 15px;
-      }
-    }
-
-    .case_line {
-      margin: 40vw 0;
-      height: auto;
-      .axis {
-        text {
-          font-size: 8.5vw;
-        }
-      }
-      .line_dsc {
-        flex-direction: column;
-        align-items: center;
-        font-size: 4.5vw;
-
-        p:last-child {
-          font-size: 3.3vw;
-          margin-top: 6vw;
-
-          &:before {
-            width: 5vw;
-            border-bottom: 3px solid #47a564;
-            margin-bottom: 3px;
+      .korea_vaccine {
+        svg {
+          text {
+            font-size: 5.8vw;
           }
         }
-      }
-      .line_tooltip {
-        height: 12vw;
-        font-size: 3.5vw;
-        p:first-child {
-          padding: 5px;
-        }
-      }
-      .line_duration {
-        font-size: 2.5vw;
-        line-height: 3.5vw;
-      }
-    }
-  }
-  .page05 {
-    padding: 35vw 0;
+        .korV_dsc {
+          padding-bottom: 5vw;
+          p:last-child {
+            font-size: 2vw;
 
-    .title {
-      width: 80%;
-      font-size: 6vw;
-      line-height: 10vw;
-      h1:first-child {
-        padding-bottom: 5vw;
-      }
-    }
-    .korea_vaccine {
-      svg {
-        text {
-          font-size: 5.8vw;
-        }
-      }
-      .korV_dsc {
-        padding-bottom: 5vw;
-        p:last-child {
-          font-size: 2vw;
-
-          &:before {
-            margin-bottom: 3px;
+            &:before {
+              margin-bottom: 3px;
+            }
           }
         }
-      }
-      .korV_tooltip {
-        font-size: 3vw;
-        width: 20vw;
-        height: 10vw;
-      }
-    }
-    .world_vaccine {
-      .worldmap_dsc {
-        font-size: 4.5vw;
-        p:last-child {
+        .korV_tooltip {
           font-size: 3vw;
+          width: 20vw;
+          height: 10vw;
         }
       }
-      .worldmap_duration {
-        font-size: 3vw;
-      }
-      .worldmap_tooltip {
-        width: 15vw;
-        height: 15vw;
-        font-size: 3.5vw;
-      }
-    }
-  }
-  .page06 {
-    .title {
-      width: 100%;
-      font-size: 5.8vw;
-      line-height: 10vw;
-      padding-bottom: 60vw;
-      h1:first-child {
-        padding-bottom: 5vw;
-      }
-    }
-
-    .korea_case {
-      padding: 20vw 0;
-
-      .kormap_dsc {
-        flex-direction: column;
-        padding-bottom: 10vw;
-        p {
-          &:first-child {
-            font-size: 5vw;
-            padding-bottom: 3vw;
-          }
-          &:last-child {
+      .world_vaccine {
+        .worldmap_dsc {
+          font-size: 4.5vw;
+          p:last-child {
             font-size: 3vw;
           }
         }
-      }
-      .kormap_tooltip {
-        width: 15vw;
-        height: 15vw;
-        font-size: 3vw;
-        line-height: 5vw;
-        p:nth-child(2) {
-          font-size: 4vw;
+        .worldmap_duration {
+          font-size: 3vw;
         }
+        .worldmap_tooltip {
+          width: 15vw;
+          height: 15vw;
+          font-size: 3.5vw;
+        }
+      }
+    }
+    .page06 {
+      width: 100%;
+      overflow: hidden;
+      .title {
+        width: 100%;
+        font-size: 5.8vw;
+        line-height: 10vw;
+        padding-bottom: 60vw;
+        h1:first-child {
+          padding-bottom: 5vw;
+        }
+      }
+
+      .korea_case {
+        padding: 20vw 0;
+
+        .kormap_dsc {
+          flex-direction: column;
+          padding-bottom: 10vw;
+          p {
+            &:first-child {
+              font-size: 5vw;
+              padding-bottom: 3vw;
+            }
+            &:last-child {
+              font-size: 3vw;
+            }
+          }
+        }
+        .kormap_tooltip {
+          width: 15vw;
+          height: 15vw;
+          font-size: 3vw;
+          line-height: 5vw;
+          p:nth-child(2) {
+            font-size: 4vw;
+          }
+        }
+      }
+    }
+    .page07 {
+      .title {
+        height: 85vh;
+        justify-content: center;
+        font-size: 5vw;
+        padding-bottom: 20vw;
       }
     }
   }
