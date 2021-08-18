@@ -515,10 +515,10 @@ var korVaxHeight = 700;
       .range([0, korVaxHeight-200]).paddingInner(0.4);
   var korVaxXscale = d3.scaleLinear()
       .domain([0, 100])
-      .range([0, korVaxWidth-150]);
+      .range([0, korVaxWidth-180]);
 
   var svgG = korVaxSvg.append("g")
-      .attr("transform", "translate(130,0)");
+      .attr("transform", "translate(150,0)");
 
   svgG.selectAll('rect')
   .data(korVaxData)
@@ -669,7 +669,6 @@ tlL.from('.page07 > .title > div',  {
       scrub: 1,
       toggleActions: 'play reverse none reverse',
       start: 'top 25%',
-      markers: true,
       end: "bottom 100%",
       
   }
@@ -703,6 +702,6 @@ tlL.from('.page07 > .title > div',  {
       scrub: 1,
       toggleActions: 'play reverse none reverse',
       start: "top 40%",
-      end: "bottom 100%",
+      end: "bottom 90%",
   }
 })

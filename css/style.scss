@@ -172,7 +172,7 @@ html {
 
         .airplane {
           position: absolute;
-          right: 23vw;
+          right: 25vw;
           top: 19vw;
           width: 15vw;
           opacity: 0;
@@ -637,16 +637,18 @@ html {
         width: 90%;
         padding-bottom: 5vw;
 
-        p:first-child {
-          font-size: 2vw;
-          font-weight: 800;
-          &:after {
-            content: " (21.08.03 0시 기준)";
-            font-size: 1vw;
+        p {
+          &:first-child {
+            font-size: 2vw;
+            font-weight: 800;
+            &:after {
+              content: " (21.08.03 0시 기준)";
+              font-size: 1vw;
+            }
           }
-        }
-        p:last-child {
-          font-size: 1vw;
+          &:last-child {
+            font-size: 1.3vw;
+          }
         }
       }
 
@@ -906,6 +908,26 @@ html {
         }
       }
     }
+    .page06 {
+      .korea_case {
+        .kormap_dsc {
+          flex-direction: column;
+          p {
+            &:first-child {
+              font-size: 3vw;
+              padding-bottom: 3vw;
+
+              &:after {
+                font-size: 1.5vw;
+              }
+            }
+            &:last-child {
+              font-size: 2vw;
+            }
+          }
+        }
+      }
+    }
     .page07 {
       .bg {
         top: 10vw;
@@ -1064,10 +1086,12 @@ html {
       .korea_vaccine {
         svg {
           text {
-            font-size: 5.8vw;
+            font-size: 6.8vw;
           }
         }
         .korV_dsc {
+          width: 100%;
+          font-size: 3.5vw;
           padding-bottom: 5vw;
           p:last-child {
             font-size: 2vw;
@@ -1117,12 +1141,14 @@ html {
         padding: 20vw 0;
 
         .kormap_dsc {
-          flex-direction: column;
           padding-bottom: 10vw;
           p {
             &:first-child {
               font-size: 5vw;
-              padding-bottom: 3vw;
+
+              &:after {
+                font-size: 1.5vw;
+              }
             }
             &:last-child {
               font-size: 3vw;
