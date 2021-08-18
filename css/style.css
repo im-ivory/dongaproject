@@ -1204,12 +1204,13 @@ html {
   }
   .wrap .page05 .korea_vaccine .korV_dsc p:first-child:after {
     display: block;
+    font-size: 2vw;
   }
   .wrap .page05 .korea_vaccine .korV_dsc p:last-child {
     font-size: 2vw;
   }
   .wrap .page05 .korea_vaccine .korV_dsc p:last-child:before {
-    margin-bottom: 3px;
+    margin-bottom: 1px;
   }
   .wrap .page05 .korea_vaccine .korV_src {
     font-size: 2vw;

@@ -1100,13 +1100,14 @@ html {
               padding-bottom: 5vw;
               &:after {
                 display: block;
+                font-size: 2vw;
               }
             }
             &:last-child {
               font-size: 2vw;
 
               &:before {
-                margin-bottom: 3px;
+                margin-bottom: 1px;
               }
             }
           }

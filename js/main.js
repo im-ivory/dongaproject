@@ -609,7 +609,7 @@ d3.json("./content/skorea_provinces_topo_simple.json", function(error, data) {
     .attr("class", function(d) { return "city c" + d.properties.quantized; })
     .attr("d", korMapPath)
     .on("mouseover", function(d) {		
-      korMapTooltip	.html(`<p>${d.properties.name}</p><p>${d3.format(",")(d.properties.case)}명</p><p>(+${d.properties.new})</p>`)
+      korMapTooltip	.html(`<p>${d.properties.name}</p><p>${d3.format(",")(d.properties.case)}</p><p>(+${d.properties.new})</p>`)
         .style("left", (d3.event.pageX) + "px")		
         .style("top", (d3.event.pageY - 28) + "px")
         .style("opacity", 1)	
@@ -652,9 +652,6 @@ d3.json("./content/skorea_provinces_topo_simple.json", function(error, data) {
     });
 
 });
-
-// d3.selectAll(".municipality-label")
-// .attr("dy", ".5em");
 
 
 //--------------page07--------------
