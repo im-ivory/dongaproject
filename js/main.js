@@ -234,7 +234,7 @@ function increase(){
     transformOrigin: "0 0",
     height: chartHeight - 128,
     duration: 6.5,
-    ease: "power1",
+    ease:  "sine.in"
 })
     tl3.to('#up',{
         opacity: 1,
@@ -245,7 +245,7 @@ $('#jsBtn').click(function () {
     $(".counter_container").css("display", "flex");
     $('html, body').stop().animate({
     scrollTop : $('#up').offset().top - 400
-}, 5000)
+}, 6000)
 });
 
 btn.addEventListener("click", increase);
