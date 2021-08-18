@@ -482,6 +482,7 @@ html {
         height: 100px;
         padding: 2px;
         font-size: 16px;
+        word-break: keep-all;
         @extend %tooltip;
 
         p:last-child {

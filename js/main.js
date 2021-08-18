@@ -360,7 +360,7 @@ d3.csv("./content/case_data.csv", function(error, data) {
         .attr("cx", function(d) { return lineCaseX(d.date); })		 
         .attr("cy", function(d) { return lineCaseY(d.case); })		
         .on("mouseover", function(d) {		
-          lineTooltip	.html("<p>"+formatTime(d.date)+"</p>" + "<p>"+d3.format(',')(d.case)+"</p>")	
+          lineTooltip	.html("<p>"+formatTime(d.date)+"</p>" + "<p>"+d3.format(',')(d.case)+"명</p>")	
                 .style("left", (d3.event.pageX- 50) + "px")		
                 .style("top", (d3.event.pageY- 75) + "px")
                 .style("opacity", 1);	
@@ -642,7 +642,7 @@ d3.json("./content/skorea_provinces_topo_simple.json", function(error, data) {
     .attr("class", (function(d) { return "city-label "+d.properties.code; }))
     .text(function(d) { return d.properties.name; })
     .on("mouseover", function(d) {		
-      korMapTooltip	.html(`<p>${d.properties.name}</p><p>${d3.format(",")(d.properties.case)}명</p><p>(+${d.properties.new})</p>`)
+      korMapTooltip	.html(`<p>${d.properties.name}</p><p>${d3.format(",")(d.properties.case)}</p><p>(+${d.properties.new})</p>`)
         .style("left", (d3.event.pageX) + "px")		
         .style("top", (d3.event.pageY - 28) + "px")
         .style("opacity", 1)

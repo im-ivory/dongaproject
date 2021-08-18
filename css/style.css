@@ -589,6 +589,7 @@ html {
   height: 100px;
   padding: 2px;
   font-size: 16px;
+  word-break: keep-all;
 }
 
 .wrap .page05 .world_vaccine .worldmap_tooltip p:last-child {
