@@ -360,7 +360,7 @@ d3.csv("./content/case_data.csv", function(error, data) {
         .attr("cx", function(d) { return lineCaseX(d.date); })		 
         .attr("cy", function(d) { return lineCaseY(d.case); })		
         .on("mouseover", function(d) {		
-          lineTooltip	.html("<p>"+formatTime(d.date)+"</p>" + "<p>"+d3.format(',')(d.case)+"명</p>")	
+          lineTooltip	.html("<p>"+formatTime(d.date)+"</p>" + "<p>"+d3.format(',')(d.case)+"</p>")	
                 .style("left", (d3.event.pageX- 50) + "px")		
                 .style("top", (d3.event.pageY- 75) + "px")
                 .style("opacity", 1);	
