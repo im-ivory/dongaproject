@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url(reset.css);
 @font-face {
   font-family: "NanumSquareR";
@@ -12,6 +13,29 @@
 @font-face {
   font-family: "NanumSquareEB";
   src: url("../fonts/NanumSquareEB.otf");
+}
+
+.wrap .page04 .case_line .line_tooltip, .wrap .page05 .world_vaccine .worldmap_tooltip, .wrap .page05 .korea_vaccine .korV_tooltip, .wrap .page06 .korea_case .kormap_tooltip {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  background: white;
+  color: black;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
 }
 
 body,
@@ -31,9 +55,6 @@ html {
 }
 
 .wrap .page01 .inner {
-  width: 90%;
-  height: 100vh;
-  margin: 0 auto;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -46,6 +67,9 @@ html {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  width: 90%;
+  height: 100vh;
+  margin: 0 auto;
 }
 
 .wrap .page01 .inner .img {
@@ -83,9 +107,9 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border: 3px solid white;
   width: 30px;
   height: 50px;
+  border: 3px solid white;
   border-radius: 60px;
 }
 
@@ -116,19 +140,19 @@ html {
 }
 
 .wrap .page02 .content_container {
+  position: relative;
   width: 100%;
   height: auto;
-  position: relative;
   margin-top: 10vw;
 }
 
 .wrap .page02 .content_container .background_image {
   position: -webkit-sticky;
   position: sticky;
-  overflow: hidden;
   top: 0;
   width: 100%;
   height: 100vh;
+  overflow: hidden;
 }
 
 .wrap .page02 .content_container .background_image img {
@@ -151,8 +175,8 @@ html {
 }
 
 .wrap .page02 .content_container .background_image .place-dot.wuhan {
-  right: 29vw;
-  top: 19vw;
+  right: 25vw;
+  top: 21vw;
 }
 
 .wrap .page02 .content_container .background_image .place-dot.airport {
@@ -189,7 +213,7 @@ html {
 
 .wrap .page02 .content_container .background_image .airplane {
   position: absolute;
-  right: 27vw;
+  right: 23vw;
   top: 19vw;
   width: 15vw;
   opacity: 0;
@@ -205,10 +229,10 @@ html {
   position: absolute;
   right: 24vw;
   top: 23vw;
-  background-color: white;
   padding: 2vw;
   -webkit-transform: rotate(-13deg);
           transform: rotate(-13deg);
+  background-color: white;
   opacity: 0;
 }
 
@@ -292,13 +316,9 @@ html {
 }
 
 .wrap .page04 .case_bar .counter_container {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  color: white;
-  background-color: rgba(255, 96, 96, 0.884);
   position: -webkit-sticky;
   position: sticky;
+  top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -308,11 +328,15 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  text-align: center;
-  top: 20px;
-  padding: 20px;
   -ms-flex-item-align: end;
       align-self: flex-end;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  color: white;
+  background-color: rgba(255, 96, 96, 0.884);
+  text-align: center;
+  padding: 20px;
   display: none;
   z-index: 2;
 }
@@ -396,16 +420,16 @@ html {
 .wrap .page04 .case_bar .bar {
   position: absolute;
   top: 8px;
-  left: 40%;
+  left: 38.5%;
   width: 15vw;
   height: 0;
   background-color: darkorange;
 }
 
 .wrap .page04 .case_line {
-  margin-top: 10vw;
   width: 100%;
   height: 100vh;
+  margin-top: 10vw;
 }
 
 .wrap .page04 .case_line path {
@@ -461,30 +485,10 @@ html {
 }
 
 .wrap .page04 .case_line .line_tooltip {
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
   width: 100px;
   height: 60px;
   padding: 10px;
   font-size: 16px;
-  color: black;
-  background: white;
-  border: 0px;
-  border-radius: 8px;
-  pointer-events: none;
 }
 
 .wrap .page04 .case_line .line_tooltip p:first-child {
@@ -534,7 +538,6 @@ html {
 }
 
 .wrap .page05 .world_vaccine .worldmap_dsc {
-  width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -545,6 +548,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 80%;
   font-size: 2vw;
 }
 
@@ -556,7 +560,6 @@ html {
 }
 
 .wrap .page05 .world_vaccine .worldmap_duration {
-  width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -567,15 +570,14 @@ html {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  font-size: 1.5vw;
+  width: 80%;
+  font-size: 1.3vw;
 }
 
 .wrap .page05 .world_vaccine .country {
   stroke-width: 1;
   stroke: white;
   fill: #c4c4c4;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
 }
 
 .wrap .page05 .world_vaccine circle {
@@ -583,30 +585,10 @@ html {
 }
 
 .wrap .page05 .world_vaccine .worldmap_tooltip {
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
   width: 100px;
   height: 100px;
   padding: 2px;
   font-size: 16px;
-  background: white;
-  color: black;
-  border: 0px;
-  border-radius: 8px;
-  pointer-events: none;
 }
 
 .wrap .page05 .world_vaccine .worldmap_tooltip p:last-child {
@@ -681,30 +663,10 @@ html {
 }
 
 .wrap .page05 .korea_vaccine .korV_tooltip {
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
   width: 13vw;
   height: 4vw;
   padding: 0.5vw;
   font-size: 1vw;
-  color: black;
-  background: white;
-  border: 0px;
-  border-radius: 8px;
-  pointer-events: none;
 }
 
 .wrap .page05 .korea_vaccine .korV_tooltip p strong {
@@ -801,7 +763,6 @@ html {
 }
 
 .wrap .page06 .korea_case .kormap_dsc {
-  width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -811,6 +772,8 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 90%;
+  padding-bottom: 5vw;
 }
 
 .wrap .page06 .korea_case .kormap_dsc p:first-child {
@@ -818,36 +781,21 @@ html {
   font-weight: 800;
 }
 
+.wrap .page06 .korea_case .kormap_dsc p:first-child:after {
+  content: " (21.08.03 0시 기준)";
+  font-size: 1vw;
+}
+
 .wrap .page06 .korea_case .kormap_dsc p:last-child {
   font-size: 1vw;
 }
 
 .wrap .page06 .korea_case .kormap_tooltip {
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
   width: 100px;
   height: 100px;
   padding: 2px;
   font-size: 16px;
-  background: white;
-  color: black;
-  border: 0px;
   line-height: 25px;
-  border-radius: 8px;
-  pointer-events: none;
 }
 
 .wrap .page06 .korea_case .kormap_tooltip p:nth-child(2) {
@@ -861,17 +809,17 @@ html {
 }
 
 .wrap .page07 {
+  position: relative;
   width: 100%;
   height: auto;
   padding: 20vw 0;
   overflow: hidden;
-  position: relative;
 }
 
 .wrap .page07 .bg {
-  width: 100%;
   position: absolute;
   top: 0;
+  width: 100%;
 }
 
 .wrap .page07 .bg img {
@@ -879,9 +827,6 @@ html {
 }
 
 .wrap .page07 .title {
-  width: 70%;
-  height: 100%;
-  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -892,6 +837,9 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
   font-size: 3vw;
   font-weight: 800;
 }
@@ -1044,8 +992,24 @@ html {
     font-size: 2.5vw;
     line-height: 4vw;
   }
+  .wrap .page04 .case_line {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
   .wrap .page04 .case_line .axis text {
     font-size: 5vw;
+  }
+  .wrap .page04 .case_line .line_tooltip {
+    font-size: 2vw;
+    height: 7vw;
   }
   .wrap .page04 .case_line .line_duration {
     font-size: 2vw;
@@ -1056,6 +1020,11 @@ html {
   }
   .wrap .page05 .korea_vaccine svg text {
     font-size: 3.5vw;
+  }
+  .wrap .page05 .korea_vaccine .korV_tooltip {
+    font-size: 2vw;
+    line-height: 3vw;
+    height: 10vw;
   }
   .wrap .page07 .bg {
     top: 10vw;
@@ -1168,6 +1137,7 @@ html {
     margin-bottom: 3px;
   }
   .wrap .page04 .case_line .line_tooltip {
+    width: 22vw;
     height: 12vw;
     font-size: 3.5vw;
   }
@@ -1257,7 +1227,7 @@ html {
     line-height: 5vw;
   }
   .wrap .page06 .korea_case .kormap_tooltip p:nth-child(2) {
-    font-size: 4vw;
+    font-size: 3.5vw;
   }
   .wrap .page07 .title {
     height: 85vh;

@@ -41,7 +41,7 @@ tl.fromTo('.page01 > .inner > .title',{opacity:1}, {
   }
 })
 .to('.page01 > .inner > .img', {
-    xPercent: 50,
+    xPercent: 55,
     duration: 1,
     scale: 1.3,
     scrollTrigger: {
@@ -300,24 +300,25 @@ $('#jsBtn').click(function(){
 
 // //누적 확진자 수 라인 그래프// 
 
-var margin = {top: 30, right: 20, bottom: 100, left: 150},
-    width = 1000 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+var lineCaseMargin = {top: 30, right: 20, bottom: 100, left: 150},
+    lineCaseWidth = 1000 - lineCaseMargin.left - lineCaseMargin.right,
+    lineCaseHeight = 500 - lineCaseMargin.top - lineCaseMargin.bottom;
 
 var parseDate = d3.timeParse("%Y-%m-%d");
 var formatTime = d3.timeFormat("%y-%m-%d");
 
-var x = d3.scaleTime().range([0, width]);
-var y = d3.scaleLinear().range([height, 0]);
+var lineCaseX = d3.scaleTime().range([0, lineCaseWidth]);
+var lineCaseY = d3.scaleLinear().range([lineCaseHeight, 0]);
 
-var xAxis = d3.axisBottom(x)
-    .ticks(10);
-var yAxis = d3.axisLeft(y)
+var lineXAxis = d3.axisBottom(lineCaseX)
+    .ticks(7)
+    .tickFormat(d3.timeFormat("%y/%m"));
+var lineYAxis = d3.axisLeft(lineCaseY)
     .ticks(5);
 
 var valueline = d3.line()
-    .x(function(d) { return x(d.date); })
-    .y(function(d) { return y(d.case); });
+    .x(function(d) { return lineCaseX(d.date); })
+    .y(function(d) { return lineCaseY(d.case); });
 
 var lineTooltip = d3.select("body .page04 .case_line").append("div")	
     .attr("class", "line_tooltip")				
@@ -327,12 +328,12 @@ var lineDsc = d3.select("body .page04 .case_line").append("div")
     .attr("class", "line_dsc")
     .html("<p>대한민국 누적 확진자 수</p><p>누적 확진자 수(명)</p>")
 
-var svg = d3.select("body .page04 .case_line")
+var lineSvg = d3.select("body .page04 .case_line")
     .append("svg")
     .attr("viewBox", `0 0 1000 500`)
     .attr("preserveAspectRatio", "xMinYMin meet")
     .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("transform", "translate(" + lineCaseMargin.left + "," + lineCaseMargin.top + ")");
 
 var lineDuration = d3.select("body .page04 .case_line").append("div")
 .attr("class", "line_duration")
@@ -345,19 +346,19 @@ d3.csv("./content/case_data.csv", function(error, data) {
         d.case = +d.case;
     });
 
-    x.domain(d3.extent(data, function(d) { return d.date; }));
-    y.domain([0, d3.max(data, function(d) { return d.case; })]);
+    lineCaseX.domain(d3.extent(data, function(d) { return d.date; }));
+    lineCaseY.domain([0, d3.max(data, function(d) { return d.case; })]);
 
-    svg.append("path")
+    lineSvg.append("path")
        .attr("class", "line")
        .attr("d", valueline(data));
 
-    svg.selectAll("dot")	
+    lineSvg.selectAll("dot")	
        .data(data)			
        .enter().append("circle")								
         .attr("r", 7)		
-        .attr("cx", function(d) { return x(d.date); })		 
-        .attr("cy", function(d) { return y(d.case); })		
+        .attr("cx", function(d) { return lineCaseX(d.date); })		 
+        .attr("cy", function(d) { return lineCaseY(d.case); })		
         .on("mouseover", function(d) {		
           lineTooltip	.html("<p>"+formatTime(d.date)+"</p>" + "<p>"+d3.format(',')(d.case)+"명</p>")	
                 .style("left", (d3.event.pageX- 50) + "px")		
@@ -368,14 +369,14 @@ d3.csv("./content/case_data.csv", function(error, data) {
           lineTooltip.style("opacity", 0);	
         });
 
-    svg.append("g")
+    lineSvg.append("g")
         .attr("class", "x axis")
-        .attr("transform", "translate(0," + height + ")")
-        .call(xAxis);
+        .attr("transform", "translate(0," + lineCaseHeight + ")")
+        .call(lineXAxis);
 
-    svg.append("g")
+    lineSvg.append("g")
         .attr("class", "y axis")
-        .call(yAxis);
+        .call(lineYAxis);
 
 });
 
@@ -409,26 +410,26 @@ gsap.from('.page05 > .title:nth-child(3) > h1', {
 // //국가별 백신 접종률 세계 지도//
 
 const worldMapWidth = 1000;
-const worldMapHeight = 700; // svg 크기 설정
+const worldMapHeight = 700; 
 
-const worldMapProjection = d3.geoMercator() //평면지도로 설정
-    .translate([worldMapWidth/2, worldMapHeight/1.55]) // 지도를 svg 가운데로 위치 옮기기
-    .scale([150]);// 크기 설정
+const worldMapProjection = d3.geoMercator() 
+    .translate([worldMapWidth/2, worldMapHeight/1.55]) 
+    .scale([150]);
 
-const worldMapPath = d3.geoPath().projection(worldMapProjection); // 평면지도로 path(지도윤곽선)을 그린다
+const worldMapPath = d3.geoPath().projection(worldMapProjection); 
 
-var worldMapDsc = d3.select("body .page05 .world_vaccine").append("div")
+const worldMapDsc = d3.select("body .page05 .world_vaccine").append("div")
     .attr("class", "worldmap_dsc")
-    .html("<p>국가별 백신 접종률</p><p>백신 접종률(%)</p>")
+    .html("<p>주요 11개국 국가별 백신 접종률</p><p>백신 접종률(%)</p>")
 
-const worldMapContainer = d3.select(".page05 .world_vaccine"); //svg지도가 담길 container = body의 <div class="home">
-const worldMapSvg = worldMapContainer.append("svg"); // container에 svg 추가하기
+const worldMapContainer = d3.select(".page05 .world_vaccine"); 
+const worldMapSvg = worldMapContainer.append("svg"); 
 
-var worldMapDuration = d3.select("body .page05 .world_vaccine").append("div")
+const worldMapDuration = d3.select("body .page05 .world_vaccine").append("div")
     .attr("class", "worldmap_duration")
     .html("<p>통계 기간: 2020년 12월 27일 ~ 2021년 08월 02일</p>")
 
-var worldMapTooltip = d3.select(".page05 .world_vaccine").append("div")	
+const worldMapTooltip = d3.select(".page05 .world_vaccine").append("div")	
 .attr("class", "worldmap_tooltip")				
 .style("opacity", 0);
 
@@ -446,15 +447,24 @@ var worldMapTooltip = d3.select(".page05 .world_vaccine").append("div")
               .attr("d", worldMapPath) 
               .attr("class", "country") 
 
-      newFeatures = features.filter( function(d){return d.properties.vaccinated !==undefined} )
+          newFeatures = features.filter( function(d){return d.properties.vaccinated !==undefined} )
 
-              worldMapSvg.selectAll("circle")
+          worldMapSvg.selectAll("circle")
               .data(newFeatures)
               .enter().append("circle")
               .attr("transform", function(d) { return "translate(" + worldMapPath.centroid(d) + ")"; })
+              .attr("cx", function(d){
+                if(d.properties.iso_a3 == "USA"){
+                  return "3em";
+                }
+              })
+              .attr("cy", function(d){
+                if(d.properties.iso_a3 == "USA"){
+                  return "2em";
+                }
+              })
               .attr("r", 10)
               .style("fill", "cornflowerblue")
-              // .attr("xlink:href", "content/injection.png")
               .attr("class", (function(d) { return "country-name "+d.properties.iso_a3; }))
               .on("mouseover", function(d) {		
                 worldMapTooltip	.html(`<p>${d.properties.kor_name}</p><p>${d.properties.vaccinated}%</p>`)
@@ -472,7 +482,7 @@ var worldMapTooltip = d3.select(".page05 .world_vaccine").append("div")
 
 // //한국 연령대별 백신 접종률 막대 그래프//
 
-var korVaccineData = [
+var korVaxData = [
   {x: 77.1, y: "80세 이상", z:1738733},
   {x: 41.2, y: "70~79", z:1548133},
   {x: 7.6, y: "60~69", z:543993},
@@ -482,16 +492,16 @@ var korVaccineData = [
   {x: 11.2, y: "18~29", z:854927},
 ];
 
-var korVWidth = 1000;
-var korVHeight = 700;
+var korVaxWidth = 1000;
+var korVaxHeight = 700;
 
-  var korVDsc= d3.select("body .page05 .korea_vaccine").append("div")
+  var korVaxDsc= d3.select("body .page05 .korea_vaccine").append("div")
     .attr("class", "korV_dsc")
-    .html("<p>연령대별 백신접종률</p><p>백진접종률(%)</p>")
+    .html("<p>국내 연령대별 백신접종률</p><p>백진접종률(%)</p>")
 
-  var korVsvg = d3.select(".page05 .korea_vaccine")
+  var korVaxSvg = d3.select(".page05 .korea_vaccine")
   .append("svg")
-  .attr("viewBox", `0 0 ${korVWidth} ${korVHeight}`)
+  .attr("viewBox", `0 0 ${korVaxWidth} ${korVaxHeight}`)
   .append("g") 
   .attr("transform", "translate(0,20)"); 
 
@@ -500,47 +510,47 @@ var korVHeight = 700;
   // .html("<p>출처: 질병관리청</p>")
 
 
-  var korVyScale = d3.scaleBand()
-      .domain(korVaccineData.map(function(d) {return d.y;}))
-      .range([0, korVHeight-200]).paddingInner(0.4);
-  var korVxScale = d3.scaleLinear()
+  var korVaxYscale = d3.scaleBand()
+      .domain(korVaxData.map(function(d) {return d.y;}))
+      .range([0, korVaxHeight-200]).paddingInner(0.4);
+  var korVaxXscale = d3.scaleLinear()
       .domain([0, 100])
-      .range([0, korVWidth-150]);
+      .range([0, korVaxWidth-150]);
 
-  var svgG = korVsvg.append("g")
+  var svgG = korVaxSvg.append("g")
       .attr("transform", "translate(130,0)");
 
   svgG.selectAll('rect')
-  .data(korVaccineData)
+  .data(korVaxData)
   .enter() 
   .append('rect')
       .attr('height', 50)
-      .attr('y', (d,i)=>korVyScale(d.y))
+      .attr('y', (d,i)=>korVaxYscale(d.y))
       .attr('width', 10) 
       .on("mouseover", function(d) {		
-        korVTooltip	.html("<p>접종완료자: <strong>"+d3.format(",")(d.z)+"</strong>명</p>" +"<p>접종률: <strong>"+ d.x+"</strong>%</p>")	
+        korVaxTooltip	.html("<p>접종완료자: <strong>"+d3.format(",")(d.z)+"</strong>명</p>" +"<p>접종률: <strong>"+ d.x+"</strong>%</p>")	
               .style("left", (d3.event.pageX) + "px")		
               .style("top", (d3.event.pageY - 10) + "px")
               .style("opacity", 1);	
           })					
       .on("mouseout", function(d) {		
-        korVTooltip.style("opacity", 0);	
+        korVaxTooltip.style("opacity", 0);	
       })
       .transition().duration(1500) 
-      .attr('width', d=>(d.x*8.2)) 
+      .attr("width", d=>(d.x*8.2)) 
       
 
-  var yAxis2 = d3.axisLeft().scale(korVyScale);
-  var xAxis2 = d3.axisBottom().scale(korVxScale);
+  var korVaxYAxis = d3.axisLeft().scale(korVaxYscale);
+  var korVaxXAxis = d3.axisBottom().scale(korVaxXscale);
 
   svgG.append("g")
-      .call(yAxis2);
+      .call(korVaxYAxis);
 
   svgG.append("g")
-      .attr("transform", "translate(0,"+(height+135)+")")
-      .call(xAxis2);
+      .attr("transform", "translate(0,"+(korVaxHeight-195)+")")
+      .call(korVaxXAxis);
 
-  var korVTooltip = d3.select("body .page05 .korea_vaccine").append("div")
+  var korVaxTooltip = d3.select("body .page05 .korea_vaccine").append("div")
   .attr("class", "korV_tooltip")
   .style("opacity", 0);
 
@@ -573,7 +583,6 @@ var korMapSvg = d3.select(".page06 .korea_case").append("svg")
 var korMapProjection = d3.geoMercator()
 .center([127.2895, 37.4651])
 .scale(8000)
-.translate([width/2, height/2]);
 
 var korMapPath = d3.geoPath().projection(korMapProjection);
 
@@ -600,7 +609,7 @@ d3.json("./content/skorea_provinces_topo_simple.json", function(error, data) {
     .attr("class", function(d) { return "city c" + d.properties.quantized; })
     .attr("d", korMapPath)
     .on("mouseover", function(d) {		
-      korMapTooltip	.html(`<p>${d.properties.name}</p><p>${d3.format(",")(d.properties.case)}</p><p>(+${d.properties.new})</p>`)
+      korMapTooltip	.html(`<p>${d.properties.name}</p><p>${d3.format(",")(d.properties.case)}명</p><p>(+${d.properties.new})</p>`)
         .style("left", (d3.event.pageX) + "px")		
         .style("top", (d3.event.pageY - 28) + "px")
         .style("opacity", 1)	
@@ -633,7 +642,7 @@ d3.json("./content/skorea_provinces_topo_simple.json", function(error, data) {
     .attr("class", (function(d) { return "city-label "+d.properties.code; }))
     .text(function(d) { return d.properties.name; })
     .on("mouseover", function(d) {		
-      korMapTooltip	.html(`<p>${d.properties.name}</p><p>${d3.format(",")(d.properties.case)}</p><p>(+${d.properties.new})</p>`)
+      korMapTooltip	.html(`<p>${d.properties.name}</p><p>${d3.format(",")(d.properties.case)}명</p><p>(+${d.properties.new})</p>`)
         .style("left", (d3.event.pageX) + "px")		
         .style("top", (d3.event.pageY - 28) + "px")
         .style("opacity", 1)
@@ -656,10 +665,11 @@ tlL.from('.page07 > .title > div',  {
   opacity: 0,
   stagger: 2,
   scrollTrigger: {
-      trigger: '.page07 > .title > div',
+      trigger: '.page07 > .title',
       scrub: 1,
       toggleActions: 'play reverse none reverse',
-      start: 'top 50%',
+      start: 'top 25%',
+      markers: true,
       end: "bottom 100%",
       
   }
@@ -683,7 +693,7 @@ tlL.from('.page07 > .title > div',  {
       scrub: 1,
       toggleActions: 'play reverse none reverse',
       start: 'top 60%',
-      end: 'bottom 100%',
+      end: 'bottom 90%',
   }
 })
 .to('.page07 > .bg',  {
@@ -692,7 +702,7 @@ tlL.from('.page07 > .title > div',  {
       trigger: '.page07 > .title > .people',
       scrub: 1,
       toggleActions: 'play reverse none reverse',
-      start: "top 50%",
+      start: "top 40%",
       end: "bottom 100%",
   }
 })

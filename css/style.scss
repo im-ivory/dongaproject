@@ -13,6 +13,20 @@
   src: url("../fonts/NanumSquareEB.otf");
 }
 
+%tooltip {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: white;
+  color: black;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
 body,
 html {
   width: 100%;
@@ -28,14 +42,14 @@ html {
     height: auto;
 
     .inner {
-      width: 90%;
-      height: 100vh;
-      margin: 0 auto;
       position: sticky;
       top: 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      width: 90%;
+      height: 100vh;
+      margin: 0 auto;
 
       .img {
         flex-basis: 45%;
@@ -64,9 +78,9 @@ html {
         display: flex;
         align-items: flex-start;
         justify-content: center;
-        border: 3px solid rgb(255, 255, 255);
         width: 30px;
         height: 50px;
+        border: 3px solid rgb(255, 255, 255);
         border-radius: 60px;
         .wheel {
           width: 7px;
@@ -96,21 +110,20 @@ html {
     }
 
     .content_container {
+      position: relative;
       width: 100%;
       height: auto;
-      position: relative;
       margin-top: 10vw;
 
       .background_image {
         position: sticky;
-        overflow: hidden;
         top: 0;
         width: 100%;
         height: 100vh;
+        overflow: hidden;
 
         img {
           width: 100%;
-          // transform: scale(0.8) translate(33vw, -5vw);
         }
 
         .place-dot {
@@ -121,8 +134,8 @@ html {
           opacity: 0;
 
           &.wuhan {
-            right: 29vw;
-            top: 19vw;
+            right: 25vw;
+            top: 21vw;
           }
           &.airport {
             right: 14vw;
@@ -159,7 +172,7 @@ html {
 
         .airplane {
           position: absolute;
-          right: 27vw;
+          right: 23vw;
           top: 19vw;
           width: 15vw;
           opacity: 0;
@@ -172,9 +185,9 @@ html {
           position: absolute;
           right: 24vw;
           top: 23vw;
-          background-color: white;
           padding: 2vw;
           transform: rotate(-13deg);
+          background-color: white;
           opacity: 0;
           h1 {
             color: black;
@@ -253,19 +266,19 @@ html {
       align-items: center;
 
       .counter_container {
+        position: sticky;
+        top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: flex-end;
         width: 80px;
         height: 80px;
         border-radius: 50%;
         color: white;
         background-color: rgba(255, 96, 96, 0.884);
-        position: sticky;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         text-align: center;
-        top: 20px;
         padding: 20px;
-        align-self: flex-end;
         display: none;
         z-index: 2;
 
@@ -336,7 +349,7 @@ html {
       .bar {
         position: absolute;
         top: 8px;
-        left: 40%;
+        left: 38.5%;
         width: 15vw;
         height: 0;
         background-color: darkorange;
@@ -344,9 +357,9 @@ html {
     }
 
     .case_line {
-      margin-top: 10vw;
       width: 100%;
       height: 100vh;
+      margin-top: 10vw;
       path {
         stroke: rgb(24, 151, 255);
         stroke-width: 2;
@@ -390,21 +403,11 @@ html {
         line-height: 1.5vw;
       }
       .line_tooltip {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
         width: 100px;
         height: 60px;
         padding: 10px;
         font-size: 16px;
-        color: black;
-        background: white;
-        border: 0px;
-        border-radius: 8px;
-        pointer-events: none;
+        @extend %tooltip;
 
         p:first-child {
           font-weight: 800;
@@ -445,10 +448,10 @@ html {
       padding-bottom: 20vw;
 
       .worldmap_dsc {
-        width: 80%;
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 80%;
         font-size: 2vw;
 
         p:last-child {
@@ -458,18 +461,17 @@ html {
         }
       }
       .worldmap_duration {
-        width: 80%;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        font-size: 1.5vw;
+        width: 80%;
+        font-size: 1.3vw;
       }
 
       .country {
         stroke-width: 1;
         stroke: white;
         fill: rgb(196, 196, 196);
-        transition: all 0.3s;
       }
 
       circle {
@@ -477,21 +479,11 @@ html {
       }
 
       .worldmap_tooltip {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
         width: 100px;
         height: 100px;
         padding: 2px;
         font-size: 16px;
-        background: rgb(255, 255, 255);
-        color: black;
-        border: 0px;
-        border-radius: 8px;
-        pointer-events: none;
+        @extend %tooltip;
 
         p:last-child {
           font-weight: bold;
@@ -559,21 +551,11 @@ html {
       }
 
       .korV_tooltip {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
         width: 13vw;
         height: 4vw;
         padding: 0.5vw;
         font-size: 1vw;
-        color: black;
-        background: white;
-        border: 0px;
-        border-radius: 8px;
-        pointer-events: none;
+        @extend %tooltip;
 
         p {
           strong {
@@ -613,7 +595,6 @@ html {
         fill: rgb(155, 155, 155);
         stroke: black;
         cursor: pointer;
-
         &.c0 {
           fill: #e0f2f1;
         }
@@ -650,14 +631,19 @@ html {
         cursor: pointer;
       }
       .kormap_dsc {
-        width: 90%;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        width: 90%;
+        padding-bottom: 5vw;
 
         p:first-child {
           font-size: 2vw;
           font-weight: 800;
+          &:after {
+            content: " (21.08.03 0시 기준)";
+            font-size: 1vw;
+          }
         }
         p:last-child {
           font-size: 1vw;
@@ -665,22 +651,12 @@ html {
       }
 
       .kormap_tooltip {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
         width: 100px;
         height: 100px;
         padding: 2px;
         font-size: 16px;
-        background: rgb(255, 255, 255);
-        color: black;
-        border: 0px;
         line-height: 25px;
-        border-radius: 8px;
-        pointer-events: none;
+        @extend %tooltip;
 
         p:nth-child(2) {
           font-weight: bold;
@@ -695,28 +671,28 @@ html {
   }
 
   .page07 {
+    position: relative;
     width: 100%;
     height: auto;
     padding: 20vw 0;
     overflow: hidden;
-    position: relative;
 
     .bg {
-      width: 100%;
       position: absolute;
       top: 0;
+      width: 100%;
       img {
         width: 100%;
       }
     }
 
     .title {
-      width: 70%;
-      height: 100%;
-      margin: 0 auto;
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 70%;
+      height: 100%;
+      margin: 0 auto;
       font-size: 3vw;
       font-weight: 800;
       // padding-bottom: 20vw;
@@ -891,10 +867,17 @@ html {
     }
     .page04 {
       .case_line {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         .axis {
           text {
             font-size: 5vw;
           }
+        }
+        .line_tooltip {
+          font-size: 2vw;
+          height: 7vw;
         }
         .line_duration {
           font-size: 2vw;
@@ -915,6 +898,11 @@ html {
           text {
             font-size: 3.5vw;
           }
+        }
+        .korV_tooltip {
+          font-size: 2vw;
+          line-height: 3vw;
+          height: 10vw;
         }
       }
     }
@@ -1049,6 +1037,7 @@ html {
           }
         }
         .line_tooltip {
+          width: 22vw;
           height: 12vw;
           font-size: 3.5vw;
           p:first-child {
@@ -1146,7 +1135,7 @@ html {
           font-size: 3vw;
           line-height: 5vw;
           p:nth-child(2) {
-            font-size: 4vw;
+            font-size: 3.5vw;
           }
         }
       }
