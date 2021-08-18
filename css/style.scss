@@ -494,22 +494,11 @@ html {
     .korea_vaccine {
       display: flex;
       flex-direction: column;
-      // align-items: center;
       justify-content: center;
       width: 80%;
       margin: 0 auto;
       height: 100vh;
-      // svg {
-      //   position: absolute;
-      //   top: 0;
-      //   left: 0;
-      //   width: 100%;
-      //   height: 100%;
-      // }
 
-      // svg {
-      //   border: 1px white solid;
-      // }
       svg rect {
         fill: rgb(71, 165, 100);
         transition: all 0.5s;
@@ -537,19 +526,30 @@ html {
         padding-bottom: 2vw;
         font-size: 2vw;
 
-        p:last-child {
-          font-size: 1vw;
-          &:before {
-            content: "";
-            display: inline-block;
-            width: 5vw;
-            border-bottom: 5px solid rgb(71, 165, 100);
-            margin-bottom: 5px;
-            margin-right: 5px;
+        p {
+          &:first-child {
+            &:after {
+              content: " (2021년 8월 2일 0시 기준)";
+              font-size: 1vw;
+            }
+          }
+          &:last-child {
+            font-size: 1vw;
+            &:before {
+              content: "";
+              display: inline-block;
+              width: 5vw;
+              border-bottom: 5px solid rgb(71, 165, 100);
+              margin-bottom: 5px;
+              margin-right: 5px;
+            }
           }
         }
       }
-
+      .korV_src {
+        font-size: 1.5vw;
+        transform: translate(7vw, -5vw);
+      }
       .korV_tooltip {
         width: 13vw;
         height: 4vw;
@@ -1090,21 +1090,40 @@ html {
           }
         }
         .korV_dsc {
+          flex-direction: column;
+          text-align: center;
           width: 100%;
-          font-size: 3.5vw;
+          font-size: 4vw;
           padding-bottom: 5vw;
-          p:last-child {
-            font-size: 2vw;
+          p {
+            &:first-child {
+              padding-bottom: 5vw;
+              &:after {
+                display: block;
+              }
+            }
+            &:last-child {
+              font-size: 2vw;
 
-            &:before {
-              margin-bottom: 3px;
+              &:before {
+                margin-bottom: 3px;
+              }
             }
           }
         }
+        .korV_src {
+          font-size: 2vw;
+        }
         .korV_tooltip {
-          font-size: 3vw;
-          width: 20vw;
-          height: 10vw;
+          font-size: 3.5vw;
+          width: 30vw;
+          height: 12vw;
+          line-height: 4vw;
+          p {
+            &:first-child {
+              padding-bottom: 1vw;
+            }
+          }
         }
       }
       .world_vaccine {
@@ -1147,7 +1166,7 @@ html {
               font-size: 5vw;
 
               &:after {
-                font-size: 1.5vw;
+                font-size: 2vw;
               }
             }
             &:last-child {

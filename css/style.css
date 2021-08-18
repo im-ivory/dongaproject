@@ -649,6 +649,11 @@ html {
   font-size: 2vw;
 }
 
+.wrap .page05 .korea_vaccine .korV_dsc p:first-child:after {
+  content: " (2021년 8월 2일 0시 기준)";
+  font-size: 1vw;
+}
+
 .wrap .page05 .korea_vaccine .korV_dsc p:last-child {
   font-size: 1vw;
 }
@@ -660,6 +665,12 @@ html {
   border-bottom: 5px solid #47a564;
   margin-bottom: 5px;
   margin-right: 5px;
+}
+
+.wrap .page05 .korea_vaccine .korV_src {
+  font-size: 1.5vw;
+  -webkit-transform: translate(7vw, -5vw);
+          transform: translate(7vw, -5vw);
 }
 
 .wrap .page05 .korea_vaccine .korV_tooltip {
@@ -1179,9 +1190,20 @@ html {
     font-size: 6.8vw;
   }
   .wrap .page05 .korea_vaccine .korV_dsc {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
     width: 100%;
-    font-size: 3.5vw;
+    font-size: 4vw;
     padding-bottom: 5vw;
+  }
+  .wrap .page05 .korea_vaccine .korV_dsc p:first-child {
+    padding-bottom: 5vw;
+  }
+  .wrap .page05 .korea_vaccine .korV_dsc p:first-child:after {
+    display: block;
   }
   .wrap .page05 .korea_vaccine .korV_dsc p:last-child {
     font-size: 2vw;
@@ -1189,10 +1211,17 @@ html {
   .wrap .page05 .korea_vaccine .korV_dsc p:last-child:before {
     margin-bottom: 3px;
   }
+  .wrap .page05 .korea_vaccine .korV_src {
+    font-size: 2vw;
+  }
   .wrap .page05 .korea_vaccine .korV_tooltip {
-    font-size: 3vw;
-    width: 20vw;
-    height: 10vw;
+    font-size: 3.5vw;
+    width: 30vw;
+    height: 12vw;
+    line-height: 4vw;
+  }
+  .wrap .page05 .korea_vaccine .korV_tooltip p:first-child {
+    padding-bottom: 1vw;
   }
   .wrap .page05 .world_vaccine .worldmap_dsc {
     font-size: 4.5vw;
@@ -1231,7 +1260,7 @@ html {
     font-size: 5vw;
   }
   .wrap .page06 .korea_case .kormap_dsc p:first-child:after {
-    font-size: 1.5vw;
+    font-size: 2vw;
   }
   .wrap .page06 .korea_case .kormap_dsc p:last-child {
     font-size: 3vw;

@@ -505,9 +505,9 @@ var korVaxHeight = 700;
   .append("g") 
   .attr("transform", "translate(0,20)"); 
 
-  // var korVSrc= d3.select("body .page05 .korea_vaccine").append("div")
-  // .attr("class", "korV_src")
-  // .html("<p>출처: 질병관리청</p>")
+  var korVSrc= d3.select("body .page05 .korea_vaccine").append("div")
+  .attr("class", "korV_src")
+  .html("<p>출처: 질병관리청</p>")
 
 
   var korVaxYscale = d3.scaleBand()
